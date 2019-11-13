@@ -1,0 +1,55 @@
+fleet "Courier Security"
+	government "Courier"
+	names civilian
+	cargo 0
+	personality
+		frugal disables plunders opportunistic mining harvests unconstrained
+	variant 1
+		"Manta"
+		"Hawk" 3
+	variant 1
+		"Mule"
+		"Hawk" 2
+		"Berserker"
+	variant 1
+		"Splinter"
+		"Sparrow" 5
+	variant 1
+		"Firebird"
+		"Fury" 3
+	variant 1
+		"Berserker" 5
+	variant 1
+		"Fury" 4
+	variant 1
+		"Headhunter" 2
+	variant 1
+		"Bactrian"
+	variant 1
+		"Falcon"
+	variant 1
+		"Leviathan"
+	variant 1
+		"Vanguard"
+		
+fleet "Courier Scout"
+	government "Courier"
+	names civilian
+	cargo 0
+	personality
+		surveillance opportunistic
+	variant 1
+		"Headhunter (Courier)" 2
+		
+fleet "Courier Freight"
+	government "Courier"
+	names civilian
+	cargo 5
+	personality
+		timid frugal disables plunders appeasing opportunistic 
+	variant 1
+		"Bulk Freighter (Courier)" 1
+	variant 1
+		"Bulk Freighter (Courier)" 2
+	variant 1
+		"Bulk Freighter (Courier)" 3

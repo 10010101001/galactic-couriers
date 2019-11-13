@@ -1,0 +1,322 @@
+mission "Courier: First Contact 0"
+	landing
+	source "Meliter Station"
+	on offer
+		"reputation: Courier" += 10
+		log "Factions" "Courier" `The Couriers are a small breakaway community of humans living between the Hai and Korath territories. They used to be a corporate entity under the Republic's rule, but they were forced to relocate after their ships were consistently attacked by pirates and their employees started receiving threats from an unknown source.`
+		conversation
+			`After getting closer to the station of obvious Korath origins, you notice that the docking ports are heavily modified. Your ship has no problem docking, the atmosphere inside the station is also the perfect composition for humans, so you continue with the standard docking procedures and equalize the air in your ship with the station.`
+			`	The corridor following the airlock is very cramped, just as you'd expect from a Korath station, but right after you exit it you're presented with a cavernous atrium full of people. You didn't even realize that there is artifical gravity in the station, something very unusual with structures like this.`
+			`	There are multiple levels of the atrium, connected with stairs and elevators. In the sides are service bays for Korath drones that have been converted by the human inhabitants into bars, shops, offices, and living spaces.`
+			`	Your visible confusion attracts the attention of one of the locals. "You new here? A traveller?" he asks.`
+			choice
+				`	"Yes, what is this place?"`
+					goto next
+				`	"Not really, I'm just on my way to leave..."`
+					goto leave
+			label next
+			`	"This is the Meliter Station, it was originally built by one of the Korath robot factions, but then it got 'inherited' by the Couriers."`
+			`	"Who are the Couriers?" you ask.`
+			`	He thinks about your question for a moment, and says "Honestly, I'm not even sure. I heard rumors about them a few years back when I lived on Bounty. A couple dudes who supposedly stole some alien tech but were chased into hiding by some other dudes who wanted the tech for themselves. I once ran into one of the Courier captains in the spaceport, I expressed to him my concerns about a possible civil war breaking out, and he offered me to live here and work for them. Of course I agreed, this part of space is calm, there are no pirates here, and no threat of an interstellar conflict breaking out. All I have to do is occasionally fix some of the machines on this station. Pretty fine life if you ask me."`
+				goto end
+			label leave
+			`	"Come on, don't think I can't recognize a newcomer when I see one!" he laughs.`
+				goto end
+			label end
+			`	"Anyway," he continues, "I think you should meet up with the folks running this place. Anyone who has the ability to travel here by themselves can surely be of great help to them. And, from what I heard, the pay is pretty nice, too."`
+			`	The man then proceeds to hand you a paper printout of the station's layout and shows you how you can get to the main Couriers' office.`
+			`	(visit the spaceport to proceed)`
+
+mission "Courier: First Contact 1"
+	source "Meliter Station"
+	on offer
+		set "courier jobs open"
+		conversation
+			`The main office of the Couriers is positioned at the top of the spaceport, with windows overlooking the entire atrium. The only way to get there is by an elevator, where you're met by a security guard. After explaining to him your situation, he agrees to escort you to the leader of the Couriers.`
+			`	The elevator takes you to a lounge just in front of the office entrance. A woman greets you, introducing herself as the secretary of the 'Courier CEO'.`
+			`	"Mister Novak will meet with you in just a few minutes, sir" she says.`
+			`	You patiently wait in the lounge, wondering if this entire meetup is just a big waste of time, but your train of thoughts is interrupted when a man in a black formal suit and a red tie opens the office door and gestures you in.`
+			`	His office is one of the most luxurious accomodations you've ever seen, contrasting with the rough and industrial look of the rest of the station you're in.`
+			`	"My name is Vladimir Novak, I am the founder and current leader of the Courier operations from this station. I've received reports that your ship entered this system using a jump drive, is that true?"`
+			choice
+				`	"How about I ask the questions, starting with 'who are you and what are you doing here?'"`
+				`	"Yes it is. Would you care to explain who the Couriers are?"`
+			`"I'm afraid I won't be able to tell you much right away", Novak says, "but don't worry, I can make the time you spent here worth your while. As the name suggests, the Couriers specialize in transporting things, be it cargo, valuables, or even passengers. I won't get into the details of our operation, but I do want to ask you for help."`
+			`	"Help with what?" you ask.`
+			`	"We are currently low on ships with jump drives. Well, we've always been low on ships with jump drives. It's an issue anyone living in a system without hyperspace links has to deal with. If you want to learn more about us, you will have to earn out trust. I have allowed your ship access to our job board, if you feel like helping out, there will almost always be some work you can do for us. Mostly simple transport missions. Prove that you're willing to help, and we may consider sharing more information."`
+			choice
+				`	"Okay, I'll see what I can do."`
+			`"I'm glad to hear that" the man says, "just return in a few days and I'm sure we will have some lucrative jobs for you."`
+			
+mission "Courier: Small Deliveries done"
+	name "Learn about the Couriers"
+	description "The Couriers agreed to share more information and possible work opportunities with you. Travel to <planet> to speak with them in person."
+	landing
+	destination "Meliter Station"
+	to offer
+		"courier jobs" >= 10
+	on offer
+		conversation
+			`Not long after you land, you receive a message from Vladimir Novak. It reads:`
+			`"I have been monitoring your recent work for the Couriers, and I can say I'm quite impressed. I'm sure you have many questions. Come to Meliter and meet me in my office and we can talk about our further cooperation."`
+				accept
+	on complete
+		conversation
+			`As instructed, you go to meet up with Novak. This time you know exactly where to go, and make your way to his office much faster than before. You are also allowed passage without any guards having to escort you. It seems like your work for the Couriers made them much more relaxed around you.`
+			`	"Captain <last>! I'm very glad you came, we had many people turn us down in the past."`
+			`	"How can I turn you down when I don't even know what it is you're doing?" you ask.`
+			`	"I understand any concerns that you may have had about the missions, captain" says Novak, "but I assure you that at no point were you carrying any dangerous or illegal cargo."`
+			`	He steps toward the window overlooking the atrium of the station, and continues "But I also think that you understand that keeping our operations and location secret is very important. I was a starship captain like you, <last>, although instead of political affairs I gained my wealth and relative freedom thanks to my success in the corporate world. You may have heard of my company, the 'Galactic Couriers'..."`
+			`	He crosses his hands and laughs, "...what a stupid name. But, nontheless, it was a huge success. While most independent merchants transport goods or people from one place to another, we managed to coordinate our operations. We built a network of freight routes that allowed us to transport cargo with a much higher efficiency, regardless of its source or destination; instead of one fleet of ships doing all the work, we set up transfer points where smaller freighters could load their cargo into large ones and in the process decrease the overall operating costs that come with flying small ships long distances."`
+			
+			choice
+				`	"So what happened that made you move all the way here?"`
+				
+			`"Many things," Novak responds, "the first and very obvious issue we had to face were pirates. The precise flight schedules that allowed us to maximize efficiency also meant that our freight fleets were easily predictable, a single leaked document would allow pirates to set up a perfectly timed ambush. Each raid delivered three very damaging blows to the company, we lost good people, making it harder to employ new crew, we lost ships, many of which were leased, worsening our credit rating, and we also lost the cargo, giving our customers more reasons to doubt the safety and reliability of our services."`
+			
+			choice
+				`	"That's just the way it is, every captain has to deal with pirates at some point."`
+					goto ch1
+				`	"I am very sorry to hear that."`
+					goto ch2
+					
+			label ch1
+			`"I know. And I also knew back then." says Novak.`
+				goto next
+				
+			label ch2
+			`"Don't be, captain" says Novak. "I was fully aware that we'd have to deal with them at some point."`
+			
+			label next
+			`	"But what doomed our company weren't the raids themselves. Our employees and their family members started receiving threats, that if they keep working for us bad things would start happening to them. We don't know who sent those threats, I suppose not any of the pirates, because they wouldn't gain anything from our company going out of business. We tried to get the authorities involved, but they mysteriously couldn't find any clues. Anyone who did that must've had very good connections in the right places, they probably overheard that some of our ships were equipped with alien technology and wanted a piece of the action for themselves."`
+			
+			choice
+				`	"Do you have any suspects?"`
+					goto suspect
+				`	"Were the jump drives that brought you here a part of that technology?"`
+					goto drives
+					
+			label suspect
+			`	"No, not really" says Novak calmly, "there were so many different groups and individuals who would benefit from the liquidation of our assets that it was pretty much impossible to accuse any specific one of them. Although from what I've heard, the situation in the Republic has gotten much better since then."`
+				goto drives2
+			
+			label drives
+			`	"The jump drives were almost exclusively the technology. We knew that the Syndicate and some free captains managed to snatch some from alien raids in the east, but we made ourselves an exceptionally large target by outfiting many of our ships with the drives. They were perfect for jumping between systems without links, it allowed us to confuse the pirate raiding parties and it also made many of our routes shorter. Of course, we didn't want to raise much attention when using them; we entrusted only our highest ranking pilots with them, and we made sure to use them only in empty systems or far away from any other traffic. We equipped our ships with the highest-grade interference plating in an attempt to hide the jump drives from Navy scanners, but we were bound to attract some attention."`
+				goto drives2
+			
+			label drives2
+			`	He then returns to his table, types something on the computer and rotates the screen so its facing you. It shows a map of nearby star systems, with the Korath territory highlighted.`
+			`	"Tell me, captain" he asks, "where do you think we got enough jump drives to move our entire fleet here?"`
+			`	You attempt to answer, but even before you start he interrupts you, "trick question. We didn't. We got only a handful from disabled Korath ships, but when the time came to relocate, we had to swap them between our fleets as they were going in and out of this star system. A fleet with jump drives would travel here, then the drives were all loaded onto a single freighter, sent back, installed on more ships, and the process could repeat."`
+			
+			choice
+				`	"Wouldn't that leave you with a lot of stranded ships?"`
+			
+			`"Indeed," Novak says, "but when our scout ships first discovered this system, it was apparent that modifying the local space station would require a lot of resources, so we ended up scrapping many of the ships once they got here, using the materials we gained to patch up the station. Anyway, I don't want to waste your time. Now that you've proven your worth, you will be granted access to better contracts. Check the job board in a few days and I think you will be pleasantly surprised. Is there anything else you'd like to know?"`
+				goto answer0
+			
+			label answer0
+			choice 
+				`	"Can you tell me more about this star system?"`
+					goto answer1
+				`	"Who are your customers?"`
+					goto answer2
+				`	"Aren't you afraid of Korath drone attacks?"`
+					goto answer3
+				`	"Not really, thanks."`
+					goto answer4
+					
+			label answer1
+			`"When our first scout ships discovered Meliter, it was already abandoned. We think that it used to be linked with the rest of the Korath space in the past, otherwise there would be no way for Korath drones to get here and set up the station in the first place, but we have no idea how the hyperspace links were severed. Another big mystery is why wasn't this system inhabited by the other Korath that have access to jump drives; a stable triple star system is extremely rare and has an immense energy output. Our standing theory is that the Korath still think that this system is inhabited by their drones. We also suspect that the planet this station is orbiting has extremely rich deposits of rare metals, but any attempts at setting up mining operations were hindered by the extreme atmospheric pressure and temperature."`
+				goto answer0
+				
+			label answer2
+			`"Mostly private individuals, ex-captains who made a fortune and retired, low-profile rebel groups on pirate worlds, we also often deliver to the Hai space, you'd be surprised how many of them are interested in human commodities and entertainment. Oh, and since you made contact with them, we've also ran a few shipments for the Remnants. As far as the actual content of our shipment goes, I have no idea. When someone orders our services, we send a cargo inspector ahead of the actual freighter. He or she makes sure that the cargo is safe and legal, and if it is, it gets sealed in special containers designed to interfere with cargo scanners and then loaded onto the freighter. In the entire process, only the customer and the inspector know what the actual contents are. This way there's almost no possibility for information leak and thus the risk of raids and ambushes is minimized. Our customers also welcome the privacy. The inspectors are highly-trained professionals, many of them are ex-Navy officers, so the information is perfectly safe with them. Anything else?"`
+				goto answer0
+			
+			label answer3
+			`"As far as we know, the drones have no access to jump drive technology. We're not entirely sure how they got in this system, but they don't seem to pose a threat anymore. We do, however, fear the possibiltiy that Korath raiders and scouts that do have jump drives will re-discover this system and realize that its no longer controlled by the drones. Some of our scouts on guard duty in the nearby sectors also reported hostile Hai battleships nosing around, we don't know where they got the drives but it seems like we were lucky enough that none of them decided to pay a visit to this system. Any more questions?"`
+				goto answer0
+				
+			label answer4
+			`"Very well," says Novak, "I will contact you in case we need something from you, captain."`
+			
+mission "Courier: Korath raid 1"
+	name "Defend Meliter"
+	description "Defend the Courier station in the Meliter system against a fleet of Korath attack vessels."
+	landing
+	source "Meliter Station"
+	destination "Meliter Station"
+	to offer
+		"courier jobs" >= 15
+		random > 40
+	on offer
+		conversation
+			`Shortly after your landing, sirens start sounding off around the station. You try asking people what's happening, but they seem to be as confused as you are. Finally, one of the Courier security guards finds you and starts explaining.`
+			`	"We are under attack from the Korath. A large fleet of Korath Raiders just jumped in, they must've followed one of our freighters! Captain, we're going to need your help defending the station, there are hundreds of civilians whose lives are in danger!"`
+			`	He then runs away, presumably to join the fight himself. You don't seem to have any other option than to help defend the station, given that the only way out of this system is straight through the Korath attackers.`
+				launch
+	on visit
+		dialog "There are still Korath ships in orbit! They need to be destroyed or disabled otherwise they will attack the station."
+	on complete
+		conversation
+			`Upon returning to the station, you notice that it took surprisingly little damage. It is obvious that the Korath had the intention to take the station over, so they tried to avoid damaging its new life support systems. As you're looking around the atrium, you notice Novak talking with a group of Courier pilots. This is the first time you're seeing him outside of his office. When he spots you, he gestures you to join the debriefing.`
+			`	"This is captain <last>", he says to the pilots. You introduce to each other and Novak continues, "While our stations seems to be relatively undamaged, we lost many ships and good pilots. The fleet we sent to defend Meliter was almost our entire defence force, we are now practically powerless. I assume that now the Korath know we're here, they will return, but given how we kicked their asses today, I expect them to take some time to regroup. We have to use this short window of ceasefire to our advantage and build up more defenses."`
+			`	The pilots nod in agreement, and one of them speaks up, "We should contact the Remnants. Once I ran a shipment to one of their worlds when it was attacked by the Korath. They had no trouble dealing with them, and I noticed that some of their ships could cloak and completely disappear. Such technology would give us a huge advantage."`
+			`	Even more people nod this time, Novak seems to think about the proposal and then says "You're right, it would, but remember that the only contacts we have with the Remnants, and the Hai for that matter, are through private individuals. As far as their governments are concerned, we don't exist."`
+			`	He turns to you and continues "You, captain, I know you have some ties to both the Remnants and the Hai. Which one of them do you think would be more willing to help us out? I don't want to contact both, we need to keep our profile as low as possible, we don't want to risk the Korath finding out that we're making allies and attacking prematurely."`
+			choice
+				`	"The Hai had good relations with humans for some quite time now, I'd try talking to them."`
+					goto hai
+				`	"I think the Remnants could help you. After all, they too are humans in a similar situation to you."`
+					goto remnants
+				`	"What about the Wanderers? Or the Coalition? Do you know about them?"`
+					goto unknown
+				`	"I don't think you should bring any more alien races into this mess."`
+					goto nobody
+			
+			label hai
+			`Some of the pilots seem to agree with you, but the majority is still convinced that the Remnants would be the better choice.`
+			`	"That's a very bad idea," says one of them, "as mister Novak said, we need to keep a low profile. The Hai space is full of humans, and I'm damn sure the Republic monitors all ships going in and out."`
+			`	Another speaks out "What's wrong about that? Maybe it's time for us to reveal our presence to the Republic, who knows, they could help us in the fight."`
+			`	The two then start arguing, but Novak interrupts them "The Hai's ties with the Republic are too risky. I'm sure most of the Republic folks are good people, but I'm also sure that there are still those who'd do anything to gain our technology and this station. I will take all your suggestions into consideration."`
+				goto end
+				
+			label remnants
+			`Most pilots agree with you, and apparently so does Novak.`
+			`"True," he says, "plus, the Hai's close ties with the Republic could bring negative attention to us. We don't even have to deal with much diplomatic issues, we just need them to allow us to buy their ships, we'd be more than willing to pay for them. I will take all of yours suggestions into consideration."`
+				goto end
+				
+			label unknown
+			`Some pilots seem suprised that you brought up the Wanderers and the Coalition, while others simply disagree.`
+			`	"None of the two have any ties with humans" says Novak, "I doubt the Wanderers would be willing to provide technology for a fight that isn't theirs, and the Coalition has no access to jump drives whatsoever. Their government is even more strict when it comes to combat tech, they don't even sell it to their own people, or bugs and horses, or whatever they are. I will think about it, but I don't believe those two would be a good choice."`
+				goto end
+				
+			label nobody
+			`Your answer seems to anger one of the women in the group.`
+			`	"So what," she says "we build our own ships to rival the Korath using the few boulders that fly around here?"`
+			`	"She's right," says Novak, "there's no way we can stand up to the Korath if they attack again. We need someone to help us, or at least sell us ships and weapons, and as we've learned today, standard human ships simply won't do. I will think of something, don't worry."`
+				goto end
+				
+			label end
+			`The debriefing then goes on for a few minutes, and at the end Novak tells you to meet him in his office above the spaceport. He also hands you a credit chip worth 10 million, "A little something", he says.`
+		payment 10000000
+		
+	npc disable
+		government "Korath"
+		personality heroic nemesis unconstrained entering
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant
+				"Korath Raider" 3
+				"Korath Chaser" 6
+	npc disable
+		government "Korath"
+		personality heroic disables staying entering
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant
+				"Korath Raider" 12
+				"Korath Chaser" 24
+	npc
+		government "Courier"
+		personality heroic disables plunders opportunistic launching
+		system "Meliter"
+		fleet
+			names "civilian"
+			variant
+				"Bactrian" 2
+				"Falcon" 2
+				"Leviathan" 3
+				"Firebird" 3
+				"Manta" 3
+				"Raven" 3
+				"Headhunter" 3
+				"Berserker" 2
+				"Sparrow" 4
+				"Lance" 7
+				"Finch" 5
+				"Combat Drone" 3 
+				
+mission "Courier: Diplomacy Remnant 1A"
+	name "Take Novak to the Remnant space"
+	description "Transport Novak to <planet> where he will try to negotiate Courier's access to the Remnant shipyards."
+	passengers 1
+	source "Meliter Station"
+	destination "Viminal"
+	to offer
+		has "Courier: Korath raid 1: done"
+	on offer
+		conversation
+			`Once again you wait in the waiting lounge right in front of Novak's office. In a few minutes he invites you in and tells you to take a seat.`
+			`	"Here's the plan," he says, "I have divided our remaining cobat pilots into three groups; the largest one will stay in Meliter in case the Korath show up again, one will guard the nearby system and warn us ahead of any possible raid, and the third one will secure a safe route from Meliter to <planet>."`
+			`	"So you'll try negotiating with the Remnants?" you ask.`
+			`	"Yes. In fact, captain, I would like if you took me there. Even though we managed to scavenge mulitple jump drives from the raid, we'd still like to keep as many of our ships with those drives near this system."`
+			choice
+				`	"Let's get going then."`
+					goto agree
+				`	"Sorry, I don't have time to help you right now."`
+					goto disagree
+					
+			label disagree
+			`"I suppose I can arrange my own transport once we're done recovering from the raid. Thank you for your time, I'll be sure to contact you if we need your help again."`
+				decline
+			
+			label agree
+			`"Very well, I'll pack my things and we can depart."`
+				accept
+	on complete
+		conversation
+			`You land on Viminal and wish Novak good luck with the negotiations. He instructs you to meet him in the spaceport once he's done so that you can take him back to Meliter.`
+		
+mission "Courier: Diplomacy Remnant 1B"
+	name "Meet with Novak on Viminal"
+	description "Go to <planet> and meet with Vladimir Novak in the local spaceport."
+	landing
+	source "Meliter Station"
+	destination "Viminal"
+	to offer
+		has "Courier: Diplomacy Remnant 1A: declined"
+		random > 75
+	on offer
+		dialog
+			`Right after you dock with the station, you receive a message from one of the Courier captains. It reads;`
+			`"Captain <last>, I'm so happy to see you. I have been tasked by Novak to pick him up on <planet>, but my ship is experiencing issues with her engines. Would you be willing to go meet up with him for me? He should be waiting in the local spaceport."`
+			`(declining this mission will end the Courier storyline)`
+	on complete
+		conversation
+			`You land on Viminal as instructed. You should meet up with Novak in the spaceport to see how his negotiations with the Remnants went.`
+		
+mission "Courier: Diplomacy Remnant 2"
+	name "Take Novak to the Meliter Station"
+	description "Take Novak back to <planet>"
+	source "Viminal"
+	destination "Meliter Station"
+	passengers 1
+	to offer
+		or
+			has "Courier: Diplomacy Remnant 1B: done"
+			has "Courier: Diplomacy Remnant 1A: done"
+	on offer
+		conversation
+			`You find Novak in one of the Remnant bars, holding a shot glass filled with a pink liquid, staring at it in disgust. When he sees you, he puts it down and invites you to join him.`
+			`	"Watch this" he says. He pulls a lighter out of his pocket, setting fire to the liquid in his glass. It evaporates in a few seconds, releasing blue smoke in the process. You wonder how many times he tried that while waiting for you.`
+			`	"These folks here have a pretty weird taste given that they're technically humans. Anyway, I'm guessing you'd like to know how the negotiations went?"`
+			`	You nod in agreement.`
+			`	"Well," he continues, "good news is that they agreed to let us buy their ships. The bad news, though... the only ship they'll allow us to buy is their smallest warship, I think it's called the Starling. But I guess it's still pretty decent - a ship that can turn invisible will allow us to set up early warning systems around Meliter so at the very least the Korath will lose the element of surprise. Small Korath fleets consisting of a few ships may slip past, but they won't be able to amass a huge fleet like the one that attacked us without us knowing long beforehand."`
+			choice
+				`	"Even a small Remnant ship is far stronger than its human counterparts, it'll serve you well."`
+				`	"You should've pushed them more, their large warships would give you a huge advantage."`
+			`"I'm lucky they even agreed to the Starling, I think the only reason they decided to help us is because of how our situation is similar to theirs; a small breakaway human colony being threatened by the Korath..."`
+			`	He then looks at his wrist watch and says that you two should "get out of here". Now that the deal is secured, he has to return to his office and make sure that the Courier's new ships are used as efficiently as possible.`
+				accept
+	on complete
+		conversation
+			`After docking with the station, Novak thanks you and hands you a credit chip worth 2 million.`
+			`	"You helped us a lot, <last>. I've decided to allow you full acess to our job board. Now, all Courier contracts will be available to you in case you want to make some more money. Once again, we'll notify you should we need your help, but I think you'll be able to take a break for now."`
+		payment 2000000
+		set "more courier jobs open"
+		event "starling available to couriers"
+		

@@ -1,0 +1,72 @@
+ship "Bulk Freighter" "Bulk Freighter (Courier)"
+	sprite "ship/bulk freighter"
+	outfits
+		"Sidewinder Missile Launcher" 1
+		"Sidewinder Missile" 90
+		"Laser Turret" 3
+		"Heavy Anti-Missile Turret" 2
+		"Catalytic Ramscoop" 2
+		
+		"RT-I Radiothermal"
+		"LP144a Battery Pack"
+		"D23-QP Shield Generator"
+		"Laser Rifle"
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Scram Drive"
+		"Jump Drive"
+		
+	gun -20 -175 "Sidewinder Missile Launcher"
+	turret -12 -155 "Laser Turret"
+	turret 12 -155 "Heavy Anti-Missile Turret"
+	turret 0 5 "Laser Turret"
+	turret -30 175 "Heavy Anti-Missile Turret"
+	turret 30 175 "Laser Turret"
+	
+ship "Headhunter" "Headhunter (Courier)"
+	sprite "ship/headhunter"
+	outfits
+		"Heavy Laser" 2
+		
+		"RT-I Radiothermal"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
+		
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
+		"Hyperdrive"
+		"Jump Drive"
+		"Catalytic Ramscoop" 2
+	
+	gun -17.5 -17
+	gun 17.5 -17
+	gun -12 -25.5 "Heavy Laser"
+	gun 12 -25.5 "Heavy Laser"
+	turret 0 9
+	
+ship "Starling" "Starling (Courier)"
+	sprite "ship/starling"
+	outfits
+		"Inhibitor Cannon" 2
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+		"Jump Drive"
+
+
+	gun 0 -99
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	turret 0 2

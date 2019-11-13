@@ -1,0 +1,12 @@
+government "Courier"
+	swizzle 5
+	color 0 .71 1
+	
+	"player reputation" 10
+	"attitude toward"
+		"Pirate" -.2
+		"Korath" -.2
+	"bribe" .05
+	"fine" 0
+	"friendly hail" "friendly civilian"
+	"hostile hail" "hostile civilian"

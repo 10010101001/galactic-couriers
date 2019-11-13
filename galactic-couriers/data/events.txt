@@ -1,0 +1,30 @@
+event "starling available to couriers"
+	fleet "Courier Scout"
+		add variant 1
+			"Headhunter (Courier)"
+			"Starling (Courier)"
+		add variant 1
+			"Starling (Courier)" 2
+			
+	system "Durax"
+		add fleet "Courier Scout" 5000
+	system "Kasikfar"
+		add fleet "Courier Scout" 5000
+	system "Fasitopfar"
+		add fleet "Courier Scout" 5000
+	system "Peresedersi"
+		add fleet "Courier Scout" 5000
+	system "Meliter"
+		add fleet "Korath Raid" 10000
+
+
+# I want to affect as little vanilla content as possible, run this event to revert (most) changes to the stock map		
+event "remove couriers from vanilla"
+	system "Durax"
+		remove fleet "Courier Scout"
+	system "Kasikfar"
+		remove fleet "Courier Scout"
+	system "Fasitopfar"
+		remove fleet "Courier Scout"
+	system "Peresedersi"
+		remove fleet "Courier Scout"
