@@ -16,6 +16,8 @@ event "starling available to couriers"
 		add fleet "Courier Scout" 5000
 	system "Meliter"
 		add fleet "Korath Raid" 10000
+		
+event "couriers captured korath"
 
 
 # I want to affect as little vanilla content as possible, run this event to revert (most) changes to the stock map		

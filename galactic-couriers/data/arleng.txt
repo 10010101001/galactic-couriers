@@ -1,0 +1,114 @@
+government "Ar'leng"
+	swizzle 6
+	color 1 0 0
+	
+	"player reputation" -10
+	"attitude toward"
+		"Courier" -10
+		"Korath" -10
+		
+effect "arleng sparks"
+	sprite "effect/arleng sparks"
+		"no repeat"
+		"frame rate" 10
+	"lifetime" 37
+	"random spin" 2
+	"random velocity" .1
+	"velocity scale" .5
+
+outfit "Ar'leng Particle Accelerator"
+	category "Turrets"
+	cost 1234567
+	thumbnail "outfit/disruptor"
+	"mass" 83
+	"outfit space" -83
+	"weapon capacity" -83
+	"turret mounts" -1
+	weapon
+		sprite "projectile/arleng"
+			"frame rate" 2.5
+		sound "detainer"
+		"hit effect" "medium explosion" 1
+		"live effect" "arleng sparks" 50
+		"inaccuracy" .5
+		"velocity" 30
+		"lifetime" 140
+		"reload" 15
+		"burst reload" 10
+		"burst count" 2
+		"hardpoint sprite" "hardpoint/disruptor"
+		"hardpoint offset" 15.
+		sound "disruptor"
+		"hit effect" "disruptor impact"
+		"turret turn" 20
+		"firing energy" 0.1
+		"firing heat" 0.1
+		"shield damage" 1500
+		"hull damage" 1500
+		"disruption damage" .24
+	description "This weapon uses a mysterious process to extract energy from the very fabric of space-time. This means that it can delvier lethal projectiles with only minimal energy costs."
+
+ship "Ar'leng Capital Ship"
+	sprite "ship/geoff"
+	thumbnail "thumbnail/geoff"
+	
+	attributes
+		category "Heavy Warship"
+		"cost" 41280000
+		"shields" 57200
+		"hull" 65400
+		"hull repair rate" 1500
+		"automaton" 1
+		"mass" 50000
+		"drag" 16.8
+		"heat dissipation" .5
+		"fuel capacity" 400
+		"cargo space" 87
+		"outfit space" 3000
+		"weapon capacity" 800
+		"engine capacity" 1000
+		"self destruct" .99
+		"ramscoop" 5
+		weapon
+			"blast radius" 1000
+			"shield damage" 20000
+			"hull damage" 10000
+			"hit force" 20000
+	outfits
+		"Ar'leng Particle Accelerator" 4
+		"Korath Detainer" 2
+		
+		"Triple Plasma Core" 3
+		"Plasma Core"
+
+		"Systems Core (Large)"
+		"Large Heat Shunt" 12
+		"Small Heat Shunt" 2
+		"Control Transceiver"
+		
+		"Thruster (Planetary Class)" 7
+		"Steering (Stellar Class)" 3
+		Hyperdrive
+		"Jump Drive"
+		
+	engine -138 274
+	engine 138 274
+	engine -46 370
+	engine 46 370
+	gun -138 -196 "Korath Detainer"
+	gun 138 -196 "Korath Detainer"
+	turret 0 -156 "Ar'leng Particle Accelerator"
+	turret 0 -90 "Ar'leng Particle Accelerator"
+	turret -110 92 "Ar'leng Particle Accelerator"
+	turret 110 92 "Ar'leng Particle Accelerator"
+
+
+	explode "tiny explosion" 20
+	explode "small explosion" 45
+	explode "medium explosion" 50
+	explode "pug medium explosion" 50
+	explode "large explosion" 40
+	explode "pug large explosion" 40
+	explode "huge explosion" 10
+	"final explode" "final explosion large"
+	description "The origins of this vessel are unknown. Most likely, it was created by an alien civilization beyond the edge of the observable universe, far more advanced than anyone else in the Milky Way."

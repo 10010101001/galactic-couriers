@@ -54,7 +54,7 @@ mission "Courier: Small Deliveries done"
 	landing
 	destination "Meliter Station"
 	to offer
-		"courier jobs" >= 10
+		"courier jobs" >= 4
 	on offer
 		conversation
 			`Not long after you land, you receive a message from Vladimir Novak. It reads:`
@@ -148,7 +148,7 @@ mission "Courier: Korath raid 1"
 	source "Meliter Station"
 	destination "Meliter Station"
 	to offer
-		"courier jobs" >= 15
+		"courier jobs" >= 7
 		random > 40
 	on offer
 		conversation
@@ -204,7 +204,7 @@ mission "Courier: Korath raid 1"
 		
 	npc disable
 		government "Korath"
-		personality heroic nemesis unconstrained entering
+		personality heroic nemesis unconstrained entering target
 		system "Meliter"
 		fleet 
 			names "korath"
@@ -213,7 +213,7 @@ mission "Courier: Korath raid 1"
 				"Korath Chaser" 6
 	npc disable
 		government "Korath"
-		personality heroic disables staying entering
+		personality heroic disables staying entering target 
 		system "Meliter"
 		fleet 
 			names "korath"
@@ -279,7 +279,7 @@ mission "Courier: Diplomacy Remnant 1B"
 	destination "Viminal"
 	to offer
 		has "Courier: Diplomacy Remnant 1A: declined"
-		random > 75
+		random > 30
 	on offer
 		dialog
 			`Right after you dock with the station, you receive a message from one of the Courier captains. It reads;`
@@ -319,7 +319,7 @@ mission "Courier: Diplomacy Remnant 2"
 		payment 2000000
 		set "more courier jobs open"
 		event "starling available to couriers"
-		event "couriers captured korath" 5
+		event "couriers captured korath" 30
 
 mission "Courier: Diplomacy Hai 1"
 	invisible
@@ -409,7 +409,7 @@ mission "Courier: Diplomacy Hai 2"
 				
 mission "Courier: Diplomacy Hai 3"
 	name "Escort battleships to <planet>"
-	description "Escort a fleet of Hai battleships from <planet> to Meliter so that they can help defend the Courier station"
+	description "Escort a fleet of Hai battleships from Darkwaste to Meliter so that they can help defend the Courier station"
 	landing
 	source "Darkwaste"
 	destination "Meliter Station"
@@ -479,3 +479,151 @@ mission "Courier: Diplomacy Hai 3"
 				"Combat Drone" 6
 				"Sparrow" 15
 				"Starling (Courier)" 6
+				
+mission "Courier: Korath raid 2"
+	name "Defend <planet>"
+	description "A massive Korath fleet entered the Meliter system. It needs to be dealt with before it can board the <planet>."
+	source "Meliter Station"
+	destination "Meliter Station"
+	to offer
+		has "Courier: Diplomacy Hai 3: done"
+	on offer
+		conversation
+			`You go to the spaceport atrium as instructed, but Chris is nowhere to be seen. You figure that he's probably got a lot of work to do now that you brought in a large fleet of Hai battleships, so you decide to explore the local shops and bars while waiting.`
+			`	Finally, after about 45 minutes of mindlessly wandering around, you spot Chris at the other side of the atrium. You wave at him and he starts going towards you.`
+			`	"I'm sorry I kept you waiting for so long" he says apologetically, "anyway, now that we have some time I would like to-"`
+			`	Once again, Chris is interrupted, this time by a siren and the station's intercom system;`
+			`	"We have just received a report from one of our scouts" says Novak through the loudspeakers, "the Korath fleets are on the move. I repeat, the Korath are on the move. We've counted at least thirty battleships with even more on the way coming from their homeworlds. All civilians and non-critical personnel are instructed to board the nearest freighter and evacuate the system. All combat pilots are required to take defensive positions."`
+			`	One of the Courier security guards then approaches you and shows Chris the way to the neares freighter.`
+			`	"I know you'd like to stay, but I'm afraid we can't lose you mister Zimmerman" says the guard to Chris.`
+			`	Just like during the first raid, you don't seem to have any other option than to join the fight. Now that you've been associated with the Couriers, it's very likely that the Korath will pursue you if you try to escape.`
+				accept
+				
+	on visit
+		dialog `This station is under attack! Either you failed to destroy/disable the attackers, or there are still more hostile fleets on their way.`
+		
+	on complete
+		conversation
+			`You dock with the station while the other Courier ships are still busy cleaning up the battlefield and salvaging as much Korath equipment as possible. The station is eerily quiet now that almost everyone has evacuated. The only person you meet is Novak.`
+			`	"I'm glad you're okay" he says, "that was one of the most terrifying battles I've seen. I would've joined in myself, but someone had to stay behind and engage the self-destruct in case the station got boarded."`
+			`	"You don't want it to fall back into Korath hands?" you ask.`
+			`	"Of course not. Did you see what ships they just brought in? That must've been almost their entire homeworld fleet. There must be something about this station extremely attractive to them, and if its so important that they're willing to sacrifice a major part of their fleet for it, we can't let them have it."`
+			choice
+				`	"Any idea what that may be?"`
+				
+			`He thinks about your question for a second, and continues, "All those things that Chris pointed out, it must be no coincidence. A triple star system, immense solar activity, disappearing hyperspace links... Whatever the Sestor drones were doing here must've required unimaginable amounts of energy."`
+			`	Suddenly you hear a voice from one of hallways leading to ship docking ports, "Exactly, and I think I just figured it out."`
+			` 	It's Chris. He explains to you and Novak that instead of going on the freighter, he took his lab equipment onboard a Starling and stayed cloacked throughout the entire duration of the battle.`
+			`	"I consider myself an optimist" he says, "but when I saw the reports from our scouts about the size of the Korath fleets, I was convinced that we'd lose. For a long time now have I suspected that what the Kor Sestor were developing here was a weapon. From the small bits of text we were able to translate, we found out that they were working on 'a device to channel energy into enemy territory', something like a long-range EMP, probably to interfere with the Mereti core systems. I hoped to rush my research and get it working before the Korath attacked, but I was too slow. But, thanks to <last>'s help, they were defeated the good old way."`
+			`	"So, this weapon" says Novak, "that's what the Korath want?"`
+			`	"I don't think so" Chris responds, "all evidence points to the fact that this 'device' was developed long after the Korath left their drones. I think what they want is this station and the triple star system, they could build many manufacturing plants and the stars would cover all their power requirements."`
+			choice
+				`	"Do you know where this device is?"`
+				
+			`Chris gets silent for a second and then looks around, "I think we're standing in it."`
+			`	"The... station?" asks Novak.`
+			`	Chris nods in agreement, "Yes, the station. When we started the modification of the station to support human inhabitants, I noticed a lot of details that just seemed... off. For example, the outer hull seems to be one big superconductor. Every time a solar flare hits us, there are strange energy buildups in the power grid, as if the energy of the star was being channeled by the station itself."`
+			`	"Channeled where?" you ask.`
+			`	"Right now, nowhere" Chris responds, "the system isn't fully operational. In fact, it seems to be badly damaged, likely from the last test that disrupted the hyperspace link."`
+			choice
+				`	"Didn't you say that this 'entity' severed the link?"`
+				
+			`"That's what we thought. We were never certain, but what I learned in the few hours I spent studying the Sestor records while the battle was going on completely changed my standing theory."`
+			`	Chris then pulls out his tablet and starts frantically drawing something.`
+			`	"This is how I think it happened" he explains, "this system was controlled by the Kor Sestor, but it was attacked by the Kor Mereti. The Sestor, not wanting the Mereti to gain access to the technology of this station, activated the weapon prematurely, when it wasn't fully completed. Their intent was to use it to tap into the energy output of the triple star system and redirect it towards the Mereti planets, stations, and factories. To do that, it would form a temporary hyperspace link between Meliter and its target and then send the full force three stars through it in a uniform beam."`
+			`	He looks out of the window at the three suns of this system, and continues, "But, as I said, the weapon wasn't ready. It misfired. Instead of sending the power to the Mereti space, it sent it in a random direction. Now, I'm going to speculate, but I think it established a link with a star system in some other, distant galaxy."`
+			`	"How distant?" asks Novak.`
+			`	"Well, I looked at the power logs from the event, and if my calculations are correct, the length of the link was somewhere between seventy billion or a hundred billion light years. That means that for a short time Meliter was linked with a star system outside of our observable universe."`
+			choice
+				`	"That sounds impossible."`
+				
+			`Chris turns to you and continues, "That's because it is impossible, <last>. Even the full power of three stars shouldn't be able to sustain a link that distant. The only possible explanation is that the link was somehow amplified. But that's where my knowledge ends. Maybe it intersected a black hole, or a supernova. But once it was established, it allowed that 'entity' to traverse it. And whatever the entity was, it made the Sestor drones engage safety protocols and start evacuating the system. The weapon shut down before they all could run away, and once the link was cut, the residual power was enough to permanently disrupt the original link leading to the Sestor space."`
+			`	"So where is this 'entity' now?" asks Novak, "Did it return through the link?"`
+			`	"There was no time for it to return" Chris continues, "as soon as it entered Meliter, it engaged in a fight and the link collapsed mere seconds later. In fact, I think it never left this system. Or at least its proximity."`
+			choice
+				`	"You've been in this system for years, I'm sure you'd notice it."`
+
+			`"During the battle, my ship's sensors started to pick up unusual energy bursts coming from deep space at the very edge of this system. As far as we know, the only things out there are a bunch of asteroids on extremely elliptical orbits."`
+			`	Novak sits down on a nearby bench, takes a deep breath, and says, "Chris. Are you saying that this... thing, this entity or ship or whatever it is..."`
+			`	"I'm afraid so, sir" says Chris, "we woke that thing up. The energy burst signature matches almost perfectly with the one in the old Sestor records, albeit much weaker. It was probably hibernating, and now entered a wake-up sequence."`
+			`	A few seconds of silence follow. Finally, Novak looks at Chris and asks "How long before it gets here?"`
+			`	"If its movement speed is consistent with the data from the records, I think we have only a few weeks before it manages to adjust its orbit. It doesn't appear to be equipped with a hyperdrive, so we should have enough time to evacuate."`
+			`	You notice that many Courier ships docked back with the station and the atrium is becomming filled with people again. After a moment of contemplating the situation, Novak uses his radio to connect to the station's loudspeakers.`
+			`	"Okay people, pack it up again, we got a code red, incoming hostile, this time we can't fight them off" he then puts down his radio, looks at you, and continues, "Captain <last>, once again we can use your help. There will be a few transport ship captains waiting for you in the spaceport. I'd really appreciate if you could help escort them to our backup outpost on Earth. I'll stay here with Chris to see if we can figure out a way to defend the station."`
+			
+	
+	npc
+		government "Courier"
+		personality heroic disables staying launching plunders
+		system "Meliter"
+		fleet
+			names "civilian"
+			variant
+				"Bactrian" 3
+				"Falcon" 4
+				"Dreadnought" 5
+				"Carrier" 1
+				"Combat Drone" 6
+				"Sparrow" 15
+				"Starling (Courier)" 12
+				"Korath Raider" 3
+				"Korath Chaser" 6
+				"Shield Beetle (Jump)" 12
+				"Leviathan" 3
+				"Firebird" 3
+				"Manta" 3
+				"Raven" 3
+				"Headhunter" 3
+				"Berserker" 2
+				
+	npc disable
+		government "Korath"
+		personality heroic unconstrained plunders opportunistic entering target
+		system "Meliter"
+		fleet
+			names "korath"
+			variant
+				"Korath Raider" 10
+				"Korath Chaser" 20
+				
+	npc disable
+		government "Korath"
+		personality heroic nemesis unconstrained opportunistic target
+		system "Korsmanath"
+		fleet
+			names "korath"
+			variant
+				"Korath Raider" 5
+				"Korath Chaser" 10
+				
+	npc disable
+		government "Korath"
+		personality heroic unconstrained plunders opportunistic target
+		system "Fasitopfar"
+		fleet
+			names "korath"
+			variant
+				"Korath Raider" 10
+				"Korath Chaser" 20
+				
+	npc disable
+		government "Korath"
+		personality heroic unconstrained plunders opportunistic target
+		system "Kor Men"
+		fleet
+			names "korath"
+			variant
+				"Korath Raider" 10
+				"Korath Chaser" 20
+				"Korath World-Ship (Courier Raid)" 3 # <- this variant has the "never disabled" attribute as to not interfere with the 'rarity' of vanilla world-ships
+				
+	npc disable
+		government "Korath"
+		personality heroic unconstrained plunders opportunistic target
+		system "Parca"
+		fleet
+			names "korath"
+			variant
+				"Korath Raider" 15
+				"Korath Chaser" 30
+				"Korath World-Ship (Courier Raid)" 10

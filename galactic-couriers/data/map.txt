@@ -35,12 +35,13 @@ system Meliter
 		period 14
 	object
 		sprite planet/desert7-b
-		distance 962.451
+		distance 1262.451
 		period 61.1859
 		object "Meliter Station"
-			sprite planet/station3kd
-			distance 273.55
+			sprite planet/meliter
+			distance 473.55
 			period 41.1893
+			
 
 planet "Meliter Station"
 	attributes station
