@@ -319,4 +319,163 @@ mission "Courier: Diplomacy Remnant 2"
 		payment 2000000
 		set "more courier jobs open"
 		event "starling available to couriers"
+		event "couriers captured korath" 5
+
+mission "Courier: Diplomacy Hai 1"
+	invisible
+	source
+		government "Free Worlds" "Republic" "Syndicate"
+	landing
+	destination "Meliter Station"
+	to offer
+		has "event: couriers captured korath"
+	on offer accept
+	on complete
+		conversation
+			`You couldn't help but notice that there are several Korath battleships flying civilian colors in this system. Do you want to seek out someone who could tell you what's going on?`
+			choice
+				`	Yes`
+					goto yes
+				`	No`
+					goto no
+			
+			label yes
+			`You try asking people around, but no one seems to be able or willing to answer your questions about the Korath ships.`
+				goto no
+			
+			label no
+			`	Perhaps you should go directly to Novak's office in the spaceport and find out what's happening.`
+			
+	npc
+		government "Courier"
+		personality heroic disables staying waiting
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant
+				"Korath Raider" 3
+				"Korath Chaser" 6
+
+mission "Courier: Diplomacy Hai 2"
+	name "Retreive ships from <planet>"
+	description "Escort a fleet of Hai battleships from <planet> to Meliter so that they can help defend the Courier station"
+	source "Meliter Station"
+	destination "Darkwaste"
+	to offer
+		has "Courier: Diplomacy Hai 1: done"
+	on offer
+		conversation
+			`Once again you take the elevator to Novak's office, but when the door opens you see that the lounge in front of the office has been converted into a makeshift briefing room. There are computer screens on almost every wall and a large table with a map of nearby star systems now takes up a large part of the room. You find Novak and about a dozen other people in the lounge discussing something, but your presence interrupts them.`
+			`	"Capain <last>! Nice to see you again." says Novak.`
+			choice
+				`	"What's with the Korath ships in the system?"`
+			
+			`"Oh, those," he says, "we had a few more raids while you were gone. The Korath keep sending single ships to attack us, and we managed to capture three of them. I think their plan was to keep us busy with minor attacks while they hoard a huge fleet. Needless to say, their has plan failed."`
+			`	He then gestures you to come look at something on the map. You notice that several uninhabited star systems around Meliter have been highlighted.`
+			`	"This is where the Korath are building fleets," says one of the men accompanying Novak, "we've positioned our newly acquired Starlings in all of them, to monitor their activity. We've noticed that small fleets of two or three Raiders often jump in and then land near the poles of the local uninhabited planets. We don't want to risk bringing the Starlings any closer, they depend on solar winds to actively replenish their cloak, but just by counting how many Raiders landed and how many took off, we're pretty sure that there are at least a few dozen in each system."`
+			`	"A few dozen that will sooner or later launch another attack" says Novak, "an attack much stronger than the one you helped us fight through. We could barely survive back then."`
+			choice
+				`	"Why didn't you tell me sooner? I can help you."`
+			
+			`"Precautions" says Novak. He then nods at one of the other men in the room, a scientist, who starts explaining;`
+			`	"As you know, our cargo dispatch can communicate with you anywhere in the galaxy, regardless of the hyperspace links. That is possible only thanks to salvaged Kor Sestor technology. Their automata are connected with a control center using a network that sends information almost instanteniously practically anywhere in the Milky Way. We're not sure if the Sestor developed it themselves or if it was created by their Korath ancestors, so we don't want to risk sending out messages that can be intercepted by the enemy."`
+			`	"Chris is right" Novak continues, "in fact, we were planning to send a messenger for you in just a few hours. The fact that you came here right on time simplifies the situation."`
+			`	Novak then turns his attention back the the group of pilots that he was talking to before you arrived, "Alright, so here's the plan. The Korath don't know that we're aware of their presence. As a result, they don't expect us to be prepared for their attack. I've secured a deal with one of our longtime customers in the Hai space. There's a group of Hai battleships equipped with jump drives parked in one of their uninhabited systems. They are manned entirely by our people. We need to get them here safely ASAP. Captain <last>, are you up for the task? It's just a quick and simple escort mission."`
+			choice
+				`	"I thought that you didn't want to work with the Hai?"`
+					goto ask
+				`	"Consider it done."`
+					goto next
+					
+			label ask
+			`"That's true," he says, "but we're not working with the Hai themselves. The battleships belonged to a retired human captain who knows about our situation. We bought them from her for a price much higher than any shipyard could offer her."`
+			choice
+				`	"Okay then, I'll go get them."`
+					goto next
+				
+			label next
+			`"Very well. While you're doing that, we're also going to pull in some more fleets of newly purchased human ships. Thanks to the minor Korath raids we now finally have jump drives to spare."`
+				accept
+			
+	npc
+		government "Courier"
+		personality heroic disables staying waiting
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant
+				"Korath Raider" 3
+				"Korath Chaser" 6
+				
+mission "Courier: Diplomacy Hai 3"
+	name "Escort battleships to <planet>"
+	description "Escort a fleet of Hai battleships from <planet> to Meliter so that they can help defend the Courier station"
+	landing
+	source "Darkwaste"
+	destination "Meliter Station"
+	to offer
+		has "Courier: Diplomacy Hai 2: offered"
+	on offer
+		conversation
+			`You guide your ship to the coordinates given to you by the Courier dispatcher towards a valley inbetween two tall. Once you pass one of the mountain peaks, you spot a group of large Hai battleships resting in a circular pattern around a pond of spring water, you count about a dozen of them. As you get closer, one of them takes off and moves to a different spot so that your own ship would have enough space to land.`
+			`	You land on the now free spot and walk towards the pond where many crewmen are already waiting for you. You notice that they set up a makeshift fishing camp around the pond to kill some time, even though it's very likely that there are no fish present. You introduce yourselves to each other, and in just a few minutes you're ready to depart again, this time with a sizeable fleet.`
+				accept
+	on visit
+		dialog `You reached your destination, but you left the battleships behind. Make sure they all get into this star system safely before proceeding with the mission.`
 		
+	on complete
+		payment 7000000
+		conversation
+			`You dock with the station and head for Novak's office to tell him that the Hai battleships are ready, but instead you are pulled aside by Chris, the scientist that attended the previous briefing with you.`
+			`	"My name's Christian Zimmerman" he says, "mister Novak is busy right now, he told me to give you this once you return with the ships."`
+			`	Chris reaches in his pocket and hands you a credit chip worth seven million.`
+			`	"But before you go, captain" he continues, "I wanted to ask you for some help myself."`
+			choice
+				`	"What do you need?"`
+				
+			`"I work as the chief scientist for the Couriers" he says, "I was brought here mainly to research the Korath technologies on this station, but also to find out what happened to the hyperspace links in this system."`
+			`	He then reaches into his second pocket of his lab coat and pulls out a tablet. On the screen you see a map of the Milky Way, but the only marked systems are the ones occupied by the Korath and their drones. Chris then zooms the view in on Meliter and you see that there is a link between it and Silikatakfar, a nearby star system.`
+			`	"This map was recently retrieved from one of the data terminals on this station. This means that this system did have a hyperspace link while it was still inhabited by the Sestor."`
+			choice
+				`	"Maybe they severed it to protect themselves from the other automata?"`
+				`	"The Pug have the technology to disrupt links, could they have something to do with it?"`
+				
+			`Your question seems to be completely ignored by Chris who instead keeps scrolling the screen until he finds a big block of text written in a language you don't understand.`
+			`	"This is a variation of the Korath language" he says, "one that we have a very limited understanding of, but from what we've managed to translate, the Sestor drones were, and I quote, 'scared' of the 'entity' that appeared here. Obivously, machines like them can't feel fear the way living beings do, but even they would rather bail from a fight than stay and get destroyed."`
+			`	He then scrolls the text a bit more, and continues;`
+			`	"Some of the drones supposedly managed to escape using their hyperdrive, but for some reason many of them got stranded here when the link was severed. Instead, they used their engines to reach escape velocity, put their systems in a state of deep hibernation, and simply drifted away, towards the rest of the Sestor space. It probably took them hundreds of years, but that's not the point-"`
+			`	Chris then gets interrupted by a Courier pilot calling his name. He apologizes and tells you to meet him in the spaceport once he's done.`
+	
+	npc accompany
+		government "Courier"
+		personality escort launching disables
+		system "Fah Root"
+		fleet
+			names "civilian"
+			variant
+				"Shield Beetle (Jump)" 12
+	
+	npc
+		government "Courier"
+		personality heroic disables staying waiting
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant
+				"Korath Raider" 3
+				"Korath Chaser" 6
+				
+	npc
+		government "Courier"
+		personality heroic disables staying waiting
+		system "Meliter"
+		fleet
+			names "civilian"
+			variant
+				"Bactrian" 3
+				"Falcon" 4
+				"Dreadnought" 5
+				"Carrier" 1
+				"Combat Drone" 6
+				"Sparrow" 15
+				"Starling (Courier)" 6
