@@ -38,7 +38,7 @@ system Meliter
 		distance 1262.451
 		period 61.1859
 		object "Meliter Station"
-			sprite planet/meliter
+			sprite planet/station3kh
 			distance 473.55
 			period 41.1893
 			
@@ -49,6 +49,6 @@ planet "Meliter Station"
 	description `This former Korath station was taken over by independent human pilots and now serves as the main hub of the Couriers. A lot of work had to be done to modify the station so that it would support prolonged human habitation.`
 	description `	Thanks to the strong light and solar wind radiated from the triple star cluster at the center of this system, the huge energy needs of the station can easily be covered by solar power. The station also has integrated ramscoops to generate immense amounts of hyperspace fuel to support the Couriers' long travels.`
 	spaceport `The Couriers modified the Korath docking bays so that they would be fully compatible with human ships. You notice an absence of any fuel tanks, presumably because the nearby stars are such a plentiful source that there's no need for storage. Some of the old Korath service bays have been converted into bars and shops, but many of the signs around here are written in non-human languages, presumably because the Couriers often receive various alien visitors.`
-	"required reputation" 0
+	"required reputation" 5
 	bribe 0
 	security 0

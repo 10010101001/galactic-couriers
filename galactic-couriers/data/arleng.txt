@@ -5,7 +5,7 @@ government "Ar'leng"
 	"player reputation" -10
 	"attitude toward"
 		"Courier" -10
-		"Korath" -10
+		"Korath" -12
 		
 effect "arleng sparks"
 	sprite "effect/arleng sparks"
@@ -15,6 +15,16 @@ effect "arleng sparks"
 	"random spin" 2
 	"random velocity" .1
 	"velocity scale" .5
+	
+outfit "Ar'leng Active Heatsink"
+	category "Systems"
+	cost 25000000
+	thumbnail "outfit/arleng-heatsink"
+	"mass" 120
+	"outfit space" -120
+	"cooling" 3640
+	description "This device seems to function as an exact opposite of the Ar'leng weapons; its power conductors are set up in reverse. This simple variation allows it to pull in heat from all of the subsystems of a ship its mounted in and push it through the very fabric of spacetime, practically making it disappear."
+	description "When activated without any nearby heat sources, the heatsink can reach temperatures so close to the absolute zero that its own molecular bonds start falling apart."
 
 outfit "Ar'leng Particle Accelerator"
 	category "Turrets"
@@ -32,7 +42,7 @@ outfit "Ar'leng Particle Accelerator"
 		"live effect" "arleng sparks" 50
 		"inaccuracy" .5
 		"velocity" 30
-		"lifetime" 140
+		"lifetime" 70
 		"reload" 15
 		"burst reload" 10
 		"burst count" 2
@@ -59,7 +69,7 @@ ship "Ar'leng Capital Ship"
 		"hull" 65400
 		"hull repair rate" 1500
 		"automaton" 1
-		"mass" 50000
+		"mass" 2000
 		"drag" 16.8
 		"heat dissipation" .5
 		"fuel capacity" 400
@@ -76,33 +86,21 @@ ship "Ar'leng Capital Ship"
 			"hit force" 20000
 	outfits
 		"Ar'leng Particle Accelerator" 4
-		"Korath Detainer" 2
-		
-		"Triple Plasma Core" 3
-		"Plasma Core"
-
-		"Systems Core (Large)"
-		"Large Heat Shunt" 12
-		"Small Heat Shunt" 2
-		"Control Transceiver"
-		
-		"Thruster (Planetary Class)" 7
-		"Steering (Stellar Class)" 3
-		Hyperdrive
-		"Jump Drive"
+		"Triple Plasma Core" 5
+		"Large Heat Shunt" 20
+		"Thruster (Planetary Class)" 2
+		"Steering (Stellar Class)" 1
 		
 	engine -138 274
 	engine 138 274
 	engine -46 370
 	engine 46 370
-	gun -138 -196 "Korath Detainer"
-	gun 138 -196 "Korath Detainer"
+	gun -138 -196
+	gun 138 -196
 	turret 0 -156 "Ar'leng Particle Accelerator"
 	turret 0 -90 "Ar'leng Particle Accelerator"
 	turret -110 92 "Ar'leng Particle Accelerator"
 	turret 110 92 "Ar'leng Particle Accelerator"
-
-
 	explode "tiny explosion" 20
 	explode "small explosion" 45
 	explode "medium explosion" 50

@@ -19,14 +19,97 @@ event "starling available to couriers"
 		
 event "couriers captured korath"
 
+event "courier analyzers done"
 
-# I want to affect as little vanilla content as possible, run this event to revert (most) changes to the stock map		
-#event "remove couriers from vanilla"
-#	system "Durax"
-#		remove fleet "Courier Scout"
-#	system "Kasikfar"
-#		remove fleet "Courier Scout"
-#	system "Fasitopfar"
-#		remove fleet "Courier Scout"
-#	system "Peresedersi"
-#		remove fleet "Courier Scout"
+event "meliter shields up"
+	system Meliter
+		pos 190 -480
+		government Courier
+		habitable 2035
+		belt 1120
+		asteroids "small rock" 127 4.34
+		asteroids "medium rock" 23 4.41
+		asteroids "large rock" 63 4.13
+		minables aluminum 20 5.16891
+		minables lead 15 5.12023
+		trade Clothing 370
+		trade Electronics 683
+		trade Equipment 588
+		trade Food 488
+		trade "Heavy Metals" 907
+		trade Industrial 740
+		trade "Luxury Goods" 1331
+		trade Medical 604
+		trade Metal 320
+		trade Plastic 449
+		fleet "Courier Security" 1000
+		fleet "Courier Freight" 1000
+		fleet "Courier Scout" 1500
+		object
+			sprite star/f5
+			distance 16.1966
+			period 9.26902
+		object
+			sprite star/f5
+			distance 120.8034
+			period 9.26902
+		object
+			sprite star/m0
+			distance 500
+			period 14
+		object
+			sprite planet/desert7-b
+			distance 1262.451
+			period 61.1859
+			object "Meliter Station"
+				sprite planet/station3khs
+				distance 473.55
+				period 41.1893
+
+event "meliter supernova"
+	unvisit "Meliter"
+	system Meliter
+		pos 190 -69420
+		government Courier
+		habitable 2035
+		belt 1120
+		asteroids "small rock" 127 4.34
+		asteroids "medium rock" 23 4.41
+		asteroids "large rock" 63 4.13
+		minables aluminum 20 5.16891
+		minables lead 15 5.12023
+		trade Clothing 370
+		trade Electronics 683
+		trade Equipment 588
+		trade Food 488
+		trade "Heavy Metals" 907
+		trade Industrial 740
+		trade "Luxury Goods" 1331
+		trade Medical 604
+		trade Metal 320
+		trade Plastic 449
+		fleet "Courier Security" 1000
+		fleet "Courier Freight" 1000
+		fleet "Courier Scout" 1500
+		object
+			sprite star/f5
+			distance 16.1966
+			period 9.26902
+		object
+			sprite star/f5
+			distance 120.8034
+			period 9.26902
+		object
+			sprite star/m0
+			distance 500
+			period 14
+		object
+			sprite planet/desert7-b
+			distance 1262.451
+			period 61.1859
+			object "Meliter Station"
+				sprite planet/station3khs
+				distance 473.55
+				period 41.1893	
+
+event "meliter return 0"
