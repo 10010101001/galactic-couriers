@@ -54,7 +54,7 @@ mission "Courier: Encounter"
 			label ask
 			`While you're approaching the man in the uniform, two of his armed guards notice you.`
 			`	"That's enough, move away, civilian" says one of them, pointing his weapon at you.`
-			`	"At ease!" says the uniformed man, "that's no civilian! That's captain <last>!". He apologizes for the guard for the guard and offers you a handshake. He introduces himself as Stefan.`
+			`	"At ease!" says the uniformed man, "that's no civilian! That's captain <last>!". He apologizes for the guard and offers you a handshake. He introduces himself as Stefan.`
 			choice
 				`	"How do you know my name?"`
 
@@ -1087,3 +1087,49 @@ mission "Courier: Evacuation 3"
 		personality disables staying waiting opportunistic mute
 		system "Meliter"
 		ship "Ar'leng Capital Ship" "Beholder"
+		
+mission "Courier: Meliter accessible again"
+	name "Meet Novak in Meliter"
+	description "You received a short message from who you assume is Novak back in Meliter. You should go check it out to see what the aftermath of the supernova is."
+	landing
+	source
+		government "Free Worlds" "Republic" "Syndicate"
+	destination "Meliter Station"
+	to offer
+		has "event: meliter return 0"
+	on offer
+		conversation
+			`Shortly after your ship settles on the landing pad, a message appears on your computer.`
+			`	'MEET US MELITER -NOVAK'`
+			`	You check your map and notice that indeed there is a system present at the same coordinates as where Meliter was before the supernova, it seems like now that several months have passed, your navigation computer thinks it is once again safe for you to travel there.`
+				accept
+		event "meliter return 1"
+	on complete
+		conversation
+			`To your surprise, the station seems to have taken the supernova pretty well. The automatic docking system is still working flawlessly, and the life support and artifical gravity systems also seem to be operational. One thing you notice is that the station is extremely cold now that it's no longer receiving heat from three stars simultaneously.`
+			`	All hallways and rooms are almost completely empty, during the evacuation the Couriers took with them pretty much anything that wasn't bolted to the ground. You can hear multiple echoes of each of your steps as you make your way towards the main atrium where you meet Novak, Chris, and a few other Courier pilots sitting around a large table - which you assume is the last piece of furniture left on the station - with drinks and military food rations on it.`
+			`	Both Novak and Chris are visibly delighted to see you, and Novak invites you to join them.`
+			`	"Came to join our little picnic, captain?" laughs Novak.`
+			choice
+				`	"Chris, are you alright?"`
+			`Chris laughs and says "Alright? I've never been better, <last>! Seeing a triple supernova first-hand, right outside of these windows... I did my best to keep many external sensors on the station running and I managed to collect more data on these events than most Republic research efforts combined! In fact, most of the cameras on the outside stayed functional throughout the entire event, look..."`
+			`	He then pulls out his tablet and scrolls through a directory full of short video clips from the different docking cameras of the station.`
+			`	The first one shows the alien ship in detail as it engaged with the Korath, seconds after the last Courier fleet left the system. The ship is seen unleashing a rain of fast and deadly projectiles, destroying all the Korath battleships before they even have a chance to retaliate. At one point it drifts out of the camera's view, so Chris switches to another clip. When the last Korath ship explodes, the alien vessel turns its attention towards the station. It starts firing, but the first supernova goes off and sweeps the projectiles before they can reach the station. The vessel stops, its engines probably got knocked out in the blast wave, but the two additional stellar explosions manage to tear it apart, leaving almost no wreckage behind.`
+			`	"The same happened to the planet the station was orbiting" says Chris, "the first explosion completely blown away its atmosphere and the two subsequent blasts just obliterated it."`
+			choice
+				`	"So both the weapon and the shields worked?"`
+			`"The shields performed phenomenally" he says, "in fact, during the peak of the blasts they pulled in so much energy that I was afraid it may overload the weapon and trigger another detonation, this time inside the station. I was forced to activate it again to bleed the energy off, I targeted an empty spot in space and just let it channel the power there. Sadly, there wasn't much I could do to limit the current, the weapon and all of its control circuitry got completely fried."`
+			`	"Maybe it's for the better" says Novak, "I'll sure be sleeping well, knowing that the thing that can pop stars with the press of a button is out of commission."`
+			`	"Right," says Chris, "now that both the weapon and the triple star system are gone, there is no reason for the Korath to come here. Meliter just became another subpar Kor Sestor station."`
+			choice
+				`	"So the Couriers are over?"`
+			`"Honestly," says Novak, "I have no idea. Many of the people that lived on the station just went back to living in the Republic. Can't blame them, after all, I promised them a calm and stable place to call home. And, at least in my opinion, three stars going nuclear is as far from 'calm' and 'stable' as you can get. But then there's the other group of people. They enjoyed the freedom that living in an isolated system far from human civilization gave them... some of them even enjoyed the thrill of piloting ships through alien territories and fighting the Korath. We are no longer a company, we're a community, and if we can find another place to call 'our own' then I'm all in for re-settling."`
+			` 	You then chat for a little longer, but are often interrupted by power outages.`
+			`	"The station is trying its hardest to keep the shields powered" says Chris, "I think we should go before the life support collapses."`
+			`	While the Courier pilots are busy packing up anything left behind the evacuation, you say goodbye to Chris and Novak and prepare to head your own way, but not before Chris invites you to meet him in the research center on Earth once you have some free time.`
+			
+	npc
+		system "Meliter"
+		government "Uninhabited"
+		personality derelict target pacifist mute
+		ship "Science Drone" "Recon Drone"

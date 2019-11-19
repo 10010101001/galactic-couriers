@@ -113,3 +113,61 @@ event "meliter supernova"
 				period 41.1893	
 
 event "meliter return 0"
+
+event "meliter return 1"
+	system Meliter
+		pos 190 -480
+		government Uninhabited
+		habitable 2035
+		belt 1120
+		object
+			sprite star/nova
+			period 10
+		object "Meliter Station"
+			sprite planet/station3khs
+			distance 1262.451
+			period 61.1859
+		object "Donn Wormhole"
+			sprite planet/wormhole-red
+			distance 2500
+			period 3000
+			belt 1120
+		remove asteroids "small rock" 127 4.34
+		remove asteroids "medium rock" 23 4.41
+		remove asteroids "large rock" 63 4.13
+		remove minables aluminum 20 5.16891
+		remove minables lead 15 5.12023
+		remove trade Clothing 370
+		remove trade Electronics 683
+		remove trade Equipment 588
+		remove trade Food 488
+		remove trade "Heavy Metals" 907
+		remove trade Industrial 740
+		remove trade "Luxury Goods" 1331
+		remove trade Medical 604
+		remove trade Metal 320
+		remove trade Plastic 449
+		remove fleet "Courier Security" 1000
+		remove fleet "Courier Freight" 1000
+		remove fleet "Courier Scout" 1500
+		
+	system "Durax"
+		remove fleet "Courier Scout" 5000
+	system "Kasikfar"
+		remove fleet "Courier Scout" 5000
+	system "Fasitopfar"
+		remove fleet "Courier Scout" 5000
+	system "Peresedersi"
+		remove fleet "Courier Scout" 5000
+	system "Meliter"
+		remove fleet "Korath Raid" 10000
+		
+	planet "Meliter Station"
+		attributes station uninhabited
+		landscape land/space4
+		remove description
+		remove description
+		remove spaceport
+		description `After the recent supernova that destroyed almost the entirety of the local star system, this ex-Korath, ex-Courier station now rests abandoned. Even though most of its outer hull survived, almost all systems inside were damaged beyond repair. Now that there are no longer three stars in the close vicinity, the station's solar-dependent power grid is starving and can only barely run the life support systems and outer shields.`
+		remove "required reputation" 5
+
