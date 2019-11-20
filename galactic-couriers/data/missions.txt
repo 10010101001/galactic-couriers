@@ -1127,9 +1127,63 @@ mission "Courier: Meliter accessible again"
 			` 	You then chat for a little longer, but are often interrupted by power outages.`
 			`	"The station is trying its hardest to keep the shields powered" says Chris, "I think we should go before the life support collapses."`
 			`	While the Courier pilots are busy packing up anything left behind the evacuation, you say goodbye to Chris and Novak and prepare to head your own way, but not before Chris invites you to meet him in the research center on Earth once you have some free time.`
+
+mission "Courier: Wormhole 1"
+	name "Transport scientists to Meliter"
+	description "Take Chris and McKay to the Meliter system and explore a newly formed wormhole"
+	landing
+	source "Earth"
+	waypoint "Meliter"
+	destination "Earth"
+	passengers 2
+	cargo "Research equipment" 1
+	to offer
+		has "Courier: Meliter accessible again: done"
+	on offer
+		conversation
+			`Do you want to visit Chris in the local research center?`
+			choice
+				`	(Yes.)`
+					goto next
+				`	(Not now.)`
+					defer
+					
+			label next
+			`You find Chris together with McKay and many former Courier scientists in the research center. McKay welcomes you and explains their situation.`
+			`	"When Chris returned here," he says, "he brought with him the entire Korath database and the full sensor logs of the Meliter station."`
+			`	Chris continues, "yes, when I fired the weapon for the second - and last - time, the station's sensors started to pick up a strange anomaly forming. I dismissed it as the effects of the supernova interfering with them, but even after it calmed down the anomaly persisted. You may have noticed it when you returned to Meliter. We have reasons to believe that the interaction of the weapon with the superheated matter ejected by the supernova has opened a wormhole from Meliter."`
+			choice
+				`	"A wormhole to where? Couldn't more alien ships come through?"`
+					goto wormhole
+				`	"Let's go check it out!"`
+					goto depart
+					
+			label wormhole
+			`"No" responds Chris, "the first time the weapon connected with the alien world, it used several thousand times more power. Given the short duration of the recent event, I'd say the second end of the wormhole must be still in this galaxy."`
+			`	"All we need are a few measurements" says McKay, "just take us to Meliter and back."`
+			choice
+				`	"Okay, let's go."`
+					
+			label depart
+			`"Very well" says McKay, "I'll take the appropriate equipment and we can get going."`
+				accept
+				
+	on enter "Meliter"
+		conversation
+			`As soon as you enter the system, Chris and McKay start their work, collecting data about the nearby wormhole. A few minutes later, Chris notices a faint energy signature on your ship's radar.`
+			`	"No way!" he exclaims, "That must be the drone I sent to check out the wreckage!"`
+			`	Neither you or McKay know what he's talking about, so Chris starts to explain.`
+			`	"Before the wreckage of the alien ship was completely swept away by the solar winds, I sent one of the repair drones of the station to analyze it and retrieve any technology it could find. I lost contact with it shortly after it left the shield range, I thought it got fried, but according to these logs it actually managed to reach its destination." He shows a stream of data on his tablet, presumably representing infromation that is being downloaded from the drone.`
+			`	"We need to check it out!" he says, "anything the drone managed to recover from the alien ship could be a huge discovery!"`
 			
-	npc
-		system "Meliter"
-		government "Uninhabited"
-		personality derelict target pacifist mute
-		ship "Science Drone" "Recon Drone"
+	on complete
+		conversation
+			`You land on Earth and Chris and McKay start unloading the cargo you retrieved from the drone. They instruct you to meet them in the research center near the spaceport once they're done analyzing it.`
+				
+	npc assist        
+		system Meliter        
+		government Uninhabited        
+		personality derelict target pacifist mute        
+		ship "Science Drone" "Repair drone"        
+		dialog `You dock with the drone and let Chris open the hatch. Inside are two strange devices you've never seen before, and judging from the reactions of both Chris and McKay, they probably don't know what they are either. You load both of the devices into your ship and prepare to return back to Earth.`
+			
