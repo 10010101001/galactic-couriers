@@ -6,6 +6,7 @@ mission "Courier: Encounter"
 		has "First Contact: Remnant: offered"
 		has "First Contact: Wanderer: offered"
 		has "Coalition: First Contact: offered"
+		has "main plot completed"
 		random >= 75
 	on offer
 		conversation
@@ -63,9 +64,6 @@ mission "Courier: Encounter"
 			choice
 				`	"What's in those containers?"`
 					goto containers
-				#`	(Say nothing.)`
-				#	goto nothing
-				# TODO
 					
 			label containers
 			`"If I knew, I'd tell you" says Stefan, "I work as a member of a private security force of one of the rich folks here. Can't tell you much about him, and I also don't have the security clearance to know what the cargo is. All I can tell you is that ships like this come here very often. I'm always assigned to supervising duty to make sure all the cargo is safely unloaded. Some people around here say that these ships come from some sort of an alien world, far from the human space, at the very north of the galaxy..."`
@@ -83,11 +81,34 @@ mission "Courier: Encounter"
 			`	Panic envelops the spaceport, there are people running all around you trying to find out what happened. You just sit there, sipping on your drink, thinking whether or not you should try looking for this system "in the north"...`
 				decline
 
+mission "Courier: Boarding"
+	invisible
+	landing
+	source
+		government "Uninhabited"
+	to offer
+		has "courier encounter: stayed"
+		or
+			has "main plot completed"
+			not "chosen sides"
+			
+	npc assist             
+		government Courier       
+		personality derelict pacifist uninterested     
+		ship "Bulk Freighter (Courier)" "The Unstoppable"        
+		dialog `You dock with the freighter to assist, wondering how it got itself in this situation. One of the crewmen radios you and explains that they were on a reconnaissance mission but that 'they ran out of scout ships so they sent a spare freighter instead'. The crew then thanks you for your help and tells you to meet with their 'boss' in a system north of the core so you can receive a small gift for your assistance.`
+		
+	on complete
+		set "courier encounter: helped"
+		"reputation: Courier" = 5
+		
 mission "Courier: First Contact 0"
 	landing
 	source "Meliter Station"
 	to offer
-		has "courier encounter: asked"
+		or
+			has "courier encounter: asked"
+			has "courier encounter: helped"
 	on offer
 		log "Factions" "Courier" `The Couriers are a small breakaway community of humans living between the Hai and Korath territories. They used to be a corporate entity under the Republic's rule, but they were forced to relocate after their ships were consistently attacked by pirates and their employees started receiving threats from an unknown source.`
 		conversation

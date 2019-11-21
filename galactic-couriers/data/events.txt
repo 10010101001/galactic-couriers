@@ -160,3 +160,35 @@ event "meliter return 1"
 		description `After the recent supernova that destroyed almost the entirety of the local star system, this ex-Korath, ex-Courier station now rests abandoned. Even though most of its outer hull survived, almost all systems inside were damaged beyond repair. Now that there are no longer three stars in the close vicinity, the station's solar-dependent power grid is starving and can only barely run the life support systems and outer shields.`
 		remove "required reputation"
 
+event "republic occupies meliter"
+	system Meliter
+		pos 190 -480
+		government Republic
+		habitable 2035
+		belt 1120
+		fleet "Courier Scout" 1500
+		object
+			sprite star/nova
+			period 10
+		object "Meliter Station"
+			sprite planet/station3khs
+			distance 1262.451
+			period 61.1859
+		object "Donn Wormhole"
+			sprite planet/wormhole-red
+			distance 2500
+			period 3000
+			
+	government "Courier"
+		swizzle 5
+		color 0 .71 1
+	
+		"player reputation" 1
+		"attitude toward"
+			"Pirate" -.2
+			"Korath" -.2
+			"Republic" -1
+		"bribe" .05
+		"fine" 0
+		"friendly hail" "friendly civilian"
+		"hostile hail" "hostile civilian"

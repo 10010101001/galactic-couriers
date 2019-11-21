@@ -6,4 +6,5 @@ outfit "Hyperspace Augmenter"
 	"outfit space" -10
 	"jump speed" 1
 	"hyperspace augmenter" 1
+	"quantum keystone" 1
 	description "A mysterious device recovered from the wreckage of an unknown alien vessel. Its original purpose was likely to function as the alien version of a hyperdrive, but it doesn't seem to be fully compatible with the hyperspace links of the Milky Way galaxy. But when paired with an actual hyperdrive, this device provides a slight jump performance boost."

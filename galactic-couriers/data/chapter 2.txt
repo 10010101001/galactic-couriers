@@ -96,3 +96,229 @@ mission "Courier: Wormhole 1"
 		personality derelict target pacifist mute        
 		ship "Science Drone" "Repair drone"        
 		dialog `You dock with the drone and let Chris open the hatch. Inside are two strange devices you've never seen before, and judging from the reactions of both Chris and McKay, they probably don't know what they are either. You load both of the devices into your ship and prepare to return back to Earth.`
+		
+mission "Courier: Wormhole 2"
+	name "Explore the Meliter wormhole"
+	description "Escort McKay's science ship through the wormhole that recently formed in the Meliter system and explore what is on the other side."
+	source "Earth"
+	passengers 1
+	waypoint "Meliter"
+	waypoint "Mabon"
+	waypoint "Moccus"
+	waypoint "Taranis"
+	waypoint "Ceridwen"
+	to offer
+		has "Courier: Wormhole 1: done"
+	on offer
+		conversation
+			`Once again you make your way to McKay's research center. You find him and Chris inspecting the two identical devices that you brought from Meliter.`
+			`	"This is incredible!" says McKay, "This device... it must've been the alien ship's variant of a hyperdrive!"`
+			`	"Indeed" says Chris, "the radiated energy signature is very similar to our own hyperdrives. Except much more... refined."`
+			choice
+				`	"What's so incredible about that? Everyone in the Milky Way has hyperdrives."`
+				
+			`"Why yes," says Chris, "but this 'drive' seems to be intended for usage with much longer hypespace links. Our drives can travel interstellar distances in a single jump. But this one..."`
+			`	He then looks at one of the nearby computer screens and continues, "...this drive was likely used to traverse intergalactic hyperspace links. That would explain how the ship could travel so far without any major damage being inflicted upon it."`
+			`	"Sadly, we're missing the crucial pieces" says McKay, "it is very possible that these devices were only one part of the ship's hyperdrive system. By themselves they don't seem to be able to function as drives. But we think that we can interface them with our own hyperdrives and jump drives."`
+			choice
+				`	"And what would that do?"`
+				
+			`"On the surface," continues McKay, "not much. I think we could use these 'augmenters' - as I like to call them - to increase the performance of our current drives, allowing a ship with one of these installed to engage hyperspace jumps without having to bleed off all of its velocity. But that is not the main part..."`
+			`	"We also think we can use this to traverse the wormhole that was formed in Meliter" says Chris, "and not only that, we can make the device resonate at any frequency we want, at the quantum level, so a ship equipped with one of these could also travel through the wormholes in the Ember Wastes region without the need of a keystone."`
+			`	"Like a master key to the galaxy," laughs McKay.`
+			choice
+				`	"What do you want me to do?"`
+			
+			`"If you're willing to help us out," says Chris, "we will install one of these into your ship and the other into our own research vessel. I will go with you while McKay takes his research team on his ship."`
+			`	"And then we'll just dive in the wormhole!" continues McKay.`
+			choice
+				`	"Okay, sounds interesting!"`
+					goto depart
+				`	"Are there any risks involved?"`
+					goto risk
+					
+			label risk
+			`"The main risk is running into someone who doesn't like to be ran into" says Chris, "we would just go with our ship alone, but I will feel much safer having someone with more combat experience escorting us through. Otherwise, I am pretty confident it is perfecly safe."`
+			`	"That said, make sure your ship is combat-ready" says McKay, "we've got only two of these, so you won't be able to take any more ships with us. Although, personally I don't think we'll have any trouble, after all, the wormhole likely leads to a relatively nearby place within the Milky Way."`
+			choice
+				`	"Sounds good, let's get going."`
+					goto depart
+					
+			label depart
+			`"Good," says Chris, "I'll install one in your ship while McKay takes care of the other one, and we can go right away. Oh, and make sure you have enough fuel or ramscoops, but McKay's ship can refuel you if neccessary."`
+				accept
+	on accept
+		outfit "Hyperspace Augmenter" 1
+		
+	on enter "Meliter"
+		conversation
+			`McKay calls you from his ships on the radio.`
+			`	"Alright, captain <last>, this is the moment. I can't tell you what's on the other side, maybe empty space, maybe a new alien race we've never met before... Just wait for me so we can go through at the same time and keep your weapons ready!"`
+			
+	on enter "Donn"
+		conversation
+			`You haven't even had enough time to properly look around yet Chris has already managed to prepare his equipment. He connects his tablet to your ship computer interface and runs a scan of the nearby systems.`
+			`	"Okay, looking good," he says, "I'm not picking up any other ships besides McKay's signature coming through the wormhole. According to your long-range sensors, this system is a part of a small local cluster, let's fully explore it before we return to Earth. Just please wait for McKay's ship so they can run their own detailed scans of the systems."`
+		
+	on enter "Mabon"
+		dialog `Once you've visited all the systems in this cluster, escort McKay's ship back to Earth so they can analyze all the data they collected.`
+		
+	npc save accompany          
+		government Republic 
+		personality forbearing timid launching escort        
+		ship "Frigate (McKay)" "Puddle Jumper"     
+
+	on visit
+		dialog `You've returned to Earth, but either you left McKay's ship behind or you haven't explored all the systems you were supposed to. Make sure McKay can research the entire area behind the wormhole and then bring the results back here.`
+
+	on complete
+		conversation
+			`Chris runs out of your ship even before McKay lands. You follow him to the research lab where he connects his own sensors to the computer.`
+			`	"That was incredible!" says Chris, "Did you see that? A completely uninhabited star cluster with several perfectly habitable planets! I think we found it! A new home for the Couriers! Completely safe from any attacks, no possibility of anyone else's intervention... I need to tell Novak!"`
+			choice
+				`	"Wouldn't claiming an entire star cluster for a single company be selfish?" you ask.`
+				
+			`	"The Couriers are way past that," Chris responds, "true, we started as an ordinary company, but we shaped, we evolved. When piracy was at its peak, when the Republic explicitly ordered their ships to not assist the poor worlds in the south, the Couriers turned into a beacon of hope. Safety. At one point, Meliter was home to over fifty thousand refugees from planets that couldn't properly defend themselves. Obviously they wouldn't fit in the station, so we converted many of our freighters into temporary accomodations. All that and we still managed to keep a low profile, to operate 'underground', to avoid attracting any negative attention.`
+			`	"Now we can do that all over again, but on a whole new level. Once we properly establish ourseleves, we will no longer have to hide from the rest of the galaxy, instead we will be a serious and sovereign entity capable of protecting its citizens. I can't force you to keep helping us, captain, but even though you've been with us for only a short time, you proved yourself to be a trustworthy ally. So, do you wish to accompany us through a whole new chapter of the Courier history?"`
+			choice
+				`	"If you're really confident that you can manage all of that, count me in."`
+					goto agree
+				`	"Just let me think about it for a while..."`
+					goto think
+				`	"You can't keep habitable systems a secret! I am not going to help the Couriers anymore."`
+					goto disagree
+					
+			label agree
+			apply
+				set "courier chapter 2: accepted"
+			`"I am glad to hear that, captain" says Chris with obvious signs of relief in his voice.`
+			`	"Once you get ready, meet me in the spaceport and we'll pay a little visit to Novak. Oh, and you can keep the hyperspace augmenter, me and McKay are pretty confident that we can recreate its effects and mass-produce our own derivates."`
+			
+			label think
+			apply
+				set "courier chapter 2: defered"
+			`"I understand, captain" says Chris, "but once you've made up your mind, you know where to find me. Oh, and you can keep the hyperspace augmenter, me and McKay are pretty confident that we can recreate its effects and mass-produce our own derivates."`
+			
+			label disagree
+			apply
+				set "courier chapter 2: declined"
+			`"It's your call, captain" says Chris, "in that case I'm just going to ask you to keep everything you've seen secret. And just keep the augmenter, we've got another one..."`
+
+mission "Courier: Decision"
+	landing
+	source "Earth"
+	to offer
+		has "courier chapter 2: defered"
+	on offer
+		conversation
+			`Do you want to visit Chris and tell him if you're going to help the Couriers or not?`
+			choice
+				`	(Yes.)`
+					goto next
+				`	(Not now.)`
+					defer
+					
+			label next
+			`You find Chris working alone outside of the laboratory, near McKay's research ship.`
+			`	"Welcome back, captain <last>" he says when he sees you, "have you made up your mind?"`
+			choice
+				`	"I will help the Couriers with the relocation."`
+					goto agree
+				`	"I'm not going to help you, count me out."`
+					goto disagree
+					
+			label agree
+			apply
+				set "courier chapter 2: accepted"
+			`"I am glad to hear that, captain" says Chris, "now we should go visit Novak. I haven't told him the news yet. I will meet you in the spaceport in just a few minutes, I need to finish this."`
+				decline
+				
+			label disagree
+			apply
+				set "courier chapter 2: declined"
+			`"It's your call, captain" says Chris, "in that case I'm just going to ask you to keep everything you've seen secret. And just keep the augmenter, we've got another one..."`
+				decline
+				
+				
+mission "Courier: Report 1"
+	landing
+	invisible
+	source
+		government "Republic"
+	to offer
+		has "courier chapter 2: declined"
+	on offer
+		conversation
+			`Shortly after you land and leave your ship, a high-ranking Republic officer waves at you and starts walking towards you.`
+			`	"May I please have some of your time, captain?" he says in a rather friendly tone.`
+			choice
+				`	"Sure. What's the matter?"`
+				`	"Depends... why?"`
+				
+			`"We've received reports that some rogue entity discovered an uninhabited star cluster in the north," he says.`
+			`	"I know you're a busy captain, but I also know that you often travel to these distant systems. I figured that if anyone would know about any suspicious activity, it would be you. So? Anything?"`
+			choice
+				`	"I have no idea what you're talking about. Probably just some gossip."`
+					goto nothing
+				`	"Would that be a problem?"`
+					goto problem
+				`	"Actually, yes. The Couriers discovered a wormhole that leads to a completely uninhabited star cluster."`
+					goto snitch
+					
+			label nothing
+			`"In that case," he says, "I apologize for taking up your time. Have a nice day!"`
+				decline
+				
+			label problem
+			`"We can't have any unsupervised human colonies being established without the Republic being able to control them." he says, "I know that sounds wrong when said like that, but we're afraid that any breakaway communities would quickly become breeding grounds for piracy, and even more so if they have access to jump drives and alien technology. Do you know about anything?"`
+			choice
+				`	"I have no idea what you're talking about. Probably just some gossip."`
+					goto nothing
+				`	"Actually, yes. The Couriers discovered a wormhole that leads to a completely uninhabited star cluster."`
+					goto snitch
+			
+			label snitch
+			apply
+				set "courier chapter 2: snitched"
+				"reputation: Courier" = -100
+			`"The Couriers..." he says, surprised, "I thought they barely survived as a company, how could someone like them figure out wormhole travel..."`
+			`	He gets silent for a second and then exclaims "McKay! I knew it! Thank you for your help captain, the Navy will now take care of the matters."`
+				decline
+
+mission "Courier: Report 2"
+	landing
+	invisible
+	to offer
+		has "courier chapter 2: snitched"
+	on offer
+		event "republic occupies meliter"
+	
+	npc kill
+		government "Republic"
+		personality heroic waiting staying opportunistic
+		system "Meliter"
+		fleet 
+			names "korath"
+			variant 1
+				"Carrier"
+				"Lance" 4
+				"Combat Drone" 6
+				"Cruiser"
+				"Combat Drone" 4
+				"Frigate" 2
+				"Rainmaker" 2
+				"Gunboat" 2
+				
+	npc kill
+		government "Courier"
+		personality heroic waiting opportunistic nemesis
+		system "Donn"
+		fleet
+			names "civilian"
+			variant 1
+				"Korath Raider" 3
+				"Korath Chaser" 6
+				"Starling" 2
+				"Cruiser" 1
+				"Shield Beetle" 2
+				"Sparrow" 8

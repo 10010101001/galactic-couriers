@@ -2,7 +2,7 @@ government "Courier"
 	swizzle 5
 	color 0 .71 1
 	
-	"player reputation" 1
+	"player reputation" -10
 	"attitude toward"
 		"Pirate" -.2
 		"Korath" -.2

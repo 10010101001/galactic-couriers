@@ -45,6 +45,34 @@ ship "Headhunter" "Headhunter (Courier)"
 	gun 12 -25.5 "Heavy Laser"
 	turret 0 9
 	
+ship "Frigate" "Frigate (McKay)"
+	sprite "ship/frigate"
+	outfits
+		"Blaster Turret" 2
+		"Anti-Missile Turret"
+		
+		"NT-200 Nucleovoltaic"
+		"LP144a Battery Pack"
+		"D41-HY Shield Generator"
+		"Laser Rifle" 5
+		"Fragmentation Grenades" 5
+		
+		"X3700 Ion Thruster"
+		"X3200 Ion Steering"
+		"Hyperdrive"
+		"Jump Drive"
+		"Catalytic Ramscoop" 2
+		"Fuel Pod" 3
+		"Hyperspace Augmenter" 1
+		
+	gun -10 -83 
+	gun 10 -83 
+	gun -10 -83 
+	gun 10 -83
+	turret 0 -37 "Anti-Missile Turret"
+	turret -12 -12 "Blaster Turret"
+	turret 12 -12 "Blaster Turret"
+	
 ship "Starling" "Starling (Courier)"
 	sprite "ship/starling"
 	outfits
@@ -62,7 +90,6 @@ ship "Starling" "Starling (Courier)"
 		"Crucible-Class Steering"
 		"Hyperdrive"
 		"Jump Drive"
-
 
 	gun 0 -99
 	gun -12 -72 "Inhibitor Cannon"
