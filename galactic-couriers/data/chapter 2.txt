@@ -117,7 +117,7 @@ mission "Courier: Wormhole 2"
 			choice
 				`	"What's so incredible about that? Everyone in the Milky Way has hyperdrives."`
 				
-			`"Why yes," says Chris, "but this 'drive' seems to be intended for usage with much longer hypespace links. Our drives can travel interstellar distances in a single jump. But this one..."`
+			`"That is true," says Chris, "but this 'drive' seems to be intended for usage with much longer hypespace links. Our drives can travel interstellar distances in a single jump. But this one..."`
 			`	He then looks at one of the nearby computer screens and continues, "...this drive was likely used to traverse intergalactic hyperspace links. That would explain how the ship could travel so far without any major damage being inflicted upon it."`
 			`	"Sadly, we're missing the crucial pieces" says McKay, "it is very possible that these devices were only one part of the ship's hyperdrive system. By themselves they don't seem to be able to function as drives. But we think that we can interface them with our own hyperdrives and jump drives."`
 			choice
