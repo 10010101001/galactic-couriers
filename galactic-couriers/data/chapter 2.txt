@@ -1,0 +1,98 @@
+mission "Courier: Meliter accessible again"
+	name "Meet Novak in Meliter"
+	description "You received a short message from who you assume is Novak back in Meliter. You should go check it out to see what the aftermath of the supernova is."
+	landing
+	source
+		government "Free Worlds" "Republic" "Syndicate"
+	destination "Meliter Station"
+	to offer
+		has "event: meliter return 0"
+	on offer
+		conversation
+			`Shortly after your ship settles on the landing pad, a message appears on your computer.`
+			`	'MEET US MELITER -NOVAK'`
+			`	You check your map and notice that indeed there is a system present at the same coordinates as where Meliter was before the supernova, it seems like now that several months have passed, your navigation computer thinks it is once again safe for you to travel there.`
+				accept
+		event "meliter return 1"
+	on complete
+		conversation
+			`To your surprise, the station seems to have taken the supernova pretty well. The automatic docking system is still working flawlessly, and the life support and artifical gravity systems also seem to be operational. One thing you notice is that the station is extremely cold now that it's no longer receiving heat from three stars simultaneously.`
+			`	All hallways and rooms are almost completely empty, during the evacuation the Couriers took with them pretty much anything that wasn't bolted to the ground. You can hear multiple echoes of each of your steps as you make your way towards the main atrium where you meet Novak, Chris, and a few other Courier pilots sitting around a large table - which you assume is the last piece of furniture left on the station - with drinks and military food rations on it.`
+			`	Both Novak and Chris are visibly delighted to see you, and Novak invites you to join them.`
+			`	"Came to join our little picnic, captain?" laughs Novak.`
+			choice
+				`	"Chris, are you alright?"`
+			`Chris laughs and says "Alright? I've never been better, <last>! Seeing a triple supernova first-hand, right outside of these windows... I did my best to keep many external sensors on the station running and I managed to collect more data on these events than most Republic research efforts combined! In fact, most of the cameras on the outside stayed functional throughout the entire event, look..."`
+			`	He then pulls out his tablet and scrolls through a directory full of short video clips from the different docking cameras of the station.`
+			`	The first one shows the alien ship in detail as it engaged with the Korath, seconds after the last Courier fleet left the system. The ship is seen unleashing a rain of fast and deadly projectiles, destroying all the Korath battleships before they even have a chance to retaliate. At one point it drifts out of the camera's view, so Chris switches to another clip. When the last Korath ship explodes, the alien vessel turns its attention towards the station. It starts firing, but the first supernova goes off and sweeps the projectiles before they can reach the station. The vessel stops, its engines probably got knocked out in the blast wave, but the two additional stellar explosions manage to tear it apart, leaving almost no wreckage behind.`
+			`	"The same happened to the planet the station was orbiting" says Chris, "the first explosion completely blown away its atmosphere and the two subsequent blasts just obliterated it."`
+			choice
+				`	"So both the weapon and the shields worked?"`
+			`"The shields performed phenomenally" he says, "in fact, during the peak of the blasts they pulled in so much energy that I was afraid it may overload the weapon and trigger another detonation, this time inside the station. I was forced to activate it again to bleed the energy off, I targeted an empty spot in space and just let it channel the power there. Sadly, there wasn't much I could do to limit the current, the weapon and all of its control circuitry got completely fried."`
+			`	"Maybe it's for the better" says Novak, "I'll sure be sleeping well, knowing that the thing that can pop stars with the press of a button is out of commission."`
+			`	"Right," says Chris, "now that both the weapon and the triple star system are gone, there is no reason for the Korath to come here. Meliter just became another subpar Kor Sestor station."`
+			choice
+				`	"So the Couriers are over?"`
+			`"Honestly," says Novak, "I have no idea. Many of the people that lived on the station just went back to living in the Republic. Can't blame them, after all, I promised them a calm and stable place to call home. And, at least in my opinion, three stars going nuclear is as far from 'calm' and 'stable' as you can get. But then there's the other group of people. They enjoyed the freedom that living in an isolated system far from human civilization gave them... some of them even enjoyed the thrill of piloting ships through alien territories and fighting the Korath. We are no longer a company, we're a community, and if we can find another place to call 'our own' then I'm all in for re-settling."`
+			` 	You then chat for a little longer, but are often interrupted by power outages.`
+			`	"The station is trying its hardest to keep the shields powered" says Chris, "I think we should go before the life support collapses."`
+			`	While the Courier pilots are busy packing up anything left behind the evacuation, you say goodbye to Chris and Novak and prepare to head your own way, but not before Chris invites you to meet him in the research center on Earth once you have some free time.`
+
+mission "Courier: Wormhole 1"
+	name "Transport scientists to Meliter"
+	description "Take Chris and McKay to the Meliter system and explore a newly formed wormhole"
+	landing
+	source "Earth"
+	waypoint "Meliter"
+	destination "Earth"
+	passengers 2
+	cargo "Research equipment" 1
+	to offer
+		has "Courier: Meliter accessible again: done"
+	on offer
+		conversation
+			`Do you want to visit Chris in the local research center?`
+			choice
+				`	(Yes.)`
+					goto next
+				`	(Not now.)`
+					defer
+					
+			label next
+			`You find Chris together with McKay and many former Courier scientists in the research center. McKay welcomes you and explains their situation.`
+			`	"When Chris returned here," he says, "he brought with him the entire Korath database and the full sensor logs of the Meliter station."`
+			`	Chris continues, "yes, when I fired the weapon for the second - and last - time, the station's sensors started to pick up a strange anomaly forming. I dismissed it as the effects of the supernova interfering with them, but even after it calmed down the anomaly persisted. You may have noticed it when you returned to Meliter. We have reasons to believe that the interaction of the weapon with the superheated matter ejected by the supernova has opened a wormhole from Meliter."`
+			choice
+				`	"A wormhole to where? Couldn't more alien ships come through?"`
+					goto wormhole
+				`	"Let's go check it out!"`
+					goto depart
+					
+			label wormhole
+			`"No" responds Chris, "the first time the weapon connected with the alien world, it used several thousand times more power. Given the short duration of the recent event, I'd say the second end of the wormhole must be still in this galaxy."`
+			`	"All we need are a few measurements" says McKay, "just take us to Meliter and back."`
+			choice
+				`	"Okay, let's go."`
+					
+			label depart
+			`"Very well" says McKay, "I'll take the appropriate equipment and we can get going."`
+				accept
+				
+	on enter "Meliter"
+		conversation
+			`As soon as you enter the system, Chris and McKay start their work, collecting data about the nearby wormhole. A few minutes later, Chris notices a faint energy signature on your ship's radar.`
+			`	"No way!" he exclaims, "That must be the drone I sent to check out the wreckage!"`
+			`	Neither you or McKay know what he's talking about, so Chris starts to explain.`
+			`	"Before the wreckage of the alien ship was completely swept away by the solar winds, I sent one of the repair drones of the station to analyze it and retrieve any technology it could find. I lost contact with it shortly after it left the shield range, I thought it got fried, but according to these logs it actually managed to reach its destination." He shows a stream of data on his tablet, presumably representing infromation that is being downloaded from the drone.`
+			`	"We need to check it out!" he says, "anything the drone managed to recover from the alien ship could be a huge discovery!"`
+			
+	on complete
+		conversation
+			`You land on Earth and Chris and McKay start unloading the cargo you retrieved from the drone. They instruct you to meet them in the research center near the spaceport once they're done analyzing it.`
+				
+	npc assist        
+		system Meliter        
+		government Uninhabited        
+		personality derelict target pacifist mute        
+		ship "Science Drone" "Repair drone"        
+		dialog `You dock with the drone and let Chris open the hatch. Inside are two strange devices you've never seen before, and judging from the reactions of both Chris and McKay, they probably don't know what they are either. You load both of the devices into your ship and prepare to return back to Earth.`
