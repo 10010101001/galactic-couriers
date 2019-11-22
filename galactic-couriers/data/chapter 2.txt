@@ -193,16 +193,22 @@ mission "Courier: Wormhole 2"
 				set "courier chapter 2: accepted"
 			`"I am glad to hear that, captain" says Chris with obvious signs of relief in his voice.`
 			`	"Once you get ready, meet me in the spaceport and we'll pay a little visit to Novak. Oh, and you can keep the hyperspace augmenter, me and McKay are pretty confident that we can recreate its effects and mass-produce our own derivates."`
+				goto end
 			
 			label think
 			apply
 				set "courier chapter 2: defered"
 			`"I understand, captain" says Chris, "but once you've made up your mind, you know where to find me. Oh, and you can keep the hyperspace augmenter, me and McKay are pretty confident that we can recreate its effects and mass-produce our own derivates."`
+				goto end
 			
 			label disagree
 			apply
 				set "courier chapter 2: declined"
 			`"It's your call, captain" says Chris, "in that case I'm just going to ask you to keep everything you've seen secret. And just keep the augmenter, we've got another one..."`
+				goto end
+				
+			label end
+			` `
 
 mission "Courier: Decision"
 	landing
@@ -322,3 +328,81 @@ mission "Courier: Report 2"
 				"Cruiser" 1
 				"Shield Beetle" 2
 				"Sparrow" 8
+				
+mission "Courier: Colonization 1"
+	name "Tell Novak about the wormhole"
+	description "Meet Novak on Alfheim so Chris can inform him about your findings beyond the Meliter wormhole."
+	source "Earth"
+	destination "Alfheim"
+	passengers 1
+	to offer
+		has "courier chapter 2: accepted"
+	on offer
+		conversation
+			`You go to one of the many spaceport bars and wait for Chris. He arrives almost a full hour later.`
+			`	"I am very sorry, captain" he says, apologetically. "I was almost done but then I noticed a coolant leak from one of the McKay's ship engines. I hope you understand that I had to sort that out."`
+			`	"Where is Novak now?" you ask.`
+			`	"He said that if he ever retired he'd want to live on Alfheim. Supposedly he owns a small property there. I think that's our best bet at finding him."`
+			`	You finish your drink and get ready to depart together with Chris.`
+				accept
+	on complete
+		conversation
+			`As you approach Alfheim's surface, you notice the abundance of oil mining camps almost everywhere. You're starting to wonder why would anyone want to retire on such a planet, but only a few minutes after entering the atmosphere Chris starts to pick up Novak's signal.`
+			`	"It's a Courier ship beacon," he says, "we used them to recognize our own ships when travelling in systems with a lot of merchant activity. Before we had them, it was common for Courier escorts to mistakenly follow a civilian freighter. Many fun stories stem from that..."`
+			`	Following the beacon signal, your ships enters an area almost entirely covered by rainforests and untouched by the drilling operations. You continue flying until you reach the beach, where you can clearly see a Bulk Freighter parked in the sand, next to a small but cozy wooden hut. You can't help but notice how huge the cargo ship appears when compared to the house. There is also a much smaller Shuttle parked further away from the coastline, partially hidden by trees.`
+			`	You land next to the freighter and make your way towards the hut. As you walk closer, you start noticing more details, for example a line of cables running from the freighter to the hut.`
+			`	Chris knocks on the door and a few seconds later, Novak opens them, wearing sunglasses, a straw hat, and a loose shirt.`
+			choice
+				`	"Vaccation's over, we've got a star cluster to explore!"`
+					goto speak
+				`	(Let Chris speak.)`
+					goto silent
+					
+			label speak
+			`Novak just stares at you in silence, probably confused by what you just said.`
+			`	"What captain <last> is trying to say," adds Chris, "is that we found a new place for the Couriers. A star cluster accessible through a newly formed wormhole in Meliter."`
+				goto next
+		
+			label silent
+			`"Me, McKay, and <last> discovered a wormhole in Meliter," says Chris, "we also managed to travel through and we found a cluster of star systems with completely uninhabited planets on the other side. A perfect place for Couriers to rebuild."`
+				goto next
+			
+			label next
+			`	"And you really think it's worth it?" asks Novak, "There's pretty much nothing left of us."`
+			`	"Of course it is!" responds Chris. "If you build it, they will come. This is an exceptionally rare opportunity, Vladimir, imagine if we could start a whole new community of humans, with all our knowledge, all our experience... there are literally thousands of people who know about the Couriers and who always wanted to move to Meliter. Back then we couldn't provide a safe place for all of them to live, but that can change now."`
+			`	"So you want to establish a breakaway civilization," says Novaks, "is that what you're saying? Don't you think that it is kinda outside of our scope?"`
+			`	"Of course not" continues Chris. "It won't be much different than living in Meliter, except now we will have access to our own resources and will be less dependent on supplies from the Hai and the Republic. The entire McKay's science team voiced their interest in relocating, right now they have to do work for the Republic, but they want their own scientific freedom. With them on our side we will soon be able to develop even our own technology, build our own ships..."`
+			`	"Okay, okay" interrupts him Novak, "you sold me on it. I'll pack up my stuff and meet you in the spaceport in about two hours."`
+		
+mission "Courier: Colonization 2"
+	name "Take the Couriers to <planet>"
+	description "Transport Novak and Chris to <planet> so they can evaluate its potential for human habitation."
+	source "Alfheim"
+	destination "Matunus"
+	passengers 2
+	to offer
+		has "Courier: Colonization 1: done"
+	on offer
+		conversation
+			`As promised, Novak arrives at the spaceport in his new Shuttle in exactly two hours since you left his beach hut. Chris explains to him that his ship can't pass the wormhole and that he will have to travel with you.`
+			`	"The only other ship that can traverse the wormhole is McKay's Frigate" says Chris. "I found one planet in particular that I think is perfectly suited to start a human colony. I'll mark it on <last>'s map, and I'll also transfer the coordinates to McKay so he can meet us there."`
+			choice
+				`	"How do you want to transport people and resources to start a colony in a single ship?"`
+				`	"Should I give the augmenter back to you? Seems like you're going to need it more than me."`
+				
+			`"Together with McKay we're pretty confident that we can replicate the effects of the augmenter" says Chris, "but right now we will simply set up a small camp with the Frigate and then put the augmenter into a slightly larger transport. I also want you to keep the other one in case we need your help."`
+			
+			choice
+				`	"Very well, let's get going."`
+					accept
+					
+	on complete
+		conversation
+			`You land on an open grass field with McKay's Frigate closely following you. When you shut down your engines and leave your ship, you notice that besides the slight hum of your ship's cooling there is complete silence around you. It's likely that the local wildlife has never seen or heard a ship before.`
+			`	A relatively large group of people exits the Frigate and many of them start to immediately prepare a camp. Novak goes to greet McKay and his team, while Chris thanks you for your help and says that they will contact you once the camp is ready.`
+			
+	npc save        
+		system Ogma        
+		government Republic       
+		personality waiting staying   
+		ship "Frigate (McKay)" "Puddle Jumper"        
