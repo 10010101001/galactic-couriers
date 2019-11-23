@@ -406,3 +406,69 @@ mission "Courier: Colonization 2"
 		government Republic       
 		personality waiting staying   
 		ship "Frigate (McKay)" "Puddle Jumper"        
+
+mission "Courier: Colonization 2B"
+	invisible
+	landing
+	to offer
+		has "Courier: Colonization 2: done"
+	on offer
+		event "matunus spaceport built" 30
+
+mission "Courier: Colonization 3"
+	name "Escort transport to <planet>"
+	description "Escort a large Courier transport ship to <planet>"
+	landing
+	source
+		government "Free Worlds" "Republic" "Syndicate"
+	destination "Matunus"
+	to offer
+		has "event: matunus spaceport built"
+	on offer
+		conversation
+			`As you bring your ship in, you notice a rather odd vessel taking up multiple landing spots near the spaceport. Unpon closer inspection you realize that it is a Korath World-Ship flying merchant colors. There is a huge commotion around it; massive crowds of people pouring in from the spaceport town to inspect this gargantuan vehicle.`
+			`	You decide to alter your landing path so that you can fly by the World-ship and have a closer look. But as you get close, the World-Ship's crew contacts you over the radio.`
+			`	"Captain <last>? Is that really you?"`
+			`	You instantly recognize the voice of McKay.`
+			choice
+				`	"Is this the 'slightly' larger transport you were talking about?"`
+			`"It's a beauty, isn't she?" says McKay over the radio. "We found her almost completely wrecked in one of the uninhabited systems in the Ember Wastes. There was a large hole running straight through the hull, so the original crew evacuated. Took us quite some time to get her flying again, but here we are!"`
+			`	"So much for keeping a 'low profile'..." you say.`
+			`	"Well, we can play it off" he replies. "The civilians will think it is some experimental vessel of the Republic or the Syndicate, and the Republic and Syndicate will think it belongs to some independent captain... well, like you, <last>. In fact, now that you're here, we'd like to ask you for a favor."`
+			choice
+				`	"What do you need?"`
+			`"We'd like an escort to <planet>" says McKay. "We were planning to contact you once we left human space, but given that you stumbled upon us here, you can accompany us the whole way. We'll feel particularly unsafe around he Korath territory, I wouldn't be surprised if they wanted to take their precious ship back. There's almost two thousand people onboard, all ready to help set up the colony."`
+			choice
+				`	"Sure, I can escort you there."`
+					accept
+				`	"Sorry, I don't have time now. I'm sure you'll be fine by yourself."`
+					decline
+	
+	npc save accompany
+		government Courier     
+		personality escort
+		ship "Korath World-Ship (Courier)" "Santa Maria" 
+		
+	npc
+		system "Ogma"
+		government Courier
+		personality staying
+		ship "Modified Boxwing"
+		
+	on complete
+		conversation
+			`You watch as the huge World-ship dwarfs almost the enitre spaceport camp on its landing approach. McKay thanks you for your help over the radio and once again says that the Couriers will contact you when they need your help.`
+			choice
+				`	(Ask about the Boxwings.)`
+					goto boxwings
+				`	(Leave.)`
+					goto end
+					
+			label boxwings
+			`"Ah, those..." says McKay. "Before we installed it in this World-ship, we had the hyperspace augmenter in a Navy Carrier. We used that to bring these small freighters through the wormhole and then modified them so that they can operate as completely independent ships."`
+			`	"You could have told me, I'd lend you my augmenter" you say.`
+			`"If you did," continues McKay, "we'd be forced to put both of them in a single ship when returning through the wormhole. That would be very unwise, if anything happened to that ship we would be completely cut off from these systems. Its much better knowing that if something goes wrong, there is a well-protected backup on your ship, captain."`
+				goto end
+				
+			label end
+			` `

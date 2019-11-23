@@ -192,3 +192,37 @@ event "republic occupies meliter"
 		"fine" 0
 		"friendly hail" "friendly civilian"
 		"hostile hail" "hostile civilian"
+		
+event "matunus spaceport built"
+	planet Matunus
+		landscape land/water2
+		spaceport `The spaceport quickly evolved from a few temporary tents set up by the Couriers into a small town with concrete buildings. A makeshift shipyard has also been constructed that is now used to modify small freighters. The fact that the Couriers were able to establish this humble colony in about a month leaves you in awe.`
+		shipyard "Courier Shipyard"
+		
+	system Anu
+		add fleet "Courier Boxwings" 1500
+		
+	system Ceridwen
+		add fleet "Courier Boxwings" 1500
+		
+	system Anu
+		add fleet "Courier Boxwings" 1500
+		
+	system Moccus
+		add fleet "Courier Boxwings" 1500
+		
+	system Nisien
+		add fleet "Courier Boxwings" 1500
+		
+	system Nodens
+		add fleet "Courier Boxwings" 1500
+		
+	system Ogma
+		government Courier
+		add fleet "Courier Boxwings" 1500
+
+	system Seonaidh
+		add fleet "Courier Boxwings" 1500
+		
+	system Taranis
+		add fleet "Courier Boxwings" 1500

@@ -53,3 +53,13 @@ fleet "Courier Freight"
 		"Bulk Freighter (Courier)" 2
 	variant 1
 		"Bulk Freighter (Courier)" 3
+		
+fleet "Courier Boxwings"
+	government "Courier"
+	names civilian
+	cargo 5
+	personality
+		timid frugal disables plunders appeasing opportunistic 
+	variant 1
+		"Modified Boxwing" 3
+		"Modified Boxwing (Tanker)" 1
