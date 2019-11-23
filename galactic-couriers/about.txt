@@ -1,2 +1,2 @@
-A minor side-story taking place mostly in an isolated star system outside of the human space.
-Main game story must be completed before this plugin's story can fully start.
+The Galactic Couriers plugin tells a story of a small breakaway community of humans who (with the help of the player) manage to discover a new place to settle.
+In order for this story arc to fully begin, the main story must be finished and all alien species must be met.
