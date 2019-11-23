@@ -23,28 +23,7 @@ ship "Bulk Freighter" "Bulk Freighter (Courier)"
 	turret 0 5 "Laser Turret"
 	turret -30 175 "Heavy Anti-Missile Turret"
 	turret 30 175 "Laser Turret"
-	
-ship "Headhunter" "Headhunter (Courier)"
-	sprite "ship/headhunter"
-	outfits
-		"Heavy Laser" 2
-		
-		"RT-I Radiothermal"
-		"LP072a Battery Pack"
-		"D23-QP Shield Generator"
-		
-		"Greyhound Plasma Thruster"
-		"Greyhound Plasma Steering"
-		"Hyperdrive"
-		"Jump Drive"
-		"Catalytic Ramscoop" 2
-	
-	gun -17.5 -17
-	gun 17.5 -17
-	gun -12 -25.5 "Heavy Laser"
-	gun 12 -25.5 "Heavy Laser"
-	turret 0 9
-	
+
 ship "Frigate" "Frigate (McKay)"
 	sprite "ship/frigate"
 	outfits
@@ -73,56 +52,26 @@ ship "Frigate" "Frigate (McKay)"
 	turret -12 -12 "Blaster Turret"
 	turret 12 -12 "Blaster Turret"
 	
-ship "Starling" "Starling (Courier)"
-	sprite "ship/starling"
+ship "Headhunter" "Headhunter (Courier)"
+	sprite "ship/headhunter"
 	outfits
-		"Inhibitor Cannon" 2
-		"Point Defense Turret"
+		"Heavy Laser" 2
 		
-		"Epoch Cell"
-		"Crystal Capacitor"
-		"Emergency Ramscoop" 2
-		"Quantum Key Stone"
-		"Salvage Scanner"
+		"RT-I Radiothermal"
+		"LP072a Battery Pack"
+		"D23-QP Shield Generator"
 		
-		"Forge-Class Thruster"
-		"Forge-Class Steering"
-		"Crucible-Class Steering"
+		"Greyhound Plasma Thruster"
+		"Greyhound Plasma Steering"
 		"Hyperdrive"
 		"Jump Drive"
-
-	gun 0 -99
-	gun -12 -72 "Inhibitor Cannon"
-	gun 12 -72 "Inhibitor Cannon"
-	gun -18 -49
-	gun 18 -49
-	turret 0 2
+		"Catalytic Ramscoop" 2
 	
-ship "Korath World-Ship" "Korath World-Ship (Courier Raid)"
-	"never disabled"
-	outfits
-		"Korath Grab-Strike" 2
-		"Korath Banisher" 3
-		"Korath Warder" 3
-		
-		"Triple Plasma Core"
-		"Systems Core (Large)"
-		"Large Heat Shunt" 2
-		"Fuel Processor"
-		"Korath Repeater Rifle" 150
-		
-		"Thruster (Planetary Class)"
-		"Steering (Planetary Class)"
-		"Jump Drive"
-	
-	turret -76 -157 "Korath Grab-Strike"
-	turret 76 -157 "Korath Banisher"
-	turret -59 -135 "Korath Warder"
-	turret 59 -135 "Korath Grab-Strike"
-	turret -61 -6 "Korath Banisher"
-	turret 61 -6 "Korath Warder"
-	turret -66 210 "Korath Warder"
-	turret 66 210 "Korath Banisher"
+	gun -17.5 -17
+	gun 17.5 -17
+	gun -12 -25.5 "Heavy Laser"
+	gun 12 -25.5 "Heavy Laser"
+	turret 0 9
 	
 ship "Korath World-Ship" "Korath World-Ship (Courier)"
 	"never disabled"
@@ -150,6 +99,32 @@ ship "Korath World-Ship" "Korath World-Ship (Courier)"
 	turret -66 210 "Anti-Missile Turret"
 	turret 66 210 "Anti-Missile Turret"
 	
+ship "Korath World-Ship" "Korath World-Ship (Courier Raid)"
+	"never disabled"
+	outfits
+		"Korath Grab-Strike" 2
+		"Korath Banisher" 3
+		"Korath Warder" 3
+		
+		"Triple Plasma Core"
+		"Systems Core (Large)"
+		"Large Heat Shunt" 2
+		"Fuel Processor"
+		"Korath Repeater Rifle" 150
+		
+		"Thruster (Planetary Class)"
+		"Steering (Planetary Class)"
+		"Jump Drive"
+	
+	turret -76 -157 "Korath Grab-Strike"
+	turret 76 -157 "Korath Banisher"
+	turret -59 -135 "Korath Warder"
+	turret 59 -135 "Korath Grab-Strike"
+	turret -61 -6 "Korath Banisher"
+	turret 61 -6 "Korath Warder"
+	turret -66 210 "Korath Warder"
+	turret 66 210 "Korath Banisher"
+
 ship "Modified Boxwing"
 	sprite "ship/boxwing"
 	thumbnail "thumbnail/boxwing"
@@ -195,3 +170,28 @@ ship "Modified Boxwing" "Modified Boxwing (Tanker)"
 		"Fuel Pod" 7
 		"Catalytic Ramscoop"
 		"nGVF-AA Fuel Cell"
+	
+ship "Starling" "Starling (Courier)"
+	sprite "ship/starling"
+	outfits
+		"Inhibitor Cannon" 2
+		"Point Defense Turret"
+		
+		"Epoch Cell"
+		"Crystal Capacitor"
+		"Emergency Ramscoop" 2
+		"Quantum Key Stone"
+		"Salvage Scanner"
+		
+		"Forge-Class Thruster"
+		"Forge-Class Steering"
+		"Crucible-Class Steering"
+		"Hyperdrive"
+		"Jump Drive"
+
+	gun 0 -99
+	gun -12 -72 "Inhibitor Cannon"
+	gun 12 -72 "Inhibitor Cannon"
+	gun -18 -49
+	gun 18 -49
+	turret 0 2
