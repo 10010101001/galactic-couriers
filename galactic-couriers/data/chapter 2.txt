@@ -472,3 +472,86 @@ mission "Courier: Colonization 3"
 				
 			label end
 			` `
+			
+mission "Courier: Colonization 3B"
+	invisible
+	landing
+	to offer
+		has "Courier: Colonization 3: done"
+	on offer
+		event "matunus town built" 30
+
+		
+mission "Courier: Colonization 4"
+	name "Visit Matunus"
+	description "The Couriers sent you a message saying that they want you to visit them on their new homeworld."
+	landing
+	destination "Matunus"
+	to offer
+		has "event: matunus town built"
+	on offer
+		conversation
+			`Shortly after you land, you receive a message coded in an unknown format. After a bit of tinkering with your ship computers, you realize that its a modified Courier transmission. It reads;`
+			`	"If you can read this, then we got our transcievers working and can communicate with the Milky Way. We're going to need your help again, meet us on Matunus once you have some time."`
+				accept
+	on complete
+		conversation
+			`Knowing that a spaceport has been set up on this planet, you simply turn on autopilot and wait for it to guide the ship to its pad. However, you notice that instead of flying towards the equator, where the spaceport camp is, the ship changed its course and is now heading towards the arctic.`
+			`	You quickly realize that the broadcast landing coordinates have indeed changed, and that a whole new town has been set up in one of the northern taigas. This town is much bigger than the original one near the equator, and instead of makeshift landing pads there are proper concrete structures with a solid foundation. The population here is also much higher than what you remember from your last visit, just flying over the town you estimate that there are at least two thousand people only around the landing pads, with the town stretching much further.`
+			`	You land next to the World-Ship that the Couriers managed to capture, you notice that it has serious wear on the engines, suggesting that since you first escorted it here it has been working non-stop to bring thousands upon thousands of residents to this planet.`
+			`	Novak and Chris are both standing next to the World-Ship, Chris is working on one of the refueling pumps. Once Novak spots you, he waves at you to join them.`
+			choice
+				`	"You built this town... in just a month?"`
+				#TODO some other choice lol
+				
+			`"To be fair," says Novak, "the World-Ship is big enough to let us transport entire buildings. It was just a matter of contracting construction companies throughout the Republic and then taking all of them here."`
+			`	"But there are some buildings we can't just move here" adds Chris.`
+			`	"Exactly," continues Novak. "Power plants, water treatment facilities, factories, hangars... you name it. While building the latter three is relatively easy, we'd like to ask you for assistance with establishing the first proper power plant on Matunus."`
+			choice
+				`	"Sure, how can I help?"`
+				`	"Sorry to disappoint, but I'm not exactly the 'building' type."`
+					
+			`"All we need from you is to disable some Korath Raiders," says Novak, "each one of those bad boys has a nice and powerful fusion generator, the Triple Plasma Core. Our scouts have already managed to track some of them down, thanks to the Remnant tech they disabled their jump drives but they'll still need you to take them out. Just a couple of these generators will be enough to power the entire Matunus colony for years to come."`
+			`	"Once they're immobilized" continues Chris, "you can return here and we will send some of our cargo ships that we have parked in the Republic space. They'll take care of the rest, you just need to disable a few Raiders."`
+			choice
+				`	"Okay, sounds fun. Where do I start?"`
+				
+			`"I left my tablet in the spaceport," says Chris, "you can use it to upload the coordinates to your ship. Good luck, and remember; disable, not destroy!"`
+				
+mission "Courier: Bounty 1"
+	name "Disable Korath ships"
+	description "Disable three Korath Raiders so that Courier ships can harvest their power generators."
+	source "Matunus"
+	waypoint "Cardax"
+	waypoint "Durax"
+	waypoint "Kor Ak'Mari"
+	destination "Matunus"
+	to offer
+		has "Courier: Colonization 4: done"
+	on offer
+		conversation
+			`You have no trouble finding the spaceport building; it is the only concrete building in the sea of wooden huts that the spaceport town is. The building is completely empty, so once you notice the tablet laying on the reception desk you take it and upload the map data to your ship.`
+				accept
+			
+	npc save disable
+		personality disables staying heroic marked target
+		government "Korath"
+		system "Cardax"
+		ship "Korath Raider (Hyperdrive)"
+		
+	npc save disable
+		personality disables staying heroic marked target
+		government "Korath"
+		system "Durax"
+		ship "Korath Raider (Hyperdrive)"
+		
+	npc save disable
+		personality disables staying heroic marked target
+		government "Korath"
+		system "Kor Ak'Mari"
+		ship "Korath Raider (Hyperdrive)"
+		
+	on complete
+		conversation
+			`When you return, you notice that the empty spaceport building from before has now become the new Courier headquarters. You walk in and report your success to the receptionist. She says that she's been instructed by Novak to transfer you a reward of fifty million credits once you return.`
+			`	"Mister Novak also said that he'll seek you out should he need any more help" she adds. "In the meantime, mister Zimmerman asked me to tell you that he wants to show you something. He now resides in his new laboratory in the spaceport."`

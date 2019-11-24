@@ -196,7 +196,7 @@ event "republic occupies meliter"
 event "matunus spaceport built"
 	planet Matunus
 		landscape land/water2
-		spaceport `The spaceport quickly evolved from a few temporary tents set up by the Couriers into a small town with concrete buildings. A makeshift shipyard has also been constructed that is now used to modify small freighters. The fact that the Couriers were able to establish this humble colony in about a month leaves you in awe.`
+		spaceport `The spaceport quickly evolved from a few temporary tents set up by the Couriers into a small town with wooden buildings. A makeshift shipyard has also been constructed that is now used to modify small freighters. The fact that the Couriers were able to establish this humble colony in about a month leaves you in awe.`
 		shipyard "Courier Shipyard"
 		
 	system Anu
@@ -226,3 +226,10 @@ event "matunus spaceport built"
 		
 	system Taranis
 		add fleet "Courier Boxwings" 1500
+		
+event "matunus town built"
+	planet Matunus
+		landscape land/nordic-town
+		remove spaceport
+		spaceport `The spaceport has recently been moved closer to the north pole of the planet, partly to allow for construction of power plants with higher cooling requirements, and partly because the northern taigas of Matunus are one of only few places where large stretches of relatively level terrain can be found. The previous spaceport town has outgrown the valley it was established in, and the mountaneous terrain prevented it from expanding futher.`
+		spaceport `Now that building materials and workers are abundant, the living standards of the local inhabitants are comparable to most human worlds in the Republic space.`
