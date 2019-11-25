@@ -151,7 +151,7 @@ system Ceridwen
 planet Niamh
 	attributes moon
 	landscape land/canyon03
-	description `Niamh is a cold and desolate moon. While the atmospheric composition is almost identical to the human homeworld, the low pressure means that anyone outside of their ship or a space suit would quickly suffocate. But that still didn't stop many species of oxygen-producing microorganism to form colonies in the few liquid water puddles.`
+	description `Niamh is a cold and desolate moon. While the atmospheric composition is almost identical to the human homeworld, the low pressure means that anyone outside of their ship or a space suit would quickly suffocate. But that still didn't stop many species of oxygen-producing microorganisms to form colonies in the few liquid water puddles.`
 			
 system Donn
 	pos -1117.47 -1053.25
@@ -266,7 +266,7 @@ system Mabon
 		
 planet Bergimus
 	landscape land/beach8-sfiera
-	description `If it weren't for the lack of solid surface, Bergimus would be a perfect candidate for human habitation. Because this moon orbits so close to a massive gas giant, the tidal forces in the ocean were strong enough to break up and wash away any land. Iislands made of piled up rocks sometimes rise above the water, but they don't stay solid long enough for any land-based life to develop. But there is a strong presence of mainly algae in the water that supply the atmosphere with oxygen.`		
+	description `If it weren't for the lack of solid surface, Bergimus would be perfect for habitation. Because this moon orbits so close to a gas giant, the tidal forces were strong enough to break up and wash away most land. Islands made of piled up rocks sometimes rise above the water, but they don't stay solid long enough for any land-based life to develop. But there is a presence of mainly algae in the water that supply the atmosphere with oxygen.`
 		
 system Moccus
 	pos -1340.47 -1224.25
@@ -438,7 +438,7 @@ system Nodens
 			
 planet Boann
 	landscape land/sea2
-	description `Even though Boann is at the very far edge of the local habitable zone, the air here is pleasant and warm. The planet is almost entirely covered in one big ocean, with only occasional islands rising above the water. The oceans are subject to extreme underwater vulcanig activity, but because of their sheer depth almost no earthqakes ever reach the surface and the only impact they have is producing enough warm water to heat up the planet and sustain the local ecosystem, which is mainly composed of single-cell organisms and algae.`
+	description `Even though Boann is at the very edge of the habitable zone, the air is pleasant and warm. The planet is almost entirely covered in one ocean, with only occasional islands rising above. The ocean is subject to extreme volcanic activity, but because of its depth almost no earthquakes reach the surface and the only impact it has is releasing warm water which sustains the local single-celled organism and algae ecosystem.`
 			
 system Ogma
 	pos -1436.52 -1040.99

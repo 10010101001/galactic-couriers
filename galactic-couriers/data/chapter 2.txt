@@ -458,6 +458,7 @@ mission "Courier: Colonization 3"
 	on complete
 		conversation
 			`You watch as the huge World-ship dwarfs almost the enitre spaceport camp on its landing approach. McKay thanks you for your help over the radio and once again says that the Couriers will contact you when they need your help.`
+			`	You also notice that there are many small Boxwing freighters flying around and even jumping in an out, something very odd for a fighter-class vessel to do.`
 			choice
 				`	(Ask about the Boxwings.)`
 					goto boxwings
@@ -477,7 +478,9 @@ mission "Courier: Colonization 3B"
 	invisible
 	landing
 	to offer
-		has "Courier: Colonization 3: done"
+		or # TODO some different mission if you pass on the previous (right now both outcomes start this)
+			has "Courier: Colonization 3: done"
+			has "Courier: Colonization 4: declined"
 	on offer
 		event "matunus town built" 30
 
@@ -492,7 +495,7 @@ mission "Courier: Colonization 4"
 	on offer
 		conversation
 			`Shortly after you land, you receive a message coded in an unknown format. After a bit of tinkering with your ship computers, you realize that its a modified Courier transmission. It reads;`
-			`	"If you can read this, then we got our transcievers working and can communicate with the Milky Way. We're going to need your help again, meet us on Matunus once you have some time."`
+			`	"If you can read this, then we got our transceivers working and can communicate with the Milky Way. We're going to need your help again, meet us on Matunus once you have some time."`
 				accept
 	on complete
 		conversation
@@ -555,3 +558,66 @@ mission "Courier: Bounty 1"
 		conversation
 			`When you return, you notice that the empty spaceport building from before has now become the new Courier headquarters. You walk in and report your success to the receptionist. She says that she's been instructed by Novak to transfer you a reward of fifty million credits once you return.`
 			`	"Mister Novak also said that he'll seek you out should he need any more help" she adds. "In the meantime, mister Zimmerman asked me to tell you that he wants to show you something. He now resides in his new laboratory in the spaceport."`
+			
+mission "Courier: Diplomacy Republic 1"
+	name "Set up early warning system"
+	description "Deploy remote sensing satellites in star systems between the new Courier territory and the Republic space."
+	cargo "Satellites" 3
+	passengers 1
+	source "Matunus"
+	waypoint "Donn"
+	waypoint "Meliter"
+	waypoint "Sabriset"
+	waypoint "Kaliptari"
+	waypoint "Skeruto"
+	waypoint "Furmeliki"
+	waypoint "Kashikt"
+	waypoint "Sevrelect"
+	waypoint "Cardax"
+	waypoint "Volax"
+	destination "Maelstrom"
+	to offer
+		has "Courier: Bounty 1: done"
+	on offer
+		conversation
+			`The new Courier laboratory is one of the most structurally advanced buildings around, second maybe only to the newly formed fusion power plant. It is a large concrete building with a glass dome at the top, supported by steel beams that form an octagonal pattern. As you walk in, you notice many familiar faces; almost the entire McKay's science team that used to be stationed on Earth is now here, including McKay himself.`
+			`	You don't know where Chris is, so you ask around and find out that he is in the 'blast room', two levels underground. You take the elevator down and find chris in a hazmat suit inside a small chamber lined with explosion-proof glass and metal. In the middle of the chamber is a small metal cylinder with white smoke pouring out of it. Chris uses a pair of large pliers to reach inside the cylinder and pulls out a strange purple object. At first, you can't quite see what it is, but as the smoke clears out you recognize that it is a keystone, not different from the one you yourself used to traverse the wormholes in the Ember Wastes.`
+			`	He carfully lays the keystone next to the cylinder and slowly walks out the back of the room. He takes off the hazmat suit and joins you in the observation room.`
+			choice
+				`	"What was that all about?"`
+			
+			`"That was a Hai keystone" he says. "We figured out a way to 'retune' it so that it would allow ships to pass the wormhole in Meliter. As you could see, one of the requirements to do that is cooling it to near absolute zero. So far, we've managed to successfully retune only five of them, including this one. Most of our other attempts ended up violently shattering once we took them out of the freezer, hopefully this one stays stable."`
+			choice
+				`	"When can I get some?"`
+				
+			`"Once we know that they're safe," responds Chris, "and once we reach our quota of at least a dozen working units. I was hoping that by this time we'd already have enough to give away, though."`
+			`	"Was that what you wanted to show me?" you ask.`
+			`	Chris nods, and continues. "But right now there is a much more pressing matter on hand. Santa Maria - our World-Ship - has recently been encountering a lot of raids and ambushes, both pirate and Korath. The ship itself is pretty strong and durable, but sooner or later we want to have regular cargo ships travelling between the Courier and Republic space. Therefore we need to make sure that the systems that form the path between us are safe to pass."`
+			choice
+				`	"So you made your presence known to the Republic?"`
+					goto republic
+				`	"How can I help?"`
+					goto help
+					
+			label republic
+			`"Not exactly," he continues, "right now we're mostly in contact with individual planets, many small and crowded worlds that hugely benefit from offloading people here. The same worlds that often relied on the Courier support when piracy was at its peak. But we want to soon fully reveal our new colony so that we can establish both diplomatic and trade relations with the other factions."`
+			choice
+				`	"So what can I do for you?"`
+				
+			label help
+			`"Follow me" he says. You both take the elevator to one of the top floors of the building where several unmarked boxes await.`
+			`	"Each one of these contains a satellite," continues Chris, "we need to deploy one in each system between Donn and Volax. You may have noticed that we got our salvaged Korath transceivers working again, we put the same devices in these satellites so we will be able to monitor the activity in all those systems in real time. If we detect any suspicious activity, we will be able to target it and either send our own warships or contact the Republic to send theirs."`
+			choice
+				`	"Sounds simple, let's do it."`
+			`"Good, I'll tell my team to load the satellites into your ship" says Chris. "Also, once we're done, I'd like you to drop me off on Maelstrom. I have some business there to attend."`
+				accept
+	on visit
+		dialog `You landed on Maelstrom, but either you didn't deploy all the satellites or you left Chris behind.`
+	on enter "Donn"
+		dialog `The first satellite is loaded into your airlock and you deploy it. It automatically establishes orbit around the star and starts tracking all local activity. Now simply visit the remaining systems and do the same.`
+	on complete
+		event "courier cluster settled"
+		conversation
+			`After you land, Chris thanks you for your help and heads to the spaceport town.`
+			`	"Don't worry about me," he says, "hopefully the first keystones will be installed on some of our ships so finally I'll be able to call for my own transport. If you have the desire to further help us out, you can check in with Novak once you have some free time, I'm sure he'll have some work for you to do."`
+			
