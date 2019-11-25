@@ -261,7 +261,7 @@ event "courier cluster settled"
 		add spaceport `Given that the only traffic here are freighters and worker transports, no effort has been put into the spaceport's aesthetic. The landing pads are just flattened areas of dirt marked with a painted outline, and the ships have to be refueled from a fuel truck due to the lack of any fuel pumps. The spaceport 'town' consists of only a few pressurized buildings and has to be navigated in a space suit. The thin atmosphere also sometimes results in unbearable temperatures and scorching sunlight, therefore many local workers prefer to be in the mines throughout their entire working stay.`
 
 	planet Bergimus
-		add description `Bergimus is now home to desalination platforms. Out of all planets around, this one has the lowest salt concentration in its oceans so it is more efficient to produce drinking water here and transport it away. The warm oceans also make Bergimus a vaccation destination, with the great view of its parent gas giant adding to the attractiveness.`
+		add description `Bergimus is now home to desalination platforms. Out of all planets around, this one has the lowest salt concentration in its oceans so it is more efficient to produce drinking water here and transport it away. The warm oceans also make Bergimus a vacation destination, with the great view of its parent gas giant adding to the attractiveness.`
 		add spaceport `The spaceport is a small facility stationed on one of the few solid islands near the planet's equator. The spaceport town is divided into two primary areas; one serves the idustrial purpose and is full of water storage tanks and purifiers, while the other is a pleasant village filled with shops and hotels to support the local tourism.`
 		
 	planet Boann
@@ -275,7 +275,7 @@ event "courier cluster settled"
 		
 	planet Dorminus
 		landscape land/dorminus
-		add description `Due to the climate's dependence on the atmospheric composition, the Couriers established a series of restrictions when it comes to infrastructure here. All facilities with any form of pollutant emmisions are prohibited from operating, and burner heaters can only be fueled by low-carbon substances like natural gas. If it weren't for the restrictions, Dorminus would likely become the central Courier hub, but right now it is a desired world for purely residential towns.`
+		add description `Due to the climate's dependence on the atmospheric composition, the Couriers established a series of restrictions when it comes to infrastructure here. All facilities with any form of pollutant emissions are prohibited from operating, and burner heaters can only be fueled by low-carbon substances like natural gas. If it weren't for the restrictions, Dorminus would likely become the central Courier hub, but right now it is a desired world for purely residential towns.`
 		add spaceport `The landing pads are on floating platforms on the sea, so that arriving and departing ships wouldn't lift dirt particles into the atmosphere. While there is some infrastructure on the platforms, to get to the actual spaceport town one has to take a boat ride. The town itself is pleasant; it's weaved into the planet's forests and has a calming rural look. There is also a train station present with old-school 1.44 meter gauge tracks with catenary, something rare now that spaceships and maglevs are the standard, but the Couriers decided that using spaceships or building maglev paths would be too intrusive to the planet's climate.`
 		
 	planet Matunus
