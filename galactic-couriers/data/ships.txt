@@ -74,6 +74,7 @@ ship "Headhunter" "Headhunter (Courier)"
 	turret 0 9
 	
 ship "Korath World-Ship" "Korath World-Ship (Courier)"
+	sprite "ship/world-ship courier"
 	"never disabled"
 	outfits
 		Hyperdrive
