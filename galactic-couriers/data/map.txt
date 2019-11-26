@@ -53,16 +53,6 @@ system Anu
 	asteroids "small metal" 10 1.6416
 	asteroids "medium metal" 11 3.456
 	asteroids "large metal" 22 4.0896
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
 	object
 		sprite star/g5
 		period 10
@@ -102,16 +92,14 @@ system Ceridwen
 	asteroids "small metal" 10 5.5566
 	asteroids "medium metal" 49 4.1454
 	asteroids "large metal" 15 2.5137
-	trade Clothing 290
-	trade Electronics 740
-	trade Equipment 530
-	trade Food 350
-	trade "Heavy Metals" 960
-	trade Industrial 720
-	trade "Luxury Goods" 1220
-	trade Medical 680
-	trade Metal 390
-	trade Plastic 390
+	trade "Metal" 190
+	trade "Heavy Metals" 610
+	trade "Food" 300
+	trade "Clothing" 260
+	trade "Medical" 805
+	trade "Equipment" 630
+	trade "Industrial" 820
+	trade "Electronics" 815
 	object
 		sprite star/k5
 		period 10
@@ -164,16 +152,6 @@ system Donn
 	asteroids "small metal" 6 2.508
 	asteroids "medium metal" 65 1.496
 	asteroids "large metal" 12 3.212
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
 	object
 		sprite star/m0
 		period 10
@@ -221,16 +199,13 @@ system Mabon
 	asteroids "small metal" 70 3.4425
 	asteroids "medium metal" 77 6.205
 	asteroids "large metal" 51 3.74
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
+	trade "Food" 300
+	trade "Clothing" 260
+	trade "Equipment" 630
+	trade "Medical" 805
+	trade "Industrial" 820
+	trade "Electronics" 815
+	trade "Luxury Goods" 1370
 	object
 		sprite star/k5
 		distance 46
@@ -278,16 +253,6 @@ system Moccus
 	asteroids "large rock" 4 1.652
 	asteroids "medium metal" 1 1.624
 	asteroids "large metal" 1 2.716
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
 	object
 		sprite star/k5
 		distance 51.4801
@@ -335,16 +300,6 @@ system Nisien
 	asteroids "small metal" 20 2.31
 	asteroids "medium metal" 2 6.2832
 	asteroids "large metal" 15 5.4516
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
 	object
 		sprite star/k0
 		period 10
@@ -385,16 +340,10 @@ system Nodens
 	asteroids "small metal" 1 1.1284
 	asteroids "medium metal" 59 1.2194
 	asteroids "large metal" 5 1.547
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
+	trade "Food" 100
+	trade "Clothing" 260
+	trade "Medical" 805
+	trade "Electronics" 815
 	object
 		sprite star/k5
 		period 10
@@ -450,16 +399,11 @@ system Ogma
 	asteroids "medium rock" 35 2.1504
 	asteroids "large rock" 10 2.6368
 	asteroids "large metal" 13 1.7408
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
+	trade "Food" 475
+	trade "Clothing" 365
+	trade "Medical" 930
+	trade "Electronics" 815
+	trade "Luxury Goods" 1520
 	object
 		sprite star/k0
 		period 10
@@ -507,16 +451,15 @@ system Seonaidh
 	asteroids "small metal" 2 1.83
 	asteroids "medium metal" 1 3.69
 	asteroids "large metal" 1 3.18
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
+	trade "Equipment" 330
+	trade "Industrial" 520
+	trade "Electronics" 590
+	trade "Food" 300
+	trade "Clothing" 260
+	trade "Metal" 490
+	trade "Plastic" 465
+	trade "Medical" 805
+	trade "Heavy Metals" 1135
 	object
 		sprite star/m8
 		period 10
@@ -560,16 +503,12 @@ system Taranis
 	asteroids "small metal" 31 1.944
 	asteroids "medium metal" 7 1.872
 	asteroids "large metal" 1 3.168
-	trade Clothing 382
-	trade Electronics 680
-	trade Equipment 563
-	trade Food 253
-	trade "Heavy Metals" 792
-	trade Industrial 757
-	trade "Luxury Goods" 1425
-	trade Medical 846
-	trade Metal 290
-	trade Plastic 276
+	trade "Food" 475
+	trade "Clothing" 365
+	trade "Equipment" 630
+	trade "Medical" 930
+	trade "Electronics" 815
+	trade "Luxury Goods" 1520
 	object
 		sprite star/f5
 		period 10
