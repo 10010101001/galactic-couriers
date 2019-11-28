@@ -23,6 +23,179 @@ ship "Bulk Freighter" "Bulk Freighter (Courier)"
 	turret 0 5 "Laser Turret"
 	turret -30 175 "Heavy Anti-Missile Turret"
 	turret 30 175 "Laser Turret"
+	
+ship "Courier Freighter"
+	sprite "ship/courier-freighter"
+	thumbnail "thumbnail/courier-freighter"
+	attributes
+		category "Heavy Freighter"
+		"cost" 21000000
+		"shields" 8000
+		"hull" 11400
+		"required crew" 12
+		"bunks" 18
+		"mass" 1090
+		"drag" 17
+		"heat dissipation" .35
+		"fuel capacity" 900
+		"cargo space" 900
+		"outfit space" 500
+		"weapon capacity" 240
+		"engine capacity" 130
+		"hyperspace augmenter" 1
+		"quantum keystone" 1
+		"ramscoop" 5
+		weapon
+			"blast radius" 120
+			"shield damage" 1200
+			"hull damage" 600
+			"hit force" 1800
+	outfits
+		Hyperdrive
+		"A120 Atomic Thruster"
+		"A125 Atomic Steering"
+		"A370 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Liquid Helium Cooler"
+		"Anti-Missile Turret" 2
+		"Laser Rifle"
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D41-HY Shield Generator"
+		"Proton Turret" 2
+		
+	engine -22 198
+	engine 22 198
+	turret -23.5 -155 "Anti-Missile Turret"
+	turret 23.5 -155 "Proton Turret"
+	turret -31.5 175 "Anti-Missile Turret"
+	turret 31.5 175 "Proton Turret"
+	leak "leak" 40 50
+	leak "flame" 30 80
+	leak "big leak" 50 30
+	explode "small explosion" 15
+	explode "medium explosion" 25
+	explode "large explosion" 35
+	explode "huge explosion" 20
+	"final explode" "final explosion large"
+	description "The Couriers used their extensive knowledge of the Bulk Freighter - which used to be the workhorse of their fleet - to design a ship that could be built using existing ship frames and that would fill in any of the Bulk Freighter's shortcomings. The cargo pods use a much stronger metal alloy, which enabled them to grow in size and volume yet remain highly durable. This ship also offers higher outfit, weapon and engine capacity than its predecessor, therefore it can withstand combat situations that would have any other human freighter doomed."
+	description "Because the Couriers intend to use this ship for long-haul trips to worlds beyond the wormhole, it comes with built-in hyperspace augmentation systems which allow it to pass any wormhole in the Courier star cluster and the Ember Wastes. To prevent awkward situations, the ship also has a small integrated ramscoop."
+	
+ship "Courier Freighter" "Courier Freighter (Courier longhaul)"
+	outfits
+		Hyperdrive
+		"A120 Atomic Thruster"
+		"A125 Atomic Steering"
+		"A370 Atomic Thruster"
+		"A375 Atomic Steering"
+		"Liquid Helium Cooler"
+		"Anti-Missile Turret" 2
+		"Laser Rifle"
+		"Fusion Reactor"
+		"LP144a Battery Pack"
+		"D41-HY Shield Generator"
+		"Proton Turret" 2
+		"Jump Drive"
+		
+	turret -23.5 -155 "Anti-Missile Turret"
+	turret 23.5 -155 "Proton Turret"
+	turret -31.5 175 "Anti-Missile Turret"
+	turret 31.5 175 "Proton Turret"
+	
+ship "Quicksilver" "Quicksilver (Courier longhaul)"
+	outfits
+		Hyperdrive
+		Flamethrower 2
+		"A250 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Jump Drive"
+		"Fuel Pod" 5
+		"Water Coolant System"
+		"LP036a Battery Pack"
+		"Catalytic Ramscoop"
+		"RT-I Radiothermal"
+		"Enhanced Keystone" 1
+
+	gun -6 -38 Flamethrower
+	gun 6 -38 Flamethrower
+	
+ship "Protector" "Protector (Courier longhaul)"
+	outfits
+		Hyperdrive
+		"Heavy Anti-Missile Turret"
+		"Electron Turret" 2
+		"A375 Atomic Steering"
+		"A370 Atomic Thruster"
+		"Jump Drive"
+		"Fuel Pod" 5
+		"Fusion Reactor"
+		"Liquid Nitrogen Cooler"
+		"Laser Rifle" 6
+		"LP036a Battery Pack"
+		"Blaster Turret"
+		"D41-HY Shield Generator"
+		"Catalytic Ramscoop"
+		"Enhanced Keystone" 1
+
+	gun -15 -100
+	gun 15 -100
+	turret -54 -54 "Electron Turret"
+	turret 54 -54 "Electron Turret"
+	turret -73 0 "Blaster Turret"
+	turret 73 0 "Heavy Anti-Missile Turret"
+	turret -54 54
+	turret 54 54
+	
+ship "Vanguard" "Vanguard (Courier longhaul)"
+	outfits
+		Hyperdrive
+		"LP072a Battery Pack"
+		"A375 Atomic Steering"
+		"A370 Atomic Thruster"
+		"A255 Atomic Steering"
+		"Jump Drive"
+		"Fuel Pod" 5
+		"Fusion Reactor"
+		"Liquid Nitrogen Cooler"
+		"Laser Rifle" 4
+		"Anti-Missile Turret"
+		"Cooling Ducts"
+		"D67-TM Shield Generator"
+		"Proton Gun" 5
+		"Catalytic Ramscoop"
+		"Enhanced Keystone" 1
+		
+	gun 0 -132
+	gun -22 -122
+	gun 22 -122 "Proton Gun"
+	gun -21 -45 "Proton Gun"
+	gun 21 -45 "Proton Gun"
+	gun -31 -45 "Proton Gun"
+	gun 31 -45 "Proton Gun"
+	turret 0 42 "Anti-Missile Turret"
+	
+ship "Bulk Freighter" "Bulk Freighter (Courier longhaul)"
+	outfits
+		Hyperdrive
+		"D94-YV Shield Generator"
+		"NT-200 Nucleovoltaic"
+		"Electron Turret"
+		"A375 Atomic Steering"
+		"A250 Atomic Thruster"
+		"Jump Drive"
+		"Small Radar Jammer"
+		"LP144a Battery Pack"
+		"Fuel Pod" 3
+		"Laser Rifle"
+		"Anti-Missile Turret" 2
+		"Catalytic Ramscoop"
+		"Enhanced Keystone"
+		
+	turret -12 -155
+	turret 12 -155 "Electron Turret"
+	turret 0 5
+	turret -30 175 "Anti-Missile Turret"
+	turret 30 175 "Anti-Missile Turret"
 
 ship "Frigate" "Frigate (McKay)"
 	sprite "ship/frigate"

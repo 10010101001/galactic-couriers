@@ -58,27 +58,28 @@ outfit "Ar'leng Particle Accelerator"
 		"disruption damage" .24
 	description "This weapon uses a mysterious process to extract energy from the very fabric of space-time. This means that it can delvier lethal projectiles with only minimal energy costs."
 
-ship "Ar'leng Capital Ship"
-	sprite "ship/geoff"
-	thumbnail "thumbnail/geoff"
+ship "Ar'leng Arbiter"
+	sprite "ship/arbiter"
+	thumbnail "thumbnail/arbiter"
 	
 	attributes
 		category "Heavy Warship"
-		"cost" 41280000
-		"shields" 57200
-		"hull" 65400
-		"hull repair rate" 1500
-		"automaton" 1
-		"mass" 2000
+		"cost" 1500000000
+		"shields" 563000
+		"hull" 375000
+		"hull repair rate" 100
+		automaton 1
+		"bunks" 340
+		"mass" 1350
 		"drag" 16.8
 		"heat dissipation" .5
-		"fuel capacity" 400
+		"fuel capacity" 800
 		"cargo space" 87
 		"outfit space" 3000
 		"weapon capacity" 800
 		"engine capacity" 1000
 		"self destruct" .99
-		"ramscoop" 5
+		"ramscoop" 10
 		weapon
 			"blast radius" 1000
 			"shield damage" 20000
@@ -90,17 +91,19 @@ ship "Ar'leng Capital Ship"
 		"Large Heat Shunt" 20
 		"Thruster (Planetary Class)" 2
 		"Steering (Stellar Class)" 1
+		"Jump Drive"
+		"Hyperdrive"
 		
-	engine -138 274
-	engine 138 274
-	engine -46 370
-	engine 46 370
-	gun -138 -196
-	gun 138 -196
-	turret 0 -156 "Ar'leng Particle Accelerator"
-	turret 0 -90 "Ar'leng Particle Accelerator"
-	turret -110 92 "Ar'leng Particle Accelerator"
-	turret 110 92 "Ar'leng Particle Accelerator"
+	engine -69.5 138.5
+	engine 69.5 138.5
+	engine -23 185
+	engine 23 185
+	gun -69 -98
+	gun 69 -98
+	turret 0 -77.5 "Ar'leng Particle Accelerator"
+	turret 0 -44.5 "Ar'leng Particle Accelerator"
+	turret -54.5 46.5 "Ar'leng Particle Accelerator"
+	turret 54.5 46.5 "Ar'leng Particle Accelerator"
 	explode "tiny explosion" 20
 	explode "small explosion" 45
 	explode "medium explosion" 50

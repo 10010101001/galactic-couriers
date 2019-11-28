@@ -1107,4 +1107,4 @@ mission "Courier: Evacuation 3"
 		government "Ar'leng"
 		personality disables staying waiting opportunistic mute
 		system "Meliter"
-		ship "Ar'leng Capital Ship" "Beholder"
+		ship "Ar'leng Arbiter" "Beholder"

@@ -280,3 +280,45 @@ event "courier cluster settled"
 		
 	planet Matunus
 		add description `Now that the Couriers are fully settled in, Matunus serves as their 'homeworld'. The Courier Oversight - which basically serves as their main governing body - also has its headquarters here.`
+		
+event "courier swizzle change"
+	government "Courier"
+		swizzle 3
+		
+event "courier longhaul start"
+	shipyard "Courier Shipyard"
+		add "Courier Freighter"
+	planet Matunus
+		add outfitter "Courier Outfits"
+		add outfitter "Basic Outfits"
+		add outfitter "Syndicate Basics"
+	system "Ogma"
+		add fleet "Courier Long-haul" 1500
+	system "Anu"
+		add fleet "Courier Long-haul" 1500
+	system "Nodens"
+		add fleet "Courier Long-haul" 1500
+	system "Seonaidh"
+		add fleet "Courier Long-haul" 1500
+	system "Donn"
+		add fleet "Courier Long-haul" 1500
+	system "Meliter"
+		add fleet "Courier Long-haul" 1500
+	system "Sepriaptu"
+		add fleet "Courier Long-haul" 3500
+	system "Kaliptari"
+		add fleet "Courier Long-haul" 3500
+	system "Skeruto"
+		add fleet "Courier Long-haul" 3500
+	system "Furmeliki"
+		add fleet "Courier Long-haul" 3500
+	system "Kashikt"
+		add fleet "Courier Long-haul" 3500
+	system "Sevrelect"
+		add fleet "Courier Long-haul" 3500
+	system "Cardax"
+		add fleet "Courier Long-haul" 2000
+	system "Volax"
+		add fleet "Courier Long-haul" 2500
+	system "Nihal"
+		add fleet "Courier Long-haul" 2500

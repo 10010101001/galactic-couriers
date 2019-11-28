@@ -621,3 +621,165 @@ mission "Courier: Diplomacy Republic 1"
 			`After you land, Chris thanks you for your help and heads to the spaceport town.`
 			`	"Don't worry about me," he says, "hopefully the first keystones will be installed on some of our ships so finally I'll be able to call for my own transport. If you have the desire to further help us out, you can check in with Novak once you have some free time, I'm sure he'll have some work for you to do."`
 			
+mission "Courier: Diplomacy Republic 2"
+	name "Escort ships to Earth"
+	description "Escort Courier ships to Earth so that they can initiate diplomatic talks with the Republic."
+	landing
+	source "Matunus"
+	destination "Earth"
+	to offer
+		has "Courier: Diplomacy Republic 1: done"
+	on offer
+		event "courier swizzle change"
+		conversation
+			`As instructed, you seek out Novak to ask if he needs your help. To your surprise, he is already near the landing pads, together with him is a large group of Courier freighter pilots and also multiple ships of a design you've never seen before - they look like modified Syndicate freighters.`
+			`	You also notice that instead of flying merchant colours, the Couriers repainted their ships, likely to differentiate their freighters once they start entering human space again.`
+			`	"Great timing, as always!" says Novak when he sees you. "We are preparing for a diplomatic mission through the galaxy, wanna join us? We could use more escort ships."`
+			choice
+				`	"Where exactly are you going?"`
+					goto next
+				`	"How are you getting the ships through the wormhole?"`
+					goto keystone
+					
+			label keystone
+			`"They keystones Chris and his team were working on" he explains, "they managed to make a few good ones, so we got some of our escort ships here. Don't worry, captain, you will soon be able to buy them yourself."`
+			choice
+				`	"So where are you going?"`
+			
+			label next
+			`"Now that we've set up proper colonies" continues Novak, "we want to establish closer relationships with other factions. Not only to initiate trade, but also to inform them that we're a force to be reckoned with should anyone attempt to shut us down again. We've loaded these freighters with materials and technology we have developed during the short time we've been living here. A lot of it was made using Korath know-how, so we hope to impress people and convince them that staying on our good side would be mutually beneficial. Our first stop is Earth, so do you want to come with us?"`
+			choice
+				`	"Sure, let's pay the Republic a visit!"`
+					accept
+				#TODO defer option
+
+	npc save accompany
+		government "Courier"
+		personality escort disables timid
+		ship "Korath World-Ship (Courier)" "Santa Maria" 
+		fleet
+			names "civilian"
+			variant
+				"Courier Freighter (Courier longhaul)" 4
+				"Bulk Freighter (Courier longhaul)" 2
+				"Vanguard (Courier longhaul)" 2
+				"Protector (Courier longhaul)"
+				"Quicksilver (Courier longhaul)" 2
+				
+	on visit
+		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
+				
+	on complete
+		conversation
+			`You land on Earth and the Courier representatives start exiting their World-Ship. Before heading off, Novak comes to you and says "I think you should stay here, captain. Technically you are not a member of the Couriers, so if the talks between us and the Republic go wrong at least your reputation will remain unchanged. I'll meet you in the spaceport once we're done."`
+			`	He then joins the rest of the Couriers and leaves.`
+			
+mission "Courier: Diplomacy Syndicate 1"
+	name "Escort ships to Hephaestus"
+	description "Escort Courier ships to Hephaestus so that they can initiate diplomatic talks with the Syndicate."
+	source "Earth"
+	destination "Hephaestus"
+	to offer
+		has "Courier: Diplomacy Republic 2: done"
+	on offer
+		conversation 
+			`You decide to wait for the talks to conclude in a small park on a hill that's overlooking the landing pads. From here, the Courier World-Ship looks more like a building rather than a spaceship, you can also see crowds of people around it looking and taking pictures. You send Novak a message containing your whereabouts so once the meeting is over he knows where to find you.`
+			`	He joins you a few hours later, apparently the talks went well becase he is in a good mood.`
+			choice
+				`	"So? What's the conclusion?"`
+				
+			`"We're fine" he says, "both the Republic and Free Worlds have no problem with us. It could have been over much sooner but the Republic really wanted us to assure them that we won't attempt to expand our territory."`
+			`	"And what about the Syndicate?" you ask.`
+			`	"While there were some Syndicate representatives present," continues Novak, "they'd still like to hold a separate meeting on Hephaestus. I could see that they were hiding their excitement, though. Gaining a trade partner that's completely independent of the Republic must be very important to them, plus we can produce certain resources on our planets much cheaper than they can. All they care about is profit, and in this case their profit is beneficial to all parties involved."`
+			choice
+				`	"Alright, let's get going."`
+					accept
+				
+	npc save accompany
+		government "Courier"
+		personality escort disables timid
+		ship "Korath World-Ship (Courier)" "Santa Maria" 
+		fleet
+			names "civilian"
+			variant
+				"Courier Freighter (Courier longhaul)" 4
+				"Bulk Freighter (Courier longhaul)" 2
+				"Vanguard (Courier longhaul)" 2
+				"Protector (Courier longhaul)"
+				"Quicksilver (Courier longhaul)" 2
+	npc
+		government "Pirate"
+		system Eteron
+		personality nemesis
+		fleet
+			names "pirate"
+			variant 1
+				"Aerie" 2
+				"Dagger" 4
+				"Firebird"
+				"Fury (Heavy)" 2
+				"Firebird (Missile)"
+				
+	on visit
+		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
+			
+	on complete
+		conversation
+			`Just like before, after you land Novak instructs you to wait for them in the spaceport.`
+			`	"I'm pretty sure this won't take long," says Novak, "expect us to return in under two hours."`
+
+mission "Courier: Diplomacy Syndicate 2"
+	name "Escort ships to Matunus"
+	description "Escort Courier ships back home after they completed the diplomatic visits of the Republic and Syndicate."
+	source "Hephaestus"
+	destination "Matunus"
+	to offer
+		has "Courier: Diplomacy Syndicate 1: done"
+	on offer
+		conversation
+			`It wasn't even a full hour since you landed and you already notice the Couriers returning to their ship. You meet up with Novak and he starts explaining the situation.`
+			`	"It went exactly how we thought" he says. "They agreed to pretty much everything, they even offered us a discount for Bulk Freighter frames to make the production of our own freighters easier. Now we should return to Matunus and start the trade lines."`
+			choice
+				`	"Okay, let's get back to Matunus."`
+					accept
+					
+	npc save accompany
+		government "Courier"
+		personality escort disables timid
+		ship "Korath World-Ship (Courier)" "Santa Maria" 
+		fleet
+			names "civilian"
+			variant
+				"Courier Freighter (Courier longhaul)" 4
+				"Bulk Freighter (Courier longhaul)" 2
+				"Vanguard (Courier longhaul)" 2
+				"Protector (Courier longhaul)"
+				"Quicksilver (Courier longhaul)" 2
+
+	on visit
+		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
+
+	on complete
+		event "courier longhaul start"
+		conversation
+			`The Courier fleet lands safely and Novak thanks you over the radio.`
+			`	"You've been of a great help to us, <last>" he says. "I talked with some other members of the Courier Oversight, and we agreed to return the favor by helping you maintain your fleet. We're sure that by helping us you yourself must've suffered some losses on your side, so from now on you can expect a daily payment from us."`
+			choice
+				`	"Thank you."`
+					goto agree
+				`	"A payment? That's an insult to me, I'm no mercenary!"`
+					goto disagree
+					
+			label agree
+			apply
+				"salary: Couriers" = 25000
+			`"It will be transferred directly to your account" says Novak.`
+				goto next
+			
+			label disagree
+			`"I'm sory, captain" says Novak, "I didn't think of it that way. I am sure you're able to take care of yourself even without our help."`
+				goto next
+				
+			label next
+			`	"Anyway," he continues, "now that the Couriers are a proper faction, I will have a lot of work to do, so I myself won't be bothering you for a long time. If you feel like helping out, check out our job boards or stop by on individual planets, I'm sure you'll stumble upon someone who could use your help."`
+			
