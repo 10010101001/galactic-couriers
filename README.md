@@ -31,7 +31,7 @@ ___
 ***Spoilers ahead***
 - [ ] Add options to defer or skip all non-critical missions
 - [ ] Create jobs unique to the Courier star cluster
-- [ ] Conclude chapter 2
+- [ ] **Conclude chapter 2, start off chapter 3**
 - [ ] Create custom outfits for the Ar'leng
 - [ ] Add a side-story with levelled boss fights
 - [ ] Add an option to adopt the Courier ship swizzle
