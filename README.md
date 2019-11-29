@@ -37,6 +37,7 @@ ___
 - [ ] Add an option to adopt the Courier ship swizzle
 - [ ] Create custom hails for Courier pilots
 - [ ] Create custom news popups for Courier spaceports
+- [ ] Add reminders for easy to miss "meet me ..." mission triggers
 
 ___
 ### Story overview  
