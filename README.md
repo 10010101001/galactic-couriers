@@ -24,4 +24,16 @@ This mission becomes available once you finish the main story and make contact w
 		has "main plot completed"
 		random >= 75
 
-</details>
+</details>  
+
+___  
+### TO-DO List  
+***Spoilers ahead***
+- [ ] Add options to defer or skip all non-critical missions
+- [ ] Create jobs unique to the Courier star cluster
+- [ ] Conclude chapter 2
+- [ ] Create custom outfits for the Ar'leng
+- [ ] Add a side-story with levelled boss fights
+- [ ] Add an option to adopt the Courier ship swizzle
+- [ ] Create custom hails for Courier pilots
+- [ ] Create custom news popups for Courier spaceports
