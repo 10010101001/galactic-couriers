@@ -82,4 +82,9 @@ Chapter 2 concludes when the Met Par Tek 53 production picks up - some Korath ou
 
 #### Chapter 3 (planned)  
 
-In chapter 3 I kinda want to introduce some other Sestor ships, namely the Tek Far 71 and 78
+In the introduction of ch3 I kinda want to introduce some other Sestor ships, namely the Tek Far 71 and 78 and both the Korath fighter and drone.  
+
+In the middle the Couriers would become much stronger than other humans (thanks to the Korath tech), and would send warships to occupy Pirate systems until the group that ambushed their freighters surrenders. I want there to be some minor conflict between the Republic and the Couriers, because the Republic would insist that they'll take care of the Pirates, but the Couriers would still keep increasing their military presence around the Republic which would in turn increase the tensions between the two.  
+However, it is then found out that the Pirate group managed to infilatrate Courier ranks and now also owns the Sestor ships, which will culminate in a series of large battles between the Couriers and Pirates, with both of them using powerful Korath technology.
+
+The final battle happens on Courier's home turf when a huge Pirate fleet full of extremely powerful ships (and maybe nukes?) defeats the Courier fleet that protected the wormhole. But just before the Pirates reach the Courier homeworlds, the Ar'leng step in, insisting that the Couriers killed one of their own and now have to pay the consequences. The Pirates, thinking that it's some other Courier fleet, attack the Ar'leng, but are immediately wiped out by the powerful weapons, and now you and the Couriers are stranded in the star cluster and have to reason with the aliens.
