@@ -27,8 +27,9 @@ This mission becomes available once you finish the main story and make contact w
 </details>  
 
 ___  
+***Anything below this line is full of spoilers for the plugin's story. It mainly contains information for people who themselves are devolping plugins or want to make a suggestion for this one. DO NOT READ ANY OF THIS if you're really interested in going through the story in the game.***
+___  
 ### TO-DO List  
-***Spoilers ahead***
 - [ ] **Conclude chapter 2** *(after all the other things are done)*
 - [ ] Add options to defer or skip all non-critical ch1/2 missions
 - [ ] Create jobs unique to the Courier star cluster
@@ -42,7 +43,6 @@ ___
 
 ___
 ### Story overview  
-***Even more spoilers ahead! Do not read this if you're actually interested in downloading the plugin and playing through the story. The only reason I'm writing this is so that if you have a suggestion for the story you have a place to read up on the full context of the plugin's lore.***  
 
 I want the story of this plugin to be divided into separate "chapters", with each chapter having an interesting introduction and conclusion.  
 
