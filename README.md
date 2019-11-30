@@ -31,15 +31,15 @@ ___
 ___  
 ### TO-DO List  
 - [ ] **Conclude chapter 2** *(after all the other things are done)*
-- [ ] Add options to defer or skip all non-critical ch1/2 missions
+- [x] Add options to defer or skip all non-critical ch1/2 missions
 - [ ] Create jobs unique to the Courier star cluster
 - [ ] Create custom outfits for the Ar'leng
 - [ ] Add a side-story with levelled boss fights
 - [ ] Add an option to adopt the Courier ship swizzle
 - [ ] Create custom hails for Courier pilots
 - [ ] Create custom news popups for Courier spaceports
-- [ ] Add reminders for easy to miss "meet me ..." ch1/2 mission triggers
-- [ ] Add log entries for ch1/2 missions
+- [x] Add reminders for easy to miss "meet me ..." ch1/2 mission triggers
+- [x] Add log entries for ch1/2 missions
 
 ___  
 ### Compatibility  
