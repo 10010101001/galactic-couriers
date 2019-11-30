@@ -1,5 +1,5 @@
 # Galactic Couriers  
-**NOTE:** if updating from an older version, make sure that files "mission.txt" and "jobs.txt" are *not* present in the plugin's data folder.
+**NOTE:** if updating from an older version, make sure that files "missions.txt" and "jobs.txt" are *not* present in the plugin's data folder.
 ___  
 ### Description  
 Galactic Couriers is a plugin for the game [Endless Sky](https://github.com/endless-sky/endless-sky). It tells a story of a small breakaway community of humans, who (with the help of the player) manage to discover an uninhabited cluster of star systems, settle it, and become a fully-fledged faction.
