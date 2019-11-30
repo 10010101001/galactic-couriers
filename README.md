@@ -30,7 +30,7 @@ ___
 ***Anything below this line is full of spoilers for the plugin's story. It mainly contains information for people who themselves are devolping plugins or want to make a suggestion for this one. DO NOT READ ANY OF THIS if you're really interested in going through the story in the game.***
 ___  
 ### TO-DO List  
-- [ ] **Conclude chapter 2** *(after all the other things are done)*
+- [ ] **Conclude chapter 2**
 - [x] Add options to defer or skip all non-critical ch1/2 missions
 - [ ] Create jobs unique to the Courier star cluster
 - [ ] Create custom outfits for the Ar'leng
