@@ -29,15 +29,15 @@ This mission becomes available once you finish the main story and make contact w
 ___  
 ### TO-DO List  
 ***Spoilers ahead***
+- [ ] **Conclude chapter 2** *(after all the other things are done)*
 - [ ] Add options to defer or skip all non-critical missions
 - [ ] Create jobs unique to the Courier star cluster
-- [ ] **Conclude chapter 2** *(after all the other things are done)*
 - [ ] Create custom outfits for the Ar'leng
 - [ ] Add a side-story with levelled boss fights
 - [ ] Add an option to adopt the Courier ship swizzle
 - [ ] Create custom hails for Courier pilots
 - [ ] Create custom news popups for Courier spaceports
-- [ ] Add reminders for easy to miss "meet me ..." mission triggers
+- [ ] Add reminders for easy to miss "meet me ..." mission triggers in chapter 1 and 2
 
 ___
 ### Story overview  
