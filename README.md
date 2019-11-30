@@ -30,7 +30,7 @@ ___
 ### TO-DO List  
 ***Spoilers ahead***
 - [ ] **Conclude chapter 2** *(after all the other things are done)*
-- [ ] Add options to defer or skip all non-critical ch1/2 missions
+- [x] Add options to defer or skip all non-critical ch1/2 missions
 - [ ] Create jobs unique to the Courier star cluster
 - [ ] Create custom outfits for the Ar'leng
 - [ ] Add a side-story with levelled boss fights
