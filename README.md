@@ -41,6 +41,11 @@ ___
 - [ ] Add reminders for easy to miss "meet me ..." ch1/2 mission triggers
 - [ ] Add log entries for ch1/2 missions
 
+___  
+### Compatibility  
+The most likely compatibility issues with other plugins would likely be star systems overlaps. This plugin adds a single star systems right to the west of Silikatakfar, and a small cluster of systems to the very far north-west corner of the galaxy.  
+I also plan to have multiple missions that change the player's swizzle, which would result in conflict with any other plugins that do the same.  
+Open an issue if you find a compatibility issue with any other plugin so I can try to fix it.
 ___
 ### Story overview  
 
