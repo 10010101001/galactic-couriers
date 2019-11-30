@@ -15,6 +15,7 @@ mission "Courier: Meliter accessible again"
 				accept
 		event "meliter return 1"
 	on complete
+		log "Just returned to Meliter again. Chris is safe, but Novak decided to put the Couriers on hold. Meanwhile, Chris asked me to visit him on Earth once I have some free time."
 		conversation
 			`To your surprise, the station seems to have taken the supernova pretty well. The automatic docking system is still working flawlessly, and the life support and artifical gravity systems also seem to be operational. One thing you notice is that the station is extremely cold now that it's no longer receiving heat from three stars simultaneously.`
 			`	All hallways and rooms are almost completely empty, during the evacuation the Couriers took with them pretty much anything that wasn't bolted to the ground. You can hear multiple echoes of each of your steps as you make your way towards the main atrium where you meet Novak, Chris, and a few other Courier pilots sitting around a large table - which you assume is the last piece of furniture left on the station - with drinks and military food rations on it.`
@@ -87,6 +88,7 @@ mission "Courier: Wormhole 1"
 			`	"We need to check it out!" he says, "anything the drone managed to recover from the alien ship could be a huge discovery!"`
 			
 	on complete
+		log "Not only did Chris and McKay just find a newly formed wormhole in Meliter, we also recovered some tech from the destroyed alien ship."
 		conversation
 			`You land on Earth and Chris and McKay start unloading the cargo you retrieved from the drone. They instruct you to meet them in the research center near the spaceport once they're done analyzing it.`
 				
@@ -145,7 +147,7 @@ mission "Courier: Wormhole 2"
 					goto depart
 					
 			label depart
-			`"Good," says Chris, "I'll install one in your ship while McKay takes care of the other one, and we can go right away. Oh, and make sure you have enough fuel or ramscoops, but McKay's ship can refuel you if neccessary."`
+			`"Good," says Chris, "We'll install the keystones so we can go right away. Oh, and make sure you have enough fuel or ramscoops, although McKay's ship can refuel you if neccessary."`
 				accept
 	on accept
 		outfit "Hyperspace Augmenter" 1
@@ -172,6 +174,7 @@ mission "Courier: Wormhole 2"
 		dialog `You've returned to Earth, but either you left McKay's ship behind or you haven't explored all the systems you were supposed to. Make sure McKay can research the entire area behind the wormhole and then bring the results back here.`
 
 	on complete
+		log "Just used the alien devices to travel through the Meliter wormhole. There's a whole bunch of completely uninhabited planets out there, Chris wants to tell Novak so the Couriers can move there."
 		conversation
 			`Chris runs out of your ship even before McKay lands. You follow him to the research lab where he connects his own sensors to the computer.`
 			`	"That was incredible!" says Chris, "Did you see that? A completely uninhabited star cluster with several perfectly habitable planets! I think we found it! A new home for the Couriers! Completely safe from any attacks, no possibility of anyone else's intervention... I need to tell Novak!"`
@@ -297,6 +300,7 @@ mission "Courier: Report 2"
 	to offer
 		has "courier chapter 2: snitched"
 	on offer
+		log "Just told the Navy about the Couriers. They can't expect me to allow them to steal perfectly habitable worlds for themselves."
 		event "republic occupies meliter"
 	
 	npc kill
@@ -397,6 +401,7 @@ mission "Courier: Colonization 2"
 					accept
 					
 	on complete
+		log "Took Chris and Novak to Matunus, the new Courier homeworld. They'll set up a camp and contact me once they need my help again."
 		conversation
 			`You land on an open grass field with McKay's Frigate closely following you. When you shut down your engines and leave your ship, you notice that besides the slight hum of your ship's cooling there is complete silence around you. It's likely that the local wildlife has never seen or heard a ship before.`
 			`	A relatively large group of people exits the Frigate and many of them start to immediately prepare a camp. Novak goes to greet McKay and his team, while Chris thanks you for your help and says that they will contact you once the camp is ready.`
@@ -456,6 +461,7 @@ mission "Courier: Colonization 3"
 		ship "Modified Boxwing"
 		
 	on complete
+		log "The Couriers somehow managed to capture a Korath World-Ship. Just escorted it to Matunus so they can have more people there helping with the colony setup."
 		conversation
 			`You watch as the huge World-ship dwarfs almost the enitre spaceport camp on its landing approach. McKay thanks you for your help over the radio and once again says that the Couriers will contact you when they need your help.`
 			`	You also notice that there are many small Boxwing freighters flying around and even jumping in an out, something very odd for a fighter-class vessel to do.`
@@ -478,9 +484,9 @@ mission "Courier: Colonization 3B"
 	invisible
 	landing
 	to offer
-		or # TODO some different mission if you pass on the previous (right now both outcomes start this)
+		or
 			has "Courier: Colonization 3: done"
-			has "Courier: Colonization 4: declined"
+			has "Courier: Colonization 4: declined" # <- this is a backwards compatibility patch, chronologically it makes no sense
 	on offer
 		event "matunus town built" 30
 
@@ -505,7 +511,6 @@ mission "Courier: Colonization 4"
 			`	Novak and Chris are both standing next to the World-Ship, Chris is working on one of the refueling pumps. Once Novak spots you, he waves at you to join them.`
 			choice
 				`	"You built this town... in just a month?"`
-				#TODO some other choice lol
 				
 			`"To be fair," says Novak, "the World-Ship is big enough to let us transport entire buildings. It was just a matter of contracting construction companies throughout the Republic and then taking all of them here."`
 			`	"But there are some buildings we can't just move here" adds Chris.`
@@ -555,6 +560,7 @@ mission "Courier: Bounty 1"
 		ship "Korath Raider (Hyperdrive)"
 		
 	on complete
+		log "Just disabled a few Korath Raiders for the Couriers. They want to use their reactors to power their colony which is pretty much a city now."
 		conversation
 			`When you return, you notice that the empty spaceport building from before has now become the new Courier headquarters. You walk in and report your success to the receptionist. She says that she's been instructed by Novak to transfer you a reward of fifty million credits once you return.`
 			`	"Mister Novak also said that he'll seek you out should he need any more help" she adds. "In the meantime, mister Zimmerman asked me to tell you that he wants to show you something. He now resides in his new laboratory in the spaceport."`
@@ -617,6 +623,7 @@ mission "Courier: Diplomacy Republic 1"
 		dialog `The first satellite is loaded into your airlock and you deploy it. It automatically establishes orbit around the star and starts tracking all local activity. Now simply visit the remaining systems and do the same.`
 	on complete
 		event "courier cluster settled"
+		log "Deployed a bunch of surveillance satellites in the systems between the Republic and the new Courier territory. Chris told me to check in with Novak on Matunus once I have some time."
 		conversation
 			`After you land, Chris thanks you for your help and heads to the spaceport town.`
 			`	"Don't worry about me," he says, "hopefully the first keystones will be installed on some of our ships so finally I'll be able to call for my own transport. If you have the desire to further help us out, you can check in with Novak once you have some free time, I'm sure he'll have some work for you to do."`
@@ -631,6 +638,8 @@ mission "Courier: Diplomacy Republic 2"
 		has "Courier: Diplomacy Republic 1: done"
 	on offer
 		event "courier swizzle change"
+		log "People" "Vladimir Novak" `After the Couriers moved into their current star cluster, Novak is spending most of his time on Matunus as the head of the Courier Oversight.`
+		log "People" "Christian Zimmerman" `Chris is now working together with doctor McKay in the primary Courier laboratory on Matunus, helping with the development of new technologies using Korath know-how.`
 		conversation
 			`As instructed, you seek out Novak to ask if he needs your help. To your surprise, he is already near the landing pads, together with him is a large group of Courier freighter pilots and also multiple ships of a design you've never seen before - they look like modified Syndicate freighters.`
 			`	You also notice that instead of flying merchant colours, the Couriers repainted their ships, likely to differentiate their freighters once they start entering human space again.`
@@ -651,7 +660,10 @@ mission "Courier: Diplomacy Republic 2"
 			choice
 				`	"Sure, let's pay the Republic a visit!"`
 					accept
-				#TODO defer option
+				`	"I'm sorry, I don't have time right now."`
+				
+			`"It's fine," says Novak, "we're not in a rush, we're still waiting for more ships to receive their keystones. Once you feel like you're ready, return here."`
+				defer
 
 	npc save accompany
 		government "Courier"
@@ -760,6 +772,7 @@ mission "Courier: Diplomacy Syndicate 2"
 		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
 
 	on complete
+		log "The Couriers just revealed their present to the Republic and the Syndicate. Seems like their relations are fine."
 		event "courier longhaul start"
 		conversation
 			`The Courier fleet lands safely and Novak thanks you over the radio.`
