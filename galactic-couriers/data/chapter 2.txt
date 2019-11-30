@@ -772,7 +772,7 @@ mission "Courier: Diplomacy Syndicate 2"
 		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
 
 	on complete
-		log "The Couriers just revealed their present to the Republic and the Syndicate. Seems like their relations are fine."
+	log "The Couriers just revealed their presence to the Republic and the Syndicate. Seems like none of them have any issues."
 		event "courier longhaul start"
 		conversation
 			`The Courier fleet lands safely and Novak thanks you over the radio.`
