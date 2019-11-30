@@ -7,7 +7,7 @@ ___
 ### Installation  
 The installation process is the same as all other ES plugins. Once you download the plugin, place the *galactic-couriers* folder into your game's *plugins* folder. This folder by default is in *C:\Users\YourUserName\AppData\Roaming\endless-sky* on Windows.  
 This plugin *should* work just fine even when applied to an already well-progressed game, but it is still advised to backup your save game when installing *any* plugin.  
-I am not responsible for your save breaking, but if it does I'll be happy to help you fix it, just open a new issue.  
+I am not responsible for your save breaking, but if it does I'll be happy to help you fix it, just [open a new issue](https://github.com/Derekcz/galactic-couriers/issues/new).  
 ___  
 ### How to start  
 Once the plugin is installed, you will notice a single new star system appearing on your map. You won't be able to interact with it in any way until you finish the first mission, though.  
@@ -45,7 +45,7 @@ ___
 ### Compatibility  
 The most likely compatibility issues with other plugins would likely be star systems overlaps. This plugin adds a single star systems right to the west of Silikatakfar, and a small cluster of systems to the very far north-west corner of the galaxy.  
 I also plan to have multiple missions that change the player's swizzle, which would result in conflict with any other plugins that do the same.  
-Open an issue if you find a conflict with any other plugin so I can try to fix it.
+[Open an issue](https://github.com/Derekcz/galactic-couriers/issues/new) if you find a conflict with any other plugin so I can try to fix it.
 ___
 ### Story overview  
 
