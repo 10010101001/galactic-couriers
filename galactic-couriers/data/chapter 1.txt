@@ -110,7 +110,6 @@ mission "Courier: First Contact 0"
 			has "courier encounter: asked"
 			has "courier encounter: helped"
 	on offer
-		log "Factions" "Courier" `The Couriers are a small breakaway community of humans living between the Hai and Korath territories. They used to be a corporate entity under the Republic's rule, but they were forced to relocate after their ships were consistently attacked by pirates and their employees started receiving threats from an unknown source.`
 		conversation
 			`After getting closer to the station of obvious Korath origins, you notice that the docking ports are heavily modified. Your ship has no problem docking, the atmosphere inside the station is also the perfect composition for humans, so you continue with the standard docking procedures and equalize the air in your ship with the station.`
 			`	The corridor following the airlock is very cramped, just as you'd expect from a Korath station, but right after you exit it you're presented with a cavernous atrium full of people. At first, you didn't even realize that there is artifical gravity in the station, something very unusual with structures like this.`
@@ -138,6 +137,8 @@ mission "Courier: First Contact 1"
 	source "Meliter Station"
 	on offer
 		set "courier jobs open"
+		log "Discovered a Korath space station inhabited by humans. They call themselves the 'Couriers', supposedly they're a transport company that relocated here for some reason."
+		log "People" "Vladimir Novak" `Novak is the CEO and presumably one of the founding members of the Couriers. He used to live in the Republic space, but together with the rest of the Couriers relocated to Meliter.`
 		conversation
 			`The main office of the Couriers is positioned at the top of the spaceport, with windows overlooking the entire atrium. The only way to get there is by an elevator, where you're met by a security guard. After explaining to him your situation, he agrees to escort you to the leader of the Couriers.`
 			`	The elevator takes you to a lounge just in front of the office entrance. A woman greets you, introducing herself as the secretary of the 'Courier CEO'.`
@@ -178,6 +179,8 @@ mission "Courier: Small Deliveries done"
 			`	"I have been monitoring your recent work for the Couriers, and I can say I'm quite impressed. I'm sure you have many questions. Come to Meliter and meet me in my office and we can talk about our further cooperation."`
 				accept
 	on complete
+		log "Turns out the Couriers were forced to move after they started receiving threats from someone. They've been living in isolation ever since, although their ships still enter human space, undercover."
+		log "Factions" "Courier" `The Couriers are a small breakaway community of humans living between the Hai and Korath territories. They used to be a corporate entity under the Republic's rule, but they were forced to relocate after their ships were consistently attacked by pirates and their employees started receiving threats from an unknown source.`
 		conversation
 			`As instructed, you go to meet up with Novak. This time you know exactly where to go, and make your way to his office much faster than before. You are also allowed passage without any guards having to escort you. It seems like your work for the Couriers made them much more relaxed around you.`
 			`	"Captain <last>! I'm very glad you came, we had many people turn us down in the past."`
@@ -254,7 +257,7 @@ mission "Courier: Small Deliveries done"
 			label answer3
 			`"As far as we know, the drones have no access to jump drive technology. We're not entirely sure how they got in this system, but they don't seem to pose a threat anymore. We do, however, fear the possibiltiy that Korath raiders and scouts that do have jump drives will re-discover this system and realize that its no longer controlled by the drones. Some of our scouts on guard duty in the nearby sectors also reported hostile Hai battleships nosing around, we don't know where they got the drives but it seems like we were lucky enough that none of them decided to pay a visit to this system. Any more questions?"`
 				goto answer0
-				
+			
 			label answer4
 			`"Very well," says Novak, "I will contact you in case we need something from you, captain."`
 			
@@ -276,6 +279,7 @@ mission "Courier: Korath raid 1"
 	on visit
 		dialog "There are still Korath ships in orbit! They need to be destroyed or disabled otherwise they will attack the station."
 	on complete
+		log "Helped the Couriers defend against a Korath raid. Now they want to ask the Remnant if they'd be willing to sell them some ships."
 		conversation
 			`Upon returning to the station, you notice that it took surprisingly little damage. It is obvious that the Korath had the intention to take the station over, so they tried to avoid damaging its new life support systems. As you're looking around the atrium, you notice Novak talking with a group of Courier pilots. This is the first time you're seeing him outside of his office. When he spots you, he gestures you to join the debriefing.`
 			`	"This is captain <last>", he says to the pilots. You introduce to each other and Novak continues, "While our stations seems to be relatively undamaged, we lost many ships and good pilots. The fleet we sent to defend Meliter was almost our entire defence force, we are now practically powerless. I assume that now the Korath know we're here, they will return, but given how we kicked their asses today, I expect them to take some time to regroup. We have to use this short window of ceasefire to our advantage and build up more defenses."`
@@ -431,6 +435,7 @@ mission "Courier: Diplomacy Remnant 2"
 			`	He then looks at his wrist watch and says that you two should "get out of here". Now that the deal is secured, he has to return to his office and make sure that the Courier's new ships are used as efficiently as possible.`
 				accept
 	on complete
+		log "The Remnant agreed to sell the Couriers their Starling warships. They're probably going to use them for surveillance."
 		conversation
 			`After docking with the station, Novak thanks you and hands you a credit chip worth 2 million.`
 			`	"You helped us a lot, <last>. I've decided to allow you full acess to our job board. Now, all Courier contracts will be available to you in case you want to make some more money. Once again, we'll notify you should we need your help, but I think you'll be able to take a break for now."`
@@ -482,6 +487,7 @@ mission "Courier: Diplomacy Hai 2"
 	to offer
 		has "Courier: Diplomacy Hai 1: done"
 	on offer
+		log "The Couriers think that another large Korath raid is comming. They asked me to go retrieve a dozen Hai battleships to help with the defence."
 		conversation
 			`Once again you take the elevator to Novak's office, but when the door opens you see that the lounge in front of the office has been converted into a makeshift briefing room. There are computer screens on almost every wall and a table with a map of nearby star systems now takes up a majority of the room. You find Novak and about a dozen other people in the lounge discussing something, but your presence interrupts them.`
 			`	"Capain <last>! Nice to see you again." says Novak.`
@@ -543,6 +549,7 @@ mission "Courier: Diplomacy Hai 3"
 		
 	on complete
 		payment 7000000
+		log "People" "Christian Zimmerman" `Chris is the head of the Courier scientific branch. He moved to the Meliter Station mainly to help recover as much information from the Kor Sestor database as possible.`
 		conversation
 			`You dock with the station and head for Novak's office to tell him that the Hai battleships are ready, but instead you are pulled aside by Chris, the scientist that attended the previous briefing with you.`
 			`	"My name's Christian Zimmerman" he says, "mister Novak is busy right now, he told me to give you this once you return with the ships."`
@@ -550,7 +557,6 @@ mission "Courier: Diplomacy Hai 3"
 			`	"But before you go, captain" he continues, "I wanted to ask you for some help myself."`
 			choice
 				`	"What do you need?"`
-				# TODO: DEFER MISSION
 				
 			`"I work as the chief scientist for the Couriers" he says, "I was brought here mainly to research the Korath technologies on this station, but also to find out what happened to the hyperspace links in this system."`
 			`	He then reaches into his second pocket and pulls out a tablet. On the screen you see a map of the Milky Way, but the only marked systems are the ones occupied by the Korath and their drones. Chris then zooms the view in on Meliter and you see that there is a link between it and Silikatakfar, a nearby star system.`
@@ -622,6 +628,7 @@ mission "Courier: Korath raid 2"
 		dialog `This station is under attack! Either you failed to destroy/disable the attackers, or there are still more hostile fleets on their way.`
 		
 	on complete
+		log "Just helped the Couriers hold off another raid. The Korath are really getting stronger, hopefully they can figure out a way to stop them for good."
 		conversation
 			`You dock with the station while the other Courier ships are still busy cleaning up the battlefield and salvaging as much Korath equipment as possible. The station is eerily quiet now that almost everyone has evacuated. The only person you meet is Novak.`
 			`	"I'm glad you're okay" he says, "that was one of the most terrifying battles I've seen. I would've joined in myself, but someone had to stay behind and engage the self-destruct in case the station got boarded."`
@@ -744,10 +751,7 @@ mission "Courier: Research 1"
 			`"The original purpose of this station. The automata tested some experimental equipment here, but to know exactly what, I'm going to need the said equipment. So, shall we depart?"`
 			choice
 				`	"We'll be there in no time!"`
-					goto depart
-			#TODO: DEFER MISSION
-			
-			label depart
+
 			`"Great!" he says, "I'm going to tell my team to get ready, we'll meet you by your ship in a few minutes! Just make sure you have enough free bunks for us and some extra space in the hold for the equipment."`
 				accept
 				
@@ -755,6 +759,7 @@ mission "Courier: Research 1"
 		dialog `You reached your destination, but the research team is still lagging behind. Make sure all your escort ships are in the system with you.`
 			
 	on complete
+		log "Helped the Couriers get some research equipment to Meliter. They want to use it to uncover why the Korath left the station and how the hyperspace link got severed."
 		conversation
 			`You land on Earth but none of your passengers leave their bunks. They took a lot of the research material with them and seem to be so focused on it that they didn't notice your ship entering the atmosphere. You remind them over the intercom and they get on their way. Last to leave is Chris, who turns around and says "We won't take long. I don't know how much you are interested in science and stuff... you can come with us if you want."`
 			choice
@@ -841,6 +846,7 @@ mission "Courier: Research 3"
 		has "Courier: Research 2: done"
 		has "event: courier analyzers done"
 	on offer
+		log "Apparently the Kor Sestor left Meliter after some strange alien ship appeared. Chris thinks it may still be somewhere close so he's preparing some equipment to trace it."
 		conversation
 			`It has been over two weeks since Chris and his team connected the information alanyzers to the station's database. Do you want to check on Chris?`
 			choice
@@ -892,7 +898,17 @@ mission "Courier: Research 3"
 			`	Chris then transfers the map data from the tablet to your ship and you are ready to go.`
 				accept
 	
-	#TODO: ON ENTER DIALOGS
+	on enter Persitar
+		dialog `After entering the system, Chris fires up his scanners and takes the needed measurements. You can now continue to your next destination.`
+		
+	on enter Fasitopfar
+		dialog `After entering the system, Chris fires up his scanners and takes the needed measurements. You can now continue to your next destination.`
+		
+	on enter "Sagittarius A*"
+		dialog `After entering the system, Chris fires up his scanners and takes the needed measurements. You can now continue to your next destination.`
+		
+	on enter Coluber
+		dialog `After entering the system, Chris fires up his scanners and takes the needed measurements. You can now continue to your next destination.`
 	
 	on complete
 		conversation
@@ -916,9 +932,20 @@ mission "Courier: Research 4"
 			`	"I need to stay here" he says, "my team managed to recover some of the data about the Korath weapon that was developed here, and they will need my help. The device is now in search mode, all you have to do is fly through the systems in jump range of Meliter and it will collect the data automatically. Once you're done, just come back to my lab and I'll go over the results."`
 				accept
 			
-	#TODO: ON ENTER DIALOGS
+	on enter Sepriaptu
+		dialog `After entering the system, the scanner automatically activates and conducts the necessary measurements. You can now continue to your next destination.`
+		
+	on enter Sabriset
+		dialog `After entering the system, the scanner automatically activates and conducts the necessary measurements. You can now continue to your next destination.`
+		
+	on enter Mesuket
+		dialog `After entering the system, the scanner automatically activates and conducts the necessary measurements. You can now continue to your next destination.`
+		
+	on enter Silikatakfar
+		dialog `After entering the system, the scanner automatically activates and conducts the necessary measurements. You can now continue to your next destination.`
 	
 	on complete
+		log "Turns out the alien ship that chased out the Sestor is still in Meliter and is now closing in. I'll probably help the Couriers with the evacuation."
 		conversation
 			`As instructed, you bring the device to the lab where Chris and his team are working. Chris connects the device to his computer and starts reading through the data you collected.`
 			`	"Interesing" he says, "there appear to be no traces of the ship. That's impossible, according to the logs of this station, it used a drive so powerful that it left an energy imprint anywhere it flew."`
@@ -976,6 +1003,7 @@ mission "Courier: Evacuation 2"
 	to offer
 		has "Courier: Evacuation 1: done"
 	on offer
+		log "Chris just found out that the Meliter Station itself is the device that transported the alien ship here, by accident. He wants to use it to destabilize an orbit of one of the local stars and destroy the ship using a supernova. I'm still helping with the evacuation."
 		conversation
 			`When you return to Meliter the evacuation procedures are in full flow. Not only are people being transported away, but for some reason even the station's equipment is being disassembled and loaded onto ships.`
 			`	You find both Novak and Chris in the lab looking at the schematics of the station.`
@@ -1073,6 +1101,7 @@ mission "Courier: Evacuation 3"
 				launch
 			
 	on complete
+		log "The last Courier ships just evacuated their station. Chris stayed behind to operate the station and destroy the ship. Seems like he was succesful, because Meliter just disappeared from my map. Hopefully he'll be fine and we can go get him soon."
 		dialog `Once you land, Novak contacts you over the radio. He thanks you for your help and transfers you a reward of fifty million credits. He also says that it will be several months before they'll be able to contact Meliter and Chris, and that the Couriers will seek you out if they ever need your help again in the future.`
 		event "meliter supernova"
 		event "meliter return 0" 90
