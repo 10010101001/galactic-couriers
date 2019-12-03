@@ -498,6 +498,7 @@ mission "Courier: Colonization 4"
 	destination "Matunus"
 	to offer
 		has "event: matunus town built"
+		has "Wanderers: Sestor: Factory 2: offered"
 	on offer
 		conversation
 			`Shortly after you land, you receive a message coded in an unknown format. After a bit of tinkering with your ship computers, you realize that its a modified Courier transmission. It reads;`
@@ -510,7 +511,7 @@ mission "Courier: Colonization 4"
 			`	You land next to the World-Ship that the Couriers managed to capture, you notice that it has serious wear on the engines, suggesting that since you first escorted it here it has been working non-stop to bring thousands upon thousands of residents to this planet.`
 			`	Novak and Chris are both standing next to the World-Ship, Chris is working on one of the refueling pumps. Once Novak spots you, he waves at you to join them.`
 			choice
-				`	"You built this town... in just a month?"`
+				`	"You built this town in such a short time?"`
 				
 			`"To be fair," says Novak, "the World-Ship is big enough to let us transport entire buildings. It was just a matter of contracting construction companies throughout the Republic and then taking all of them here."`
 			`	"But there are some buildings we can't just move here" adds Chris.`
@@ -772,7 +773,7 @@ mission "Courier: Diplomacy Syndicate 2"
 		dialog `You reached your destination but you left the Courier fleet behind. Wait for them to catch up to you before landing.`
 
 	on complete
-	log "The Couriers just revealed their presence to the Republic and the Syndicate. Seems like none of them have any issues."
+		log "The Couriers just revealed their presence to the Republic and the Syndicate. Seems like none of them have any issues."
 		event "courier longhaul start"
 		conversation
 			`The Courier fleet lands safely and Novak thanks you over the radio.`
@@ -795,4 +796,212 @@ mission "Courier: Diplomacy Syndicate 2"
 				
 			label next
 			`	"Anyway," he continues, "now that the Couriers are a proper faction, I will have a lot of work to do, so I myself won't be bothering you for a long time. If you feel like helping out, check out our job boards or stop by on individual planets, I'm sure you'll stumble upon someone who could use your help."`
+
+
+mission "Courier: Corsair Intel 1"
+	name "Prepare for undercover infiltration"
+	description "Once your fleet is non-suspicious enough, go to Taliesin where your ship will be repainted and where you'll receive further instructions."
+	source "Matunus"
+	destination "Taliesin"
+	to offer
+		has "Courier: Diplomacy Syndicate 2: done"
+	on offer
+		conversation
+			`As you are walking through the spaceport, you are met by one of the Courier military pilots.`
+			`	"Captain <last>!" he exclaims, "It's so good to be seeing you here! We have a job that I think you would enjoy."`
+			choice
+				`	"What job?"`
+					goto next
+				`	"I'm sorry, I don't have time right now."`
+					defer
+					
+			label next
+			`"What would you say if we offered you to be a Pirate?"`
+			`	Your silent confusion prompts him to continue with his explanation. "Recently, we've been running into big Pirate problems. It seems like a certain Pirate group - I think they call themselves the 'Corsairs' - has managed to get their hands on some alien technology and now they act all tough, ambushing our convoys and damaging our freighters."`
+			`	"Why not just destroy them?" you ask.`
+			`	"As soon as they spot any of our warships," the man continues, "they fall back. They disperse through different Pirate worlds, and we would be spreading ourselves too thin if we sent our ships to all of those systems. We also don't want to involve the Republic in this, because we're afraid that some 'bad actors' would then want to hoard the tech for themselves."`
+			choice
+				`	"What exactly are you proposing?"`
+			`"My superior officers want you to infiltrate one of their outposts on Stormhold, that's the one closest to our shipping line. There you will be able to gather some intel on the whereabouts of their leaders so that we can arrest them and shut them down."`
+			choice
+				`	"How am I supposed to infiltrate a Pirate base?"`
+			`"Well, first and foremost you'd have to use a relatively weak fleet to not raise suspicion. Maybe even just a single ship. Once you're prepared, travel to Taliesin and my superiors will fill you in on the rest of the details."`
+			`	(To progress, you need to decrease the strength of your fleet to a 'pirate' level, do so by parking any strong escorts, unequipping weapons, and/or using a weaker ship.)`
+				accept
 			
+	to complete
+		"armament deterrence" <= 10
+		
+	on visit
+		conversation
+			`When you land, you're met by the Courier officers that are in charge of your mission. They say that your current active fleet is too suspicious for the job. Park some ships or use a weaker flagship before returning here.`
+			`	(To progress, you need to decrease the strength of your fleet to a 'pirate' level, do so by parking any strong escorts, unequipping weapons, and/or using a weaker ship.)`
+		
+	on complete
+		conversation
+			`When you land, you're met by the Courier officers that are in charge of your mission. They inspect your ship and give you the go-ahead to proceed.`
+			`	"Now take your ship to our hangar in the spaceport," says one of the officers, "there you'll receive the complementary paintjob."`
+			`	(It is important you don't change any aspects of your fleet now, otherwise you won't be able to finish the following mission.)`
+
+event "courier: going undercover"
+	government "Escort"
+		swizzle 6
+
+# TODO : THIS NEEDS TO BE CHANGED IF ANY OTHER ESCORT SWIZZLES ARE ADDED TO VANILLA OR TO KEEP COMPATIBILITY WITH OTHER PLUGINS
+event "courier: cover blown"
+	government "Escort"
+		swizzle 2
+			
+mission "Courier: Corsair Intel 2"
+	name "Infiltrate a Corsair outpost"
+	description "Fly your ship to Alcyone and see if you can get any intel on the Corsair leaders."
+	source "Taliesin"
+	stopover "Stormhold"
+	destination "Taliesin"
+	
+	to offer
+		has "Courier: Corsair Intel 1: done"
+		"armament deterrence" <= 10
+	on offer
+		log "Factions" "Corsair" `The Corsairs are a pirate clan that got access to various alien ships and outfits. They became the primary enemy of the Couriers after ambushing many of their freighters.`
+		"courier: stored rep: Republic" = "reputation: Republic"
+		"reputation: Republic" = -100
+		"courier: stored rep: Free Worlds" = "reputation: Free Worlds"
+		"reputation: Free Worlds" = -100
+		"courier: stored rep: Syndicate" = "reputation: Syndicate"
+		"reputation: Syndicate" = -100
+		"courier: stored rep: Pirate" = "reputation: Pirate"
+		"reputation: Pirate" = 100
+		"courier: stored rep: Corsair" = "reputation: Corsair"
+		"reputation: Corsair" = 100
+		event "courier: going undercover"
+		conversation
+			`You land your ship in front of the Courier hangar. You watch the workers roll it inside and start repainting it red. You also start to wonder if what you're doing is a good idea...`
+			`	Your train of thought is soon interrupted by the Courier officers as they start to explain the plan to you.`
+			`	"Alright, listen very carefully" says one of them. "We are the only ones that know you're doing this, therefore any Navy or merchant ships you meet will likely try to destroy you. You need to head straight for Alcyone, do not engage any pirates unless they engage you first. If they do, the cover was blown and you need to get back here ASAP.`
+			`	"Once you land, look for any signs of... well... competence. Most pirates are completely clueless and lack any integrity. The Corsairs, however, are all experienced combat pilots. They should have one of their recruiting centers there. Try asking around and find your way inside. Pretend that you want to join them, maybe make up a story about how you stole jump drives from the Syndicate or something... Bonus points if you take a ship of an alien origin and enter the system using a jump drive, hopefully it will impress them and they'll release some useful information. Got it?"`
+			choice
+				`	"Umm... sure."`
+					accept
+					
+	npc
+		government "Corsair"
+		personality heroic staying
+		system "Alcyone"
+		fleet 
+			names "pirate"
+			variant
+				"Sparrow" 3
+				"Shield Beetle" 2
+				"Korath Raider" 1
+				"Korath Chaser" 2
+				"Model 32" 2
+				"Met Par Tek 53"
+	
+	to fail
+		"armament deterrence" > 10
+		
+	on fail
+		"reputation: Pirate" = "courier: stored rep: Pirate"
+		"reputation: Corsair" = "courier: stored rep: Corsair"
+		log `Just ran an infiltration mission for the Couriers, but my cover was blown. Hopefully that didn't screw their plans up too much.`
+		dialog `Your cover was blown and you failed your mission. Get back to Taliesin as soon as possible to get your ship repainted.`
+		
+	on stopover
+		conversation
+			`You land on Stormhold, and, to your surprise, the local pirates seem to be fooled by your cover. The fact that the Corsairs have many alien ships in orbit also helps to draw a lot of the attention away from you.`
+			`	Slightly nervous, you look around the landing pads but don't see anything that would resemble the Corsair recruiting site. You're not really sure where to go, so you seek out the least disturbing-looking pirate around you to ask him.`
+			choice
+				`	"Hey, do you know anything about the Corsairs?"`
+					goto question
+				`	"Ahoy matey! I heard that th' Corsairs are crimpin' 'n I would like t' join thar ranks."`
+
+			`"What the hell are you talking about?" he says, confused.`
+			`	"The Corsairs... do you know about them?" you say.`			
+					
+			label question
+			`"You interested in joinin' them?" he asks. "Don't even bother, those guys only take the best of the best. I tried and they rejected me on the spot."`
+			choice
+				`	"Who said I'm not the 'best of the best'?"`
+			
+			`"Well you're just as overconfident as they are" he laughs. "One of them is now in the nearby pub. If he thinks you're Corsair material, he'll take you to their ship for questioning."`
+			`	The man then goes on to show you the direction to the pub and you get on your way. Once inside, you instantly notice the Corsair pilot. He's wearing a bright red uniform lined with shiny gold ornaments all over it.`
+			`	"Oh no, another one of you?" he says when he sees you, "listen, kid, I'll tell you what I already told everyone else on this planet; we're not hiring."`
+			choice
+				`	"What do I need to do for you to reconsider?"`
+						
+			`"For me... to reconsider?" he repeats. "Alright, you look like you have at least some bit of decency, which means a lot in this hellhole, so I'll give you a chance."`
+			`	He gestures for you to follow him and takes you to his Hai battleship. You sit down in one of the ship's bunks and the Corsair starts questioning you.`
+			`	"Alright, kid," he says, "if you want to be one of us, you need to prove that you have enough experience in the field. So, what is your background? Where do you come from?"`
+			choice
+				`	"I was with the Syndicate, but then I stole their jump drives and went on to make a fortune smuggling alien technology."`
+			
+			`"Alright," he says, visibly impressed, "that's what we like to hear. Tell me, what do you know about the Korath and their drones?"`
+			`	You explain to him that you know almost everything and that you're capable of capturing their ships. The Corsair listens with amazement, obviously they must be very desparate to acquire those ships otherwise he'd me much more suspicous.`
+			`	"So far the Hai ships were the backbone of our fleet" he says. "But when we discovared that there's an untapped source of even more powerful ships with weapons unchallenged by anything in the human space... too bad those damn birds screwed it up."`
+			`	He looks around the bunk, almost as if to make sure that no one else is listening in on your conversation, and continues.`
+			`	"I don't have the authority to outright accept you to our group. But I'll give you a tip; if you manage to cap some of those ships, bring them to Deadman's Cove. Our Fleet Admiral lives there."`
+			choice
+				`	"Thank you, I'll do that."`
+			`You leave the Corsair ship, wondering if what he told you was true. But that is for the Couriers to decide, now you have to safely return back to Taliesin.`
+			
+	on complete
+		"reputation: Republic" = "courier: stored rep: Republic"
+		"reputation: Free Worlds" = "courier: stored rep: Free Worlds"
+		"reputation: Syndicate" = "courier: stored rep: Syndicate"
+		"reputation: Pirate" = "courier: stored rep: Pirate"
+		"reputation: Corsair" = "courier: stored rep: Corsair"
+		event "courier: cover blown"
+		log `Just ran an infiltration mission for the Couriers. Pretended to be a pirate ship to get some information out of the Corsairs. Hopefully it will allow the Couriers to arrest their leaders and stop the ambushes on their freighters.`
+		payment 20000000
+		conversation
+			`You see the Courier officers already anxiously waiting for you. As soon as your ship touches down and you step off it, it gets pulled back into the hangar for repainting.`
+			`	"So?" asks one of the officers. "Got anything useful?"`
+			choice
+				`	"Yes, their Admiral is on Deadman's Cove."`
+					goto trust
+				`	"They told me their Admiral is on Deadman's Cove, but I think it may be a trap."`
+					goto distrust
+					
+			label trust
+			`"See? It was easy!" says the officer.`
+				goto next
+					
+					
+			label distrust
+			`"What makes you think that?" asks the officer.`
+			`	You explain to him that the Corsair seemed too willing to give you the intel, and that he may simply be testing you.`
+				goto next
+				
+			label next
+			`	"We'll send a scout ship to verify the information" says another officer, "if it is indeed true, we will assemble a strike fleet. Did you see their ships? How powerful of an enemy are they?"`
+			choice
+				`	"A strike fleet? You said you just want to arrest their leaders."`
+					goto strike
+				`	"I saw Hai and Korath battleships, but it is likely they have much more."`
+					goto end
+					
+			label strike
+			`"That is the plan" says the officer, "but we have to keep in mind that we'll still be well withing pirate territory. Hopefully an intimidating fleet will simply deter them from starting further conflict."`
+			`	"We need to show them that, unlike the Republic, the Couriers are capable of defending our freighters" says the other officer.`
+			choice
+				`	"I saw Hai and Korath battleships, but it is likely they have much more."`
+			
+			label end
+			`"Now that the Wanderers are in the former Korath space," says the officer, "I am a bit afraid that the Corsairs may posses even their technology. Our ships have often observed lone Wanderer ships disabled by ocassional Korath raids. There's good chance that the Corsairs could snatch some."`
+			`	A short discussion between the officers about their next move follows, after which they tell you that they'll transfer twenty million credits to your account and contact you once they decide on what to do.`
+
+mission "Courier: Corsair Intel 2B"
+	landing
+	source "Taliesin"
+	to offer
+		has "Courier: Corsair Intel 2: failed"
+	on offer
+		event "courier: cover blown"
+		"reputation: Republic" = "courier: stored rep: Republic"
+		"reputation: Free Worlds" = "courier: stored rep: Free Worlds"
+		"reputation: Syndicate" = "courier: stored rep: Syndicate"
+		"reputation: Pirate" = "courier: stored rep: Pirate"
+		"reputation: Corsair" = "courier: stored rep: Corsair"
+		conversation
+			`As soon as you land, your ship is moved back to the hangar for repainting. You explain the Courier officers what happened, and they tell you that they'll seek you out if they manage to gather any more information.`

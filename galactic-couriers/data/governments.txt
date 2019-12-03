@@ -10,3 +10,19 @@ government "Courier"
 	"fine" 0
 	"friendly hail" "friendly civilian"
 	"hostile hail" "hostile civilian"
+	
+government "Corsair"
+	swizzle 6
+	color .78 0 0
+	
+	"player reputation" -10
+	"attitude toward"
+		"Pirate" 10
+		"Courier" -.1
+		"Author" -.01
+		"Hai" -.01
+		"Korath" -.01
+		"Merchant" -.1
+		"Syndicate" -.01
+	"friendly hail" "friendly pirate"
+	"hostile hail" "hostile pirate"
