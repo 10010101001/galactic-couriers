@@ -29,7 +29,7 @@ outfit "Ar'leng Active Heatsink"
 outfit "Ar'leng Particle Accelerator"
 	category "Turrets"
 	cost 1234567
-	thumbnail "outfit/disruptor"
+	thumbnail "outfit/accelerator"
 	"mass" 83
 	"outfit space" -83
 	"weapon capacity" -83
@@ -112,4 +112,4 @@ ship "Ar'leng Arbiter"
 	explode "pug large explosion" 40
 	explode "huge explosion" 10
 	"final explode" "final explosion large"
-	description "The origins of this vessel are unknown. Most likely, it was created by an alien civilization beyond the edge of the observable universe, far more advanced than anyone else in the Milky Way."
+	description "The origins of this vessel are unknown. Most likely, it was created by an alien civilization beyond the edge of the observable universe, far more advanced than anything else in the Milky Way."
