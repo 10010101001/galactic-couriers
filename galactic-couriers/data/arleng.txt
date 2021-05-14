@@ -74,7 +74,7 @@ ship "Ar'leng Arbiter"
 		"drag" 16.8
 		"heat dissipation" .5
 		"fuel capacity" 800
-		"energy generation" 1500
+		"energy generation" 300
 		"energy capacity" 80000
 		"cargo space" 87
 		"outfit space" 3000
