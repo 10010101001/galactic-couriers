@@ -751,7 +751,7 @@ mission "Courier: Research 1"
 			`"The original purpose of this station. The automata tested some experimental equipment here, but to know exactly what, I'm going to need the said equipment. So, shall we depart?"`
 			choice
 				`	"We'll be there in no time!"`
-
+			label depart
 			`"Great!" he says, "I'm going to tell my team to get ready, we'll meet you by your ship in a few minutes! Just make sure you have enough free bunks for us and some extra space in the hold for the equipment."`
 				accept
 				
